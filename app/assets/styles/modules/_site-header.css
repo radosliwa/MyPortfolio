@@ -1,0 +1,6 @@
+.site-header{
+  background: url('../../assets/img/background-large.jpg') center center no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}

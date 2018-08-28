@@ -1,0 +1,65 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack",
+    "watch": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radosliwa/portfolio.git"
+  },
+  "dependencies": {
+    "@gabriel-delepine/smooth-scroll": "^1.4.0",
+    "jquery": "latest",
+    "jquery-smooth-scroll": "^2.2.0",
+    "normalize.css": "latest",
+    "waypoints": "^4.0.1",
+    "webpack": "^3.11.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "autoprefixer": "latest",
+    "babel-core": "^6.26.3",
+    "babel-loader": "latest",
+    "babel-preset-env": "^1.7.0",
+    "babelify": "^8.0.0",
+    "browser-sync": "^2.24.5",
+    "browserify": "^16.2.2",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-modernizr": "latest",
+    "gulp-postcss": "latest",
+    "gulp-rename": "latest",
+    "gulp-rev": "latest",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-svg-sprite": "^1.4.0",
+    "gulp-svg2png": "latest",
+    "gulp-uglify": "^3.0.0",
+    "gulp-usemin": "latest",
+    "gulp-watch": "latest",
+    "postcss-hexrgba": "latest",
+    "postcss-import": "latest",
+    "postcss-mixins": "latest",
+    "postcss-nested": "latest",
+    "postcss-simple-vars": "latest",
+    "rucksack-css": "^1.0.2",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/radosliwa/portfolio/issues"
+  },
+  "homepage": "https://github.com/radosliwa/portfolio#readme"
+}
