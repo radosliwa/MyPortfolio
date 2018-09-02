@@ -1,6 +1,100 @@
-.site-header{
-  background: url('../../assets/img/background-large.jpg') center center no-repeat;
+.site-header {
+  background: url('../../assets/img/background-large.jpg') no-repeat center bottom fixed;
   background-size: cover;
   height: 100vh;
   width: 100vw;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  &__myPicture {
+    position: relative;
+    border-radius: 50%;
+    max-width: 320px;
+    overflow: hidden;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*to center picture in the circle and avoid stretching*/
+    top: -5%;
+    img {
+      max-width: 320px;
+    }
+  }
+  &__text {
+    /* align-self: flex-start; */
+    display: flex;
+    align-items: center;
+    height: 50vh;
+    font-size: responsive;
+    min-font-size: 45px;
+    max-font-size: 60px;
+    color: #FFF;
+    font-weight: bold;
+    text-align: center;
+    &__item1, &__item2, &__item3 {
+      position: absolute;
+      width: 60%;
+      animation-duration: 11s;
+      animation-timing-function: ease;
+      animation-iteration-count: infinite;
+      transform: translate(-50%, -10%);
+    }
+    &__item1 {
+      animation-name: anim1;
+    }
+    &__item2 {
+      animation-name: anim2;
+    }
+    &__item3 {
+      animation-name: anim3;
+    }
+  }
+}
+
+@keyframes anim1 {
+  0%, 8.3% {
+    left: -100%;
+    opacity: 0;
+  }
+  8.3%, 25% {
+    left: 50%;
+    opacity: 1;
+  }
+  33.33%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes anim2 {
+  0%, 33.33% {
+    /* left: -100%; */
+    opacity: 0;
+  }
+  41.63%, 58.29% {
+    left: 50%;
+    opacity: 1;
+  }
+  66.66%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes anim3 {
+  0%, 66.66% {
+    /* left: -100%; */
+    opacity: 0;
+  }
+  74.96%, 91.62% {
+    left: 50%;
+    opacity: 1;
+  }
+  94% {
+    left: 48%;
+  }
+  100% {
+    opacity: 0;
+    left: 110%;
+  }
 }

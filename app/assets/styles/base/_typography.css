@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+body {
+  font-family: 'Cinzel', sans-serif;
+  text-align: center;
+  font-size: responsive;
+  min-font-size: 22px;
+  max-font-size: 44px;
+}
+
+p {}
+
+span {}

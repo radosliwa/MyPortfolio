@@ -1,0 +1,5 @@
+/*for fine-tuning animate.css*/
+
+.animated.zoomIn {
+  animation-duration: 2s;
+}
