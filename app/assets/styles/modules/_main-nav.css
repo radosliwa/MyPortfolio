@@ -1,0 +1,16 @@
+.main-nav {
+  text-align: center;
+  color: #FFF;
+  &__menu {
+    width: 100%;
+    background-image: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
+    /* &>li {
+      display: inline-block;
+    } */
+    @mixin atMedium {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

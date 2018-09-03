@@ -20,6 +20,8 @@
     top: -5%;
     img {
       max-width: 320px;
+      /*to adjust the size of the img itself and preserving ratio, has to go
+      hand in hand with myPicture max-width above*/
     }
   }
   &__text {
@@ -31,7 +33,6 @@
     min-font-size: 45px;
     max-font-size: 60px;
     color: #FFF;
-    font-weight: bold;
     text-align: center;
     &__item1, &__item2, &__item3 {
       position: absolute;

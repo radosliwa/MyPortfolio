@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Cinzel');/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css *//* Document
+@import url('https://fonts.googleapis.com/css?family=Exo+2:400,400i,600,700');/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css *//* Document
    ========================================================================== *//**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -202,11 +202,17 @@ select { /* 1 */
 }body {
   margin: 0;
   padding: 0;
+}ul, li, a {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
 }/*for fine-tuning animate.css*/.animated.zoomIn {
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
 }body {
-  font-family: 'Cinzel', sans-serif;
+  font-family: 'Exo 2', sans-serif;
   text-align: center;
   font-size: calc(22px + 22 * ((100vw - 420px) / 860));
 }@media screen and (min-width: 1280px){body{
@@ -215,7 +221,14 @@ select { /* 1 */
 }@media screen and (max-width: 420px){body{
     font-size: 22px;
   }
-}p {}span {}.section{
+}p {}span {}.wrapper {
+  overflow: hidden;
+  padding-left: 5px;
+  padding-right: 5px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}.section{
   min-height: 70vh;
 }.site-header {
   background: url('../../assets/img/background-large.jpg') no-repeat center bottom fixed;
@@ -239,6 +252,8 @@ select { /* 1 */
     top: -5%;
   }.site-header__myPicture img {
       max-width: 320px;
+      /*to adjust the size of the img itself and preserving ratio, has to go
+      hand in hand with myPicture max-width above*/
     }.site-header__text {
     /* align-self: flex-start; */
     display: flex;
@@ -246,7 +261,6 @@ select { /* 1 */
     height: 50vh;
     font-size: calc(45px + 15 * ((100vw - 420px) / 860));
     color: #FFF;
-    font-weight: bold;
     text-align: center;
   }@media screen and (min-width: 1280px){.site-header__text{
     font-size: 60px;
@@ -354,4 +368,17 @@ select { /* 1 */
     opacity: 0;
     left: 110%;
   }
-}
+}.main-nav {
+  text-align: center;
+  color: #FFF;
+}.main-nav__menu {
+    width: 100%;
+    background-image: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
+  }/* &>li {
+      display: inline-block;
+    } */@media(min-width: 770px) {.main-nav__menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+  }
+  }
