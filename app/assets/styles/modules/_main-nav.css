@@ -1,16 +1,27 @@
 .main-nav {
-  text-align: center;
+  margin: 0 auto;
+  border-bottom: 3px solid $mainAquamarine;
   color: #FFF;
+  background-image: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
   &__menu {
-    width: 100%;
-    background-image: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
-    /* &>li {
-      display: inline-block;
-    } */
+    display: flex;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
     @mixin atMedium {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: row;
+    }
+    &>li {}
+    li a {
+      @mixin atMedium {
+        display: inline-block;
+        padding: 6% 4%;
+      }
+      &:hover {
+        color: $mainAquamarine;
+      }
     }
   }
 }

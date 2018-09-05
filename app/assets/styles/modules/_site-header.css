@@ -8,6 +8,7 @@
   align-items: center; */
   &__myPicture {
     position: relative;
+    border: 2px solid $mainAquamarine;
     border-radius: 50%;
     max-width: 320px;
     overflow: hidden;
@@ -37,7 +38,7 @@
     &__item1, &__item2, &__item3 {
       position: absolute;
       width: 60%;
-      animation-duration: 11s;
+      animation-duration: 9.5s;
       animation-timing-function: ease;
       animation-iteration-count: infinite;
       transform: translate(-50%, -10%);
