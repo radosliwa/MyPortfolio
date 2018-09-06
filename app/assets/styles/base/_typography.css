@@ -4,12 +4,16 @@ body {
   text-align: center;
   font-size: responsive;
   min-font-size: 22px;
-  max-font-size: 44px;
+  max-font-size: 42px;
   text-align: center;
 }
 
 p {
   max-font-size: 34px;
+}
+
+h2 {
+  max-font-size: 38px;
 }
 
 span {

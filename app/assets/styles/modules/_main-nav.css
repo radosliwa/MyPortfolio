@@ -13,7 +13,9 @@
     @mixin atMedium {
       flex-direction: row;
     }
-    &>li {}
+    &>li {
+      font-size: 2.1rem;
+    }
     li a {
       @mixin atMedium {
         display: inline-block;
@@ -23,5 +25,9 @@
         color: $mainAquamarine;
       }
     }
+  }
+  &--is-fixed {
+    position: fixed;
+    z-index: 99;
   }
 }

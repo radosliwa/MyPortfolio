@@ -1,4 +1,50 @@
 .section {
-  padding-top: 3%;
+  /* padding-top: 3%; */
+  height: 100vh;
   @mixin atMedium {}
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    &--lineThrough {
+      /*another class was necessary, cause I couldn't modify __title's pseudo-elements
+      with js/jQ ): */
+      &:before {
+        content: "";
+        position: relative;
+        background-color: $mainAquamarine;
+        width: 50%;
+        height: 5px;
+        bottom: -25%;
+        right: 0;
+        margin-right: 3%;
+        animation: line-through .4s ease-out 1;
+      }
+      &:after {
+        /* display: inline-block;
+        vertical-align: middle; */
+        content: "";
+        position: relative;
+        background-color: $mainAquamarine;
+        width: 50%;
+        height: 5px;
+        bottom: -25%;
+        left: 0;
+        margin-left: 3%;
+        animation: line-through .4s ease-out 1;
+      }
+    }
+  }
+}
+
+@keyframes line-through {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
 }

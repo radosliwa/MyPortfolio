@@ -214,16 +214,18 @@ select { /* 1 */
 }body {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
-  font-size: calc(22px + 22 * ((100vw - 420px) / 860));
+  font-size: calc(22px + 20 * ((100vw - 420px) / 860));
   text-align: center;
 }@media screen and (min-width: 1280px){body{
-    font-size: 44px;
+    font-size: 42px;
   }
 }@media screen and (max-width: 420px){body{
     font-size: 22px;
   }
 }p {
   max-font-size: 34px;
+}h2 {
+  max-font-size: 38px;
 }span {
   /* text-shadow: 0px 2px 2px #000; */
   font-weight: 500;
@@ -238,10 +240,72 @@ select { /* 1 */
     margin-right: 10%;
   }.wrapper--forSections {
     padding: 0 5px;
+  }.revealItem {
+  opacity: 0;
+  transition: all 1s ease-out;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}.revealItem--is-visible {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }.section {
-  padding-top: 3%;
+  /* padding-top: 3%; */
+  height: 100vh;
 }@media(min-width: 770px) {
-  }.site-header {
+  }.section__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+  }/*another class was necessary, cause I couldn't modify __title's pseudo-elements
+      with js/jQ ): */.section__title--lineThrough:before {
+        content: "";
+        position: relative;
+        background-color: #3a91cffa;
+        width: 50%;
+        height: 5px;
+        bottom: -25%;
+        right: 0;
+        margin-right: 3%;
+        -webkit-animation: line-through .4s ease-out 1;
+                animation: line-through .4s ease-out 1;
+      }.section__title--lineThrough:after {
+        /* display: inline-block;
+        vertical-align: middle; */
+        content: "";
+        position: relative;
+        background-color: #3a91cffa;
+        width: 50%;
+        height: 5px;
+        bottom: -25%;
+        left: 0;
+        margin-left: 3%;
+        -webkit-animation: line-through .4s ease-out 1;
+                animation: line-through .4s ease-out 1;
+      }@-webkit-keyframes line-through {
+  0% {
+    opacity: 0;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}@keyframes line-through {
+  0% {
+    opacity: 0;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}.site-header {
   background: url('../../assets/img/background-large.jpg') no-repeat center bottom fixed;
   background-size: cover;
   height: 100vh;
@@ -252,7 +316,7 @@ select { /* 1 */
     position: relative;
     border: 2px solid #3a91cffa;
     border-radius: 50%;
-    max-width: 320px;
+    max-width: 305px;
     overflow: hidden;
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -263,7 +327,7 @@ select { /* 1 */
     /*to center picture in the circle and avoid stretching*/
     top: -5%;
   }.site-header__myPicture img {
-      max-width: 320px;
+      max-width: 305px;
       /*to adjust the size of the img itself and preserving ratio, has to go
       hand in hand with myPicture max-width above*/
     }.site-header__text {
@@ -380,6 +444,9 @@ select { /* 1 */
     opacity: 0;
     left: 110%;
   }
+}.scrollDown {
+  color: #FFF;
+  font-size: .5em;
 }.main-nav {
   margin: 0 auto;
   border-bottom: 3px solid #3a91cffa;
@@ -395,10 +462,15 @@ select { /* 1 */
   }@media(min-width: 770px) {.main-nav__menu {
       flex-direction: row
   }
-  }.main-nav__menu>li {}@media(min-width: 770px) {.main-nav__menu li a {
+  }.main-nav__menu>li {
+      font-size: 2.1rem;
+    }@media(min-width: 770px) {.main-nav__menu li a {
         display: inline-block;
         padding: 6% 4%
     }
   }.main-nav__menu li a:hover {
         color: #3a91cffa;
-      }
+      }.main-nav--is-fixed {
+    position: fixed;
+    z-index: 99;
+  }

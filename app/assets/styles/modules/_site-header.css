@@ -10,7 +10,7 @@
     position: relative;
     border: 2px solid $mainAquamarine;
     border-radius: 50%;
-    max-width: 320px;
+    max-width: 305px;
     overflow: hidden;
     left: 50%;
     transform: translateX(-50%);
@@ -20,7 +20,7 @@
     /*to center picture in the circle and avoid stretching*/
     top: -5%;
     img {
-      max-width: 320px;
+      max-width: 305px;
       /*to adjust the size of the img itself and preserving ratio, has to go
       hand in hand with myPicture max-width above*/
     }
