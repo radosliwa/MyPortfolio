@@ -1,4 +1,8 @@
 .main-nav {
+  /* position: fixed;
+  height: 30vh;
+  width: 30vw;
+  z-index: 99; */
   margin: 0 auto;
   border-bottom: 3px solid $mainAquamarine;
   color: #FFF;
@@ -27,7 +31,7 @@
     }
   }
   &--is-fixed {
-    position: fixed;
-    z-index: 99;
+    top: 50%;
+    position: absolute;
   }
 }

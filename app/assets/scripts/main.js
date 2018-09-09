@@ -6,6 +6,7 @@ class RevealOnScroll{
     this.itemsToReveal = el;
     this.hide();
     this.wayPoints(offset);
+    this.lineThrough();
   }
 
   hide(){
@@ -15,20 +16,45 @@ class RevealOnScroll{
   wayPoints(offset){
     this.itemsToReveal.each(function(){
       let current = this;
+      let allSectionTitles = $('.section__title');
       let sectionTitle = $(current).find('.section__title');
-      let mainNav = $('.main-nav');
       new Waypoint({
         element: current,
         handler: function() {
+          // $(allSectionTitles).removeClass('section__title--lineThrough');
           $(current).addClass('revealItem--is-visible');
-          // $(mainNav).addClass('main-nav--is-fixed');
-          $(sectionTitle).toggleClass('section__title--lineThrough');
-          console.log(sectionTitle);
+          // $(sectionTitle).addClass('section__title--lineThrough');
         },
-
         offset: offset
       });
     });}
+
+    lineThrough(){
+      this.itemsToReveal.each(function(direction){
+        let current = this;
+        let allSectionTitles = $('.section__title');
+        let sectionTitle = $(current).find('.section__title');
+        if(direction === 'down'){
+          new Waypoint({
+            element: current,
+            handler: function() {
+              $(allSectionTitles).removeClass('section__title--lineThrough');
+              $(sectionTitle).addClass('section__title--lineThrough');
+            },
+            offset: 250
+          });
+        }else{
+          new Waypoint({
+            element: current,
+            handler: function() {
+              $(allSectionTitles).removeClass('section__title--lineThrough');
+              $(sectionTitle).addClass('section__title--lineThrough');
+            },
+            offset: "0%"
+          });
+        }
+      });
+    }
 
 }
 

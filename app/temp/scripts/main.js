@@ -91,6 +91,7 @@ function () {
     this.itemsToReveal = el;
     this.hide();
     this.wayPoints(offset);
+    this.lineThrough();
   }
 
   _createClass(RevealOnScroll, [{
@@ -103,18 +104,45 @@ function () {
     value: function wayPoints(offset) {
       this.itemsToReveal.each(function () {
         var current = this;
+        var allSectionTitles = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.section__title');
         var sectionTitle = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(current).find('.section__title');
-        var mainNav = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.main-nav');
         new Waypoint({
           element: current,
           handler: function handler() {
-            __WEBPACK_IMPORTED_MODULE_0_jquery___default()(current).addClass('revealItem--is-visible'); // $(mainNav).addClass('main-nav--is-fixed');
-
-            __WEBPACK_IMPORTED_MODULE_0_jquery___default()(sectionTitle).toggleClass('section__title--lineThrough');
-            console.log(sectionTitle);
+            // $(allSectionTitles).removeClass('section__title--lineThrough');
+            __WEBPACK_IMPORTED_MODULE_0_jquery___default()(current).addClass('revealItem--is-visible'); // $(sectionTitle).addClass('section__title--lineThrough');
           },
           offset: offset
         });
+      });
+    }
+  }, {
+    key: "lineThrough",
+    value: function lineThrough() {
+      this.itemsToReveal.each(function (direction) {
+        var current = this;
+        var allSectionTitles = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.section__title');
+        var sectionTitle = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(current).find('.section__title');
+
+        if (direction === 'down') {
+          new Waypoint({
+            element: current,
+            handler: function handler() {
+              __WEBPACK_IMPORTED_MODULE_0_jquery___default()(allSectionTitles).removeClass('section__title--lineThrough');
+              __WEBPACK_IMPORTED_MODULE_0_jquery___default()(sectionTitle).addClass('section__title--lineThrough');
+            },
+            offset: 250
+          });
+        } else {
+          new Waypoint({
+            element: current,
+            handler: function handler() {
+              __WEBPACK_IMPORTED_MODULE_0_jquery___default()(allSectionTitles).removeClass('section__title--lineThrough');
+              __WEBPACK_IMPORTED_MODULE_0_jquery___default()(sectionTitle).addClass('section__title--lineThrough');
+            },
+            offset: "0%"
+          });
+        }
       });
     }
   }]);
