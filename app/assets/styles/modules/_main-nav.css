@@ -1,12 +1,11 @@
 .main-nav {
-  /* position: fixed;
-  height: 30vh;
-  width: 30vw;
-  z-index: 99; */
+  width: 100vw;
+  z-index: 100;
   margin: 0 auto;
   border-bottom: 3px solid $mainAquamarine;
   color: #FFF;
   background-image: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
+  transition: all .4s;
   &__menu {
     display: flex;
     max-width: 100%;
@@ -21,6 +20,7 @@
       font-size: 2.1rem;
     }
     li a {
+      transition: all .3s;
       @mixin atMedium {
         display: inline-block;
         padding: 6% 4%;
@@ -31,7 +31,10 @@
     }
   }
   &--is-fixed {
-    top: 50%;
-    position: absolute;
+    @mixin atMedium {
+      position: fixed;
+      top: 0;
+      transform: scale(1.1);
+    }
   }
 }

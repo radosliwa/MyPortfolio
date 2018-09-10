@@ -38,8 +38,8 @@
     &__item1, &__item2, &__item3 {
       position: absolute;
       width: 60%;
-      animation-duration: 9.5s;
-      animation-timing-function: ease;
+      animation-duration: 9s;
+      animation-timing-function: ease-out;
       animation-iteration-count: infinite;
       transform: translate(-50%, -10%);
     }

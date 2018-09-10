@@ -1,6 +1,7 @@
 .section {
-  /* height: 90vh; */
-  transition: all .9s;
+  padding-top: 2%;
+  height: 100vh;
+  transition: all .8s;
   /*for Reveal on scroll */
   @mixin atMedium {}
   &__title {
