@@ -9,8 +9,8 @@ export default class RevealOnScroll{
     this.itemsToReveal = el;
     this.hide();
     this.wayPoints(offset);
-    this.lineThrough();
     this.smoothScroll();
+    this.lineThrough();
   }
 
   hide(){
@@ -31,39 +31,42 @@ export default class RevealOnScroll{
         },
         offset: offset
       });
-    });}
+    });
+  }
 
     lineThrough(){
-      this.itemsToReveal.each(function(direction){
+      this.itemsToReveal.each(function(){
         let current = this;
         let allSectionTitles = $('.section__title');
         let sectionTitle = $(current).find('.section__title');
-        // if(direction === "down"){
+
           new Waypoint({
             element: current,
-            handler: function() {
+            handler: function(direction) {
+              if(direction === "down"){
               $(allSectionTitles).removeClass('section__title--lineThrough');
               $(sectionTitle).addClass('section__title--lineThrough');
               // alert('top');
+            }
+            },
+            offset: "45%"
+          });
+
+          new Waypoint({
+            element: current,
+            handler: function(direction) {
+              if(direction === "up"){
+                $(allSectionTitles).removeClass('section__title--lineThrough');
+                $(sectionTitle).addClass('section__title--lineThrough');
+              }
             },
             offset: "5%"
           });
-        // }else{
-        //   new Waypoint({
-        //     element: current,
-        //     handler: function() {
-        //       $(allSectionTitles).removeClass('section__title--lineThrough');
-        //       $(sectionTitle).addClass('section__title--lineThrough');
-        //       alert('bottom');
-        //     },
-        //     offset: "0%"
-        //   });
-        // }
       });
     }
 
     smoothScroll(){
-      $navLinks.smoothScroll();
+      $navLinks.smoothScroll({offset:-50});
     }
 
 }

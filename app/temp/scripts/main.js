@@ -10482,8 +10482,8 @@ function () {
     this.itemsToReveal = el;
     this.hide();
     this.wayPoints(offset);
-    this.lineThrough();
     this.smoothScroll();
+    this.lineThrough();
   }
 
   _createClass(RevealOnScroll, [{
@@ -10511,35 +10511,38 @@ function () {
   }, {
     key: "lineThrough",
     value: function lineThrough() {
-      this.itemsToReveal.each(function (direction) {
+      this.itemsToReveal.each(function () {
         var current = this;
         var allSectionTitles = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.section__title');
-        var sectionTitle = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(current).find('.section__title'); // if(direction === "down"){
-
+        var sectionTitle = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(current).find('.section__title');
         new Waypoint({
           element: current,
-          handler: function handler() {
-            __WEBPACK_IMPORTED_MODULE_0_jquery___default()(allSectionTitles).removeClass('section__title--lineThrough');
-            __WEBPACK_IMPORTED_MODULE_0_jquery___default()(sectionTitle).addClass('section__title--lineThrough'); // alert('top');
+          handler: function handler(direction) {
+            if (direction === "down") {
+              __WEBPACK_IMPORTED_MODULE_0_jquery___default()(allSectionTitles).removeClass('section__title--lineThrough');
+              __WEBPACK_IMPORTED_MODULE_0_jquery___default()(sectionTitle).addClass('section__title--lineThrough'); // alert('top');
+            }
+          },
+          offset: "45%"
+        });
+        new Waypoint({
+          element: current,
+          handler: function handler(direction) {
+            if (direction === "up") {
+              __WEBPACK_IMPORTED_MODULE_0_jquery___default()(allSectionTitles).removeClass('section__title--lineThrough');
+              __WEBPACK_IMPORTED_MODULE_0_jquery___default()(sectionTitle).addClass('section__title--lineThrough');
+            }
           },
           offset: "5%"
-        }); // }else{
-        //   new Waypoint({
-        //     element: current,
-        //     handler: function() {
-        //       $(allSectionTitles).removeClass('section__title--lineThrough');
-        //       $(sectionTitle).addClass('section__title--lineThrough');
-        //       alert('bottom');
-        //     },
-        //     offset: "0%"
-        //   });
-        // }
+        });
       });
     }
   }, {
     key: "smoothScroll",
     value: function smoothScroll() {
-      $navLinks.smoothScroll();
+      $navLinks.smoothScroll({
+        offset: -50
+      });
     }
   }]);
 
@@ -11710,7 +11713,6 @@ function () {
       new Waypoint({
         element: $mainNav.get(0),
         handler: function handler() {
-          console.log($mainNav.get(0));
           $mainNav.toggleClass('main-nav--is-fixed');
         },
         offset: 0

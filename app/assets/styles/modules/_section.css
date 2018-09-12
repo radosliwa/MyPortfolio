@@ -1,8 +1,8 @@
 .section {
-  padding-top: 2%;
   height: 100vh;
-  transition: all .8s;
+  transition: all .7s;
   /*for Reveal on scroll */
+  padding-top: 2%;
   @mixin atMedium {}
   &__title {
     display: flex;
@@ -21,7 +21,7 @@
         bottom: -25%;
         right: 0;
         margin-right: 3%;
-        animation: line-through .4s ease-out 1;
+        animation: line-through .3s ease-out 1;
       }
       &:after {
         /* display: inline-block;
@@ -34,7 +34,7 @@
         bottom: -25%;
         left: 0;
         margin-left: 3%;
-        animation: line-through .4s ease-out 1;
+        animation: line-through .3s ease-out 1;
       }
     }
   }

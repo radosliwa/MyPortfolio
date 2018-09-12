@@ -1,4 +1,79 @@
 .scrollDown {
+  position: relative;
+  /*in order for the absolute below to work*/
+  display: flex;
+  justify-content: center;
   color: #FFF;
-  font-size: .5em;
+  max-width: 5%;
+  height: 5%;
+  margin: 2% auto 0 auto;
+  &__item {
+    position: absolute;
+    top: 2%;
+    width: 28px;
+    height: 8px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
+    &:before, &:after {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 51%;
+      background: #fff;
+    }
+    &:before {
+      left: 0;
+      transform: skew(0deg, 30deg);
+    }
+    &:after {
+      right: 0;
+      width: 50%;
+      transform: skew(0deg, -30deg);
+    }
+    &:first-child {
+      animation: move 3s ease-out 1s infinite;
+    }
+    &:nth-child(2) {
+      animation: move 3s ease-out 2s infinite;
+    }
+  }
+  &__text {
+    position: absolute;
+    top: -130%;
+    display: block;
+    font-size: responsive;
+    min-font-size: 22px;
+    max-font-size: 30px;
+    /* margin-top: 75px;
+    margin-left: -30px; */
+    white-space: nowrap;
+    opacity: .55;
+    animation: pulse 2s linear alternate infinite;
+  }
+}
+
+@keyframes pulse {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes move {
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
 }
