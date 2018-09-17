@@ -9,12 +9,12 @@ body {
 }
 
 p {
+  font-size: responsive;
+  min-font-size: 22px;
   max-font-size: 34px;
 }
 
-h2 {
-  max-font-size: 38px;
-}
+h2, h3 {}
 
 span {
   /* text-shadow: 0px 2px 2px #000; */

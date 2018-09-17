@@ -3,12 +3,14 @@
   transition: all .7s;
   /*for Reveal on scroll */
   padding-top: 2%;
+  overflow: hidden;
   @mixin atMedium {}
   &__title {
     display: flex;
     justify-content: center;
     align-items: center;
     vertical-align: middle;
+    z-index: 100;
     &--lineThrough {
       /*another class was necessary, cause I couldn't modify __title's pseudo-elements
       with js/jQ ): */
@@ -37,6 +39,24 @@
         animation: line-through .3s ease-out 1;
       }
     }
+  }
+  &__skewed:first-child {
+    background: url('../../assets/img/background-large.jpg') no-repeat center fixed;
+    background-size: cover;
+    width: 50%;
+    border-top-right-radius: 70%;
+    border-bottom-right-radius: 0%;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h3, p {
+      max-width: 75%;
+    }
+  }
+  &__skewed:last-child {
+    max-width: 50%;
   }
 }
 

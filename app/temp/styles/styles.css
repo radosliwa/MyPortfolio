@@ -223,24 +223,37 @@ select { /* 1 */
     font-size: 22px;
   }
 }p {
-  max-font-size: 34px;
-}h2 {
-  max-font-size: 38px;
-}span {
+  font-size: calc(22px + 12 * ((100vw - 420px) / 860));
+}@media screen and (min-width: 1280px){p{
+    font-size: 34px;
+  }
+}@media screen and (max-width: 420px){p{
+    font-size: 22px;
+  }
+}h2, h3 {}span {
   /* text-shadow: 0px 2px 2px #000; */
   font-weight: 500;
 }strong {
   color: #3a91cffa;
   text-shadow: 1px 1px #FFF;
 }.wrapper {
-  overflow: hidden;
+  /* overflow: hidden; */
   text-align: center;
 }.wrapper--forNav {
     max-width: 100vw;
     margin-left: 10%;
     margin-right: 10%;
-  }.wrapper--forSections {
+  }/* &--forSection {
     padding: 0 5px;
+  } */.wrapper--forContactCols {
+    color: #FFF;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: #2d4f68;
+    /* align-items: flex-start; */
   }.revealItem {
   opacity: 0;
   transition: all 1s ease-out;
@@ -255,12 +268,14 @@ select { /* 1 */
   transition: all .7s;
   /*for Reveal on scroll */
   padding-top: 2%;
+  overflow: hidden;
 }@media(min-width: 770px) {
   }.section__title {
     display: flex;
     justify-content: center;
     align-items: center;
     vertical-align: middle;
+    z-index: 100;
   }/*another class was necessary, cause I couldn't modify __title's pseudo-elements
       with js/jQ ): */.section__title--lineThrough:before {
         content: "";
@@ -286,7 +301,22 @@ select { /* 1 */
         margin-left: 3%;
         -webkit-animation: line-through .3s ease-out 1;
                 animation: line-through .3s ease-out 1;
-      }@-webkit-keyframes line-through {
+      }.section__skewed:first-child {
+    background: url('../../assets/img/background-large.jpg') no-repeat center fixed;
+    background-size: cover;
+    width: 50%;
+    border-top-right-radius: 70%;
+    border-bottom-right-radius: 0%;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }.section__skewed:first-child h3, .section__skewed:first-child p {
+      max-width: 75%;
+    }.section__skewed:last-child {
+    max-width: 50%;
+  }@-webkit-keyframes line-through {
   0% {
     opacity: 0;
     -webkit-transform: scaleX(0);
@@ -482,6 +512,7 @@ select { /* 1 */
       width: 50%;
       -webkit-transform: skew(0deg, -30deg);
               transform: skew(0deg, -30deg);
+      background: #3a91cffa;
     }.scrollDown__item:first-child {
       -webkit-animation: move 3s ease-out 1s infinite;
               animation: move 3s ease-out 1s infinite;
@@ -493,10 +524,7 @@ select { /* 1 */
     top: -130%;
     display: block;
     font-size: calc(22px + 8 * ((100vw - 420px) / 860));
-    /* margin-top: 75px;
-    margin-left: -30px; */
     white-space: nowrap;
-    opacity: .55;
     -webkit-animation: pulse 2s linear alternate infinite;
             animation: pulse 2s linear alternate infinite;
   }@media screen and (min-width: 1280px){.scrollDown__text{
@@ -504,14 +532,6 @@ select { /* 1 */
   }
 }@media screen and (max-width: 420px){.scrollDown__text{
     font-size: 22px;
-  }
-}@-webkit-keyframes pulse {
-  to {
-    opacity: 1;
-  }
-}@keyframes pulse {
-  to {
-    opacity: 1;
   }
 }@-webkit-keyframes move {
   25% {
@@ -550,6 +570,20 @@ select { /* 1 */
     opacity: 0;
     -webkit-transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
             transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}@-webkit-keyframes pulse {
+  0% {
+    opacity: .25;
+  }
+  100% {
+    opacity: 1;
+  }
+}@keyframes pulse {
+  0% {
+    opacity: .25;
+  }
+  100% {
+    opacity: 1;
   }
 }.main-nav {
   width: 100vw;
@@ -590,5 +624,5 @@ select { /* 1 */
   background-image: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
   color: #FFF;
   width: 100%;
-  margin-top: 4%
+  margin-top: 2px;
 }
