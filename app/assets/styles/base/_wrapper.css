@@ -6,17 +6,5 @@
     margin-left: 10%;
     margin-right: 10%;
   }
-  /* &--forSection {
-    padding: 0 5px;
-  } */
-  &--forContactCols {
-    color: #FFF;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    background-color: #2d4f68;
-    /* align-items: flex-start; */
-  }
+  &--forSection {}
 }

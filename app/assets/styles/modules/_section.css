@@ -5,6 +5,9 @@
   padding-top: 2%;
   overflow: hidden;
   @mixin atMedium {}
+  &--no100vh {
+    height: auto;
+  }
   &__title {
     display: flex;
     justify-content: center;
@@ -40,10 +43,19 @@
       }
     }
   }
+  &__2cols {
+    color: #FFF;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #2d4f68;
+    @mixin atSmall {
+      justify-content: space-between;
+      flex-direction: row;
+    }
+  }
   &__skewed:first-child {
-    background: url('../../assets/img/background-large.jpg') no-repeat center fixed;
-    background-size: cover;
-    width: 50%;
     border-top-right-radius: 70%;
     border-bottom-right-radius: 0%;
     color: inherit;
@@ -51,12 +63,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @mixin atSmall {
+      background: url('../../assets/img/background-contact.jpg') no-repeat center fixed;
+      background-size: cover;
+      border-top-right-radius: 70%;
+      border-bottom-right-radius: 0%;
+      width: 40%;
+    }
     h3, p {
       max-width: 75%;
     }
   }
   &__skewed:last-child {
-    max-width: 50%;
+    @mixin atSmall {
+      width: 60%;
+    }
   }
 }
 

@@ -9,6 +9,8 @@
   <meta name="description" content="">
   <link rel="stylesheet" type="text/css" href="temp\styles\styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
 
 </head>
 
@@ -57,60 +59,65 @@
     </div>
   </div>
 
-  <div id="contact" class="section">
+  <div id="contact" class="section section--no100vh">
 
     <h2 class="section__title">Contact</h2>
-    <div class="wrapper wrapper--forSection wrapper--forContactCols">
-      <div class="section__skewed">
-        <h3>Interested in my services?</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      </div>
+    <div class="wrapper wrapper--forSection">
+      <div class="section__2cols">
+        <div class="section__skewed">
+          <h3>Interested in my services?</h3>
+          <p>Reach out to me through social media or using the contact form
+            <div class="icons">
+              <a href=""><i class="icons__item icons__item--biggerPadding fab fa-facebook"></i></a>
+              <a href=""><i class="icons__item icons__item--biggerPadding far fa-envelope"></i></a>
+              <a href=""><i class="icons__item icons__item--biggerPadding fab fa-github"></i></a>
+            </div>
 
-      <div class="section__skewed">
-        <form class="form">
-          <div class="form__input form__input--name">
 
-            <input id="name" name="name" type="text" placeholder="your name...">
-          </div>
+        </div>
 
-          <div class="form__input form__input--phone">
+        <div class="section__skewed">
+          <form class="form">
+            <span class="form__contactSpan">Contact me</span>
+            <div class="form__input form__input--name">
 
-            <input id="phone" name="phone" type="tel" placeholder="your name...">
-          </div>
+              <input id="name" name="name" type="text" placeholder="your name...">
+            </div>
 
-          <div class="form__input form__input--email">
 
-            <input id="email" name="email" type="email">
-          </div>
+            <div class="form__input form__input--email">
 
-          <div class="form__message">
+              <input id="email" name="email" type="email" placeholder="your e-mail...">
+            </div>
 
-            <textarea id="message" name="message" type="text" rows="5"></textarea>
-          </div>
+            <div class="form__message">
 
-          <div class="form__submit">
-            <a href="#" class="btn btn__address">Submit</a>
-          </div>
+              <textarea id="message" name="message" type="text" rows="5" placeholder="message..."></textarea>
+            </div>
 
-          <div class="form__social-icons-container">
-            <!-- <div class="row__medium_4"> -->
-            <a href="#">
-         <img src="assets/images/icons/facebook.svg" class="icon icon__social-icon">
-      
+            <div class="form__submit">
+              <a href="#" class="btn btn__address">Submit</a>
+            </div>
+
+
+
+
 
             <!-- </div> -->
-        </form>
+          </form>
         </div>
 
       </div>
-    </div>
 
-    <footer class="footer">
-      <div class="wrapper wrapper--forSection">
-        Radoslaw Sliwa 2018
-      </div>
-    </footer>
-    <script src="temp/scripts/main.js"></script>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="wrapper">
+      Radoslaw Sliwa 2018
+    </div>
+  </footer>
+  <script src="temp/scripts/main.js"></script>
 </body>
 
 </html>

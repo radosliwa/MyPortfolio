@@ -1,0 +1,16 @@
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  text-align: center;
+  margin-top: 50px;
+  &>div {
+    /* display: inline-block;
+    margin: 0 auto;*/
+    padding: 1% 0;
+  }
+  &__contactSpan {
+    padding: 3vh 0;
+  }
+}
