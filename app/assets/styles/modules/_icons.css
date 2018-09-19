@@ -1,11 +1,19 @@
 .icons {
-  display: flex;
-  justify-content: center;
-  flex-flow: row;
-  a:nth-child(2) {
-    margin: 0 3%;
+  padding: 5%;
+  &__contact {
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
     @mixin atMedium {
-      margin: 0 5%;
+      position: relative;
+      padding: 0;
+      top: -10%;
+    }
+    a:nth-child(2) {
+      margin: 0 3%;
+      @mixin atMedium {
+        margin: 0 8%;
+      }
     }
   }
   &__item {

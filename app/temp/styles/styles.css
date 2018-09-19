@@ -262,11 +262,13 @@ select { /* 1 */
   }.section--no100vh {
     height: auto;
   }.section__title {
+    position: relative;
+    z-index: 2;
+    /*chevron was overlapping*/
     display: flex;
     justify-content: center;
     align-items: center;
     vertical-align: middle;
-    z-index: 100;
   }/*another class was necessary, cause I couldn't modify __title's pseudo-elements
       with js/jQ ): */.section__title--lineThrough:before {
         content: "";
@@ -293,35 +295,46 @@ select { /* 1 */
         -webkit-animation: line-through .3s ease-out 1;
                 animation: line-through .3s ease-out 1;
       }.section__2cols {
+    position: relative;
     color: #FFF;
     overflow: hidden;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: #2d4f68;
-  }@media(min-width: 530px) {.section__2cols {
+    /* align-items: center; */
+  }/*with this on picture wouldnt reach the bottom
+    of the section*/@media(min-width: 770px) {.section__2cols {
       justify-content: space-between;
       flex-direction: row
   }
   }.section__skewed:first-child {
-    border-top-right-radius: 70%;
-    border-bottom-right-radius: 0%;
     color: inherit;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: space-around;
   }@media(min-width: 530px) {.section__skewed:first-child {
-      background: url('../../assets/img/background-contact.jpg') no-repeat center fixed;
-      background-size: cover;
+      background: url('../../assets/img/background-contact.jpg') no-repeat bottom center;
+      background-size: cover
+  }
+  }@media(min-width: 770px) {.section__skewed:first-child {
       border-top-right-radius: 70%;
       border-bottom-right-radius: 0%;
-      width: 40%
+      width: 50%
   }
   }.section__skewed:first-child h3, .section__skewed:first-child p {
       max-width: 75%;
-    }@media(min-width: 530px) {.section__skewed:last-child {
-      width: 60%
+    }@media(min-width: 770px) {.section__skewed:last-child {
+      width: 50%
+  }
+  }.section__question {
+    padding: 3% 2%;
+    /* margin-top: 10%; */
+    font-weight: 600;
+  }@media(min-width: 530px) {
+  }@media(min-width: 770px) {.section__question {
+      padding: 0
+      /* margin-top: -23%; */
   }
   }@-webkit-keyframes line-through {
   0% {
@@ -632,27 +645,42 @@ select { /* 1 */
   color: #FFF;
   width: 100%;
 }.form {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-flow: column;
   text-align: center;
-  margin-top: 50px;
-}.form>div {
+}@media(min-width: 530px) {.form {
+    top: 2%
+}
+  }@media(min-width: 770px) {.form {
+    margin-top: 4%
+}
+  }.form input, .form textarea {
+    padding: 2%;
+  }.form>div {
     /* display: inline-block;
     margin: 0 auto;*/
     padding: 1% 0;
   }.form__contactSpan {
-    padding: 3vh 0;
+    padding: 3vh 0 2vh 0;
   }.icons {
-  display: flex;
-  justify-content: center;
-  flex-flow: row;
-}.icons a:nth-child(2) {
-    margin: 0 3%;
-  }@media(min-width: 770px) {.icons a:nth-child(2) {
-      margin: 0 5%
+  padding: 5%;
+}.icons__contact {
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+  }@media(min-width: 770px) {.icons__contact {
+      position: relative;
+      padding: 0;
+      top: -10%
   }
+  }.icons__contact a:nth-child(2) {
+      margin: 0 3%;
+    }@media(min-width: 770px) {.icons__contact a:nth-child(2) {
+        margin: 0 8%
+    }
   }.icons__item {
     padding: 0 10%;
     font-size: calc(50px + 13 * ((100vw - 420px) / 860));
@@ -665,4 +693,31 @@ select { /* 1 */
 }@media(min-width: 530px) {.icons__item--biggerPadding {
         padding: 0 15%
     }
+  }.chevron {
+  position: relative;
+  background-color: #2d4f68;
+}.chevron:after, .chevron:before {
+    position: absolute;
+    content: "";
+    background-color: rgba(0, 0, 0, 0);
+    height: 70px;
+    width: 120px;
+  }@media(min-width: 530px) {.chevron:after, .chevron:before {
+      background-color: #FFF;
+      top: -15.5%
+  }
+  }@media(min-width: 770px) {.chevron:after, .chevron:before {
+      top: -13%
+  }
+  }@media(min-width: 1080px) {.chevron:after, .chevron:before {
+      top: -9%
+  }
+  }.chevron:after {
+    left: 50%;
+    -webkit-transform: skew(0, -22deg);
+            transform: skew(0, -22deg);
+  }.chevron:before {
+    right: 50%;
+    -webkit-transform: skew(0, 22deg);
+            transform: skew(0, 22deg);
   }

@@ -1,16 +1,25 @@
 .form {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-flow: column;
   text-align: center;
-  margin-top: 50px;
+  @mixin atSmall {
+    top: 2%;
+  }
+  @mixin atMedium {
+    margin-top: 4%;
+  }
+  input, textarea {
+    padding: 2%;
+  }
   &>div {
     /* display: inline-block;
     margin: 0 auto;*/
     padding: 1% 0;
   }
   &__contactSpan {
-    padding: 3vh 0;
+    padding: 3vh 0 2vh 0;
   }
 }
