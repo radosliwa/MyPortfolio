@@ -1,5 +1,5 @@
 .section {
-  height: 100vh;
+  height: auto;
   transition: all .7s;
   /*for Reveal on scroll */
   padding-top: 2%;
@@ -43,55 +43,6 @@
         margin-left: 3%;
         animation: line-through .3s ease-out 1;
       }
-    }
-  }
-  &__2cols {
-    position: relative;
-    color: #FFF;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    /* align-items: center; */
-    /*with this on picture wouldnt reach the bottom
-    of the section*/
-    @mixin atMedium {
-      justify-content: space-between;
-      flex-direction: row;
-    }
-  }
-  &__skewed:first-child {
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    @mixin atSmall {
-      background: url('../../assets/img/background-contact.jpg') no-repeat bottom center;
-      background-size: cover;
-    }
-    @mixin atMedium {
-      border-top-right-radius: 70%;
-      border-bottom-right-radius: 0%;
-      width: 50%;
-    }
-    h3, p {
-      max-width: 75%;
-    }
-  }
-  &__skewed:last-child {
-    @mixin atMedium {
-      width: 50%;
-    }
-  }
-  &__question {
-    padding: 3% 2%;
-    /* margin-top: 10%; */
-    font-weight: 600;
-    @mixin atSmall {}
-    @mixin atMedium {
-      padding: 0;
-      /* margin-top: -23%; */
     }
   }
 }

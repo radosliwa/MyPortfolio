@@ -5,6 +5,7 @@
 @import "base/_typography";
 @import "base/_mixins";
 @import "base/_wrapper";
+@import "modules/_text-modifications";
 @import "modules/_revealItem";
 @import 'modules/_section';
 @import "modules/_site-header";
@@ -13,4 +14,6 @@
 @import "modules/_footer";
 @import "modules/_form";
 @import "modules/_icons";
+@import "modules/_projects";
 @import "modules/_chevron";
+@import 'modules/_col';

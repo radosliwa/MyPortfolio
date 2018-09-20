@@ -243,181 +243,52 @@ select { /* 1 */
     max-width: 100vw;
     margin-left: 10%;
     margin-right: 10%;
-  }.wrapper--forSection {}.revealItem {
-  opacity: 0;
-  transition: all 1s ease-out;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}.revealItem--is-visible {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }.section {
-  height: 100vh;
-  transition: all .7s;
-  /*for Reveal on scroll */
-  padding-top: 2%;
-  overflow: hidden;
-}@media(min-width: 770px) {
-  }.section--no100vh {
-    height: auto;
-  }.section__title {
-    position: relative;
-    z-index: 2;
-    /*chevron was overlapping*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    vertical-align: middle;
-  }/*another class was necessary, cause I couldn't modify __title's pseudo-elements
-      with js/jQ ): */.section__title--lineThrough:before {
-        content: "";
-        position: relative;
-        background-color: #3a91cffa;
-        width: 50%;
-        height: 5px;
-        bottom: -25%;
-        right: 0;
-        margin-right: 3%;
-        -webkit-animation: line-through .3s ease-out 1;
-                animation: line-through .3s ease-out 1;
-      }.section__title--lineThrough:after {
-        /* display: inline-block;
-        vertical-align: middle; */
-        content: "";
-        position: relative;
-        background-color: #3a91cffa;
-        width: 50%;
-        height: 5px;
-        bottom: -25%;
-        left: 0;
-        margin-left: 3%;
-        -webkit-animation: line-through .3s ease-out 1;
-                animation: line-through .3s ease-out 1;
-      }.section__2cols {
-    position: relative;
-    color: #FFF;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    /* align-items: center; */
-  }/*with this on picture wouldnt reach the bottom
-    of the section*/@media(min-width: 770px) {.section__2cols {
-      justify-content: space-between;
-      flex-direction: row
+  }.wrapper--forSection {}/*--------------------------SITE-HEADER SECTION*/.text-modifications__item1, .text-modifications__item2, .text-modifications__item3 {
+    position: absolute;
+    width: 60%;
+    -webkit-animation-duration: 9s;
+            animation-duration: 9s;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-transform: translate(-50%, -10%);
+            transform: translate(-50%, -10%);
+  }.text-modifications__item1 {
+    -webkit-animation-name: anim1;
+            animation-name: anim1;
+  }.text-modifications__item2 {
+    -webkit-animation-name: anim2;
+            animation-name: anim2;
+  }.text-modifications__item3 {
+    -webkit-animation-name: anim3;
+            animation-name: anim3;
+  }/*--------------------------PROJECTS SECTION*/.text-modifications__h3ForProjectSection {
+    text-shadow: 1px 1px 1px #2d4f68;
+  }/*--------------------------ABOUT ME SECTION*/.text-modifications__pForProjectSectionM {
+    display: none;
+  }@media(min-width: 770px) {.text-modifications__pForProjectSectionM {
+      text-shadow: 1px 1px 1px #2d4f68;
+      display: block
   }
-  }.section__skewed:first-child {
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-  }@media(min-width: 530px) {.section__skewed:first-child {
-      background: url('../../assets/img/background-contact.jpg') no-repeat bottom center;
-      background-size: cover
+  }.text-modifications__pForProjectSectionS {
+    display: block;
+  }@media(min-width: 770px) {.text-modifications__pForProjectSectionS {
+      text-shadow: 1px 1px 1px #2d4f68;
+      display: none
   }
-  }@media(min-width: 770px) {.section__skewed:first-child {
-      border-top-right-radius: 70%;
-      border-bottom-right-radius: 0%;
-      width: 50%
-  }
-  }.section__skewed:first-child h3, .section__skewed:first-child p {
-      max-width: 75%;
-    }@media(min-width: 770px) {.section__skewed:last-child {
-      width: 50%
-  }
-  }.section__question {
+  }/*--------------------------CONTACT SECTION*/.text-modifications__questionInContact {
     padding: 3% 2%;
     /* margin-top: 10%; */
     font-weight: 600;
   }@media(min-width: 530px) {
-  }@media(min-width: 770px) {.section__question {
+  }@media(min-width: 770px) {.text-modifications__questionInContact {
       padding: 0
       /* margin-top: -23%; */
   }
-  }@-webkit-keyframes line-through {
-  0% {
-    opacity: 0;
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-  }
-}@keyframes line-through {
-  0% {
-    opacity: 0;
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-  }
-}.site-header {
-  background: url('../../assets/img/background-large.jpg') no-repeat center bottom fixed;
-  background-size: cover;
-  height: 100vh;
-  width: 100vw;
-}/* display: flex;
-  justify-content: center;
-  align-items: center; */.site-header__myPicture {
-    position: relative;
-    border: 2px solid #3a91cffa;
-    border-radius: 50%;
-    max-width: 305px;
-    overflow: hidden;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /*to center picture in the circle and avoid stretching*/
-    top: -5%;
-  }.site-header__myPicture img {
-      max-width: 305px;
-      /*to adjust the size of the img itself and preserving ratio, has to go
-      hand in hand with myPicture max-width above*/
-    }.site-header__text {
-    /* align-self: flex-start; */
-    display: flex;
-    align-items: center;
-    height: 50vh;
-    font-size: calc(45px + 15 * ((100vw - 420px) / 860));
-    color: #FFF;
-    text-align: center;
-  }@media screen and (min-width: 1280px){.site-header__text{
-    font-size: 60px;
-  }
-}@media screen and (max-width: 420px){.site-header__text{
-    font-size: 45px;
-  }
-}.site-header__text__item1, .site-header__text__item2, .site-header__text__item3 {
-      position: absolute;
-      width: 60%;
-      -webkit-animation-duration: 9s;
-              animation-duration: 9s;
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-      -webkit-animation-iteration-count: infinite;
-              animation-iteration-count: infinite;
-      -webkit-transform: translate(-50%, -10%);
-              transform: translate(-50%, -10%);
-    }.site-header__text__item1 {
-      -webkit-animation-name: anim1;
-              animation-name: anim1;
-    }.site-header__text__item2 {
-      -webkit-animation-name: anim2;
-              animation-name: anim2;
-    }.site-header__text__item3 {
-      -webkit-animation-name: anim3;
-              animation-name: anim3;
-    }@-webkit-keyframes anim1 {
+  }.text-modifications__contactMeForm {
+    padding: 3vh 0 2vh 0;
+  }@-webkit-keyframes anim1 {
   0%, 8.3% {
     left: -100%;
     opacity: 0;
@@ -496,6 +367,118 @@ select { /* 1 */
   100% {
     opacity: 0;
     left: 110%;
+  }
+}.revealItem {
+  opacity: 0;
+  transition: all 1s ease-out;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}.revealItem--is-visible {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }.section {
+  height: auto;
+  transition: all .7s;
+  /*for Reveal on scroll */
+  padding-top: 2%;
+  overflow: hidden;
+}@media(min-width: 770px) {
+  }.section--no100vh {
+    height: auto;
+  }.section__title {
+    position: relative;
+    z-index: 2;
+    /*chevron was overlapping*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+  }/*another class was necessary, cause I couldn't modify __title's pseudo-elements
+      with js/jQ ): */.section__title--lineThrough:before {
+        content: "";
+        position: relative;
+        background-color: #3a91cffa;
+        width: 50%;
+        height: 5px;
+        bottom: -25%;
+        right: 0;
+        margin-right: 3%;
+        -webkit-animation: line-through .3s ease-out 1;
+                animation: line-through .3s ease-out 1;
+      }.section__title--lineThrough:after {
+        /* display: inline-block;
+        vertical-align: middle; */
+        content: "";
+        position: relative;
+        background-color: #3a91cffa;
+        width: 50%;
+        height: 5px;
+        bottom: -25%;
+        left: 0;
+        margin-left: 3%;
+        -webkit-animation: line-through .3s ease-out 1;
+                animation: line-through .3s ease-out 1;
+      }@-webkit-keyframes line-through {
+  0% {
+    opacity: 0;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}@keyframes line-through {
+  0% {
+    opacity: 0;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}.site-header {
+  background: url('../../assets/img/background-large.jpg') no-repeat center bottom fixed;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}/* display: flex;
+  justify-content: center;
+  align-items: center; */.site-header__myPicture {
+    position: relative;
+    border: 2px solid #3a91cffa;
+    border-radius: 50%;
+    max-width: 305px;
+    overflow: hidden;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*to center picture in the circle and avoid stretching*/
+    top: -5%;
+  }.site-header__myPicture img {
+      max-width: 305px;
+      /*to adjust the size of the img itself and preserving ratio, has to go
+      hand in hand with myPicture max-width above*/
+    }.site-header__text {
+    /* align-self: flex-start; */
+    display: flex;
+    align-items: center;
+    height: 50vh;
+    font-size: calc(45px + 15 * ((100vw - 420px) / 860));
+    color: #FFF;
+    text-align: center;
+  }@media screen and (min-width: 1280px){.site-header__text{
+    font-size: 60px;
+  }
+}@media screen and (max-width: 420px){.site-header__text{
+    font-size: 45px;
   }
 }.scrollDown {
   position: relative;
@@ -663,8 +646,6 @@ select { /* 1 */
     /* display: inline-block;
     margin: 0 auto;*/
     padding: 1% 0;
-  }.form__contactSpan {
-    padding: 3vh 0 2vh 0;
   }.icons {
   padding: 5%;
 }.icons__contact {
@@ -693,9 +674,57 @@ select { /* 1 */
 }@media(min-width: 530px) {.icons__item--biggerPadding {
         padding: 0 15%
     }
+  }.projects {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}.projects__item {
+    height: 250px;
+    width: 250px;
+    background-color: grey;
+    /* &:nth-child(2) {
+      margin: 0 2%;
+    } */
+  }@media(min-width: 770px) {.projects__item {
+      margin: 2% 3%
+  }
   }.chevron {
   position: relative;
   background-color: #2d4f68;
+  z-index: -3;
+  /* &--TurnAround {
+    height: 100vh;
+    &:after, &:before {
+      position: absolute;
+      content: "";
+      background-color: rgba(0, 0, 0, 0);
+      height: 70px;
+      width: 120px;
+      @mixin atSmall {
+        background-color: #FFF;
+        top: 78vh;
+      }
+      @mixin atMedium {
+        top: 75vh;
+      }
+      @mixin atMediumXL {
+        top: 73%;
+      }
+      @mixin atLarge {
+        top: 71%;
+      }
+    }
+    &:after {
+      left: 50%;
+      transform: skew(0, 22deg);
+    }
+    &:before {
+      right: 50%;
+      transform: skew(0, -22deg);
+    }
+  } */
 }.chevron:after, .chevron:before {
     position: absolute;
     content: "";
@@ -720,4 +749,62 @@ select { /* 1 */
     right: 50%;
     -webkit-transform: skew(0, 22deg);
             transform: skew(0, 22deg);
+  }.col__col50 {
+    height: auto;
+  }@media(min-width: 770px) {.col__col50 {
+      width: 50%
+  }
+  }@media(min-width: 770px) {.col__col50--blueBackground {
+        position: relative;
+        color: #FFF;
+        background-color: #2d4f68;
+        z-index: -2
+    }
+        .col__col50--blueBackground:after {
+          z-index: -1;
+          position: absolute;
+          content: "";
+          background-color: #FFF;
+          color: #000;
+          height: 1000px;
+          width: 1000px;
+          top: 0%;
+          bottom: 0;
+          left: 62%;
+          -webkit-transform: rotate(19deg);
+                  transform: rotate(19deg);
+        }
+  }.col__2cols {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }/*with this on picture wouldnt reach the bottom
+    of the section*/@media(min-width: 770px) {.col__2cols {
+      justify-content: space-between;
+      flex-direction: row
+  }
+  }/* align-items: center; */.col__2cols--whiteFont {
+      color: #FFF;
+    }.col__skewed:first-child {
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }@media(min-width: 530px) {.col__skewed:first-child {
+      background: url('../../assets/img/background-contact.jpg') no-repeat bottom center;
+      background-size: cover
+  }
+  }@media(min-width: 770px) {.col__skewed:first-child {
+      border-top-right-radius: 70%;
+      border-bottom-right-radius: 0%;
+      width: 50%
+  }
+  }.col__skewed:first-child h3, .col__skewed:first-child p {
+      max-width: 75%;
+    }@media(min-width: 770px) {.col__skewed:last-child {
+      width: 50%
+  }
   }

@@ -1,0 +1,99 @@
+.text-modifications {
+  /*--------------------------SITE-HEADER SECTION*/
+  &__item1, &__item2, &__item3 {
+    position: absolute;
+    width: 60%;
+    animation-duration: 9s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    transform: translate(-50%, -10%);
+  }
+  &__item1 {
+    animation-name: anim1;
+  }
+  &__item2 {
+    animation-name: anim2;
+  }
+  &__item3 {
+    animation-name: anim3;
+  }
+  /*--------------------------ABOUT ME SECTION*/
+  /*--------------------------PROJECTS SECTION*/
+  &__h3ForProjectSection {
+    text-shadow: 1px 1px 1px #2d4f68;
+  }
+  &__pForProjectSectionM {
+    display: none;
+    @mixin atMedium {
+      text-shadow: 1px 1px 1px #2d4f68;
+      display: block;
+    }
+  }
+  &__pForProjectSectionS {
+    display: block;
+    @mixin atMedium {
+      text-shadow: 1px 1px 1px #2d4f68;
+      display: none;
+    }
+  }
+  /*--------------------------CONTACT SECTION*/
+  &__questionInContact {
+    padding: 3% 2%;
+    /* margin-top: 10%; */
+    font-weight: 600;
+    @mixin atSmall {}
+    @mixin atMedium {
+      padding: 0;
+      /* margin-top: -23%; */
+    }
+  }
+  &__contactMeForm {
+    padding: 3vh 0 2vh 0;
+  }
+}
+
+@keyframes anim1 {
+  0%, 8.3% {
+    left: -100%;
+    opacity: 0;
+  }
+  8.3%, 25% {
+    left: 50%;
+    opacity: 1;
+  }
+  33.33%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes anim2 {
+  0%, 33.33% {
+    /* left: -100%; */
+    opacity: 0;
+  }
+  41.63%, 58.29% {
+    left: 50%;
+    opacity: 1;
+  }
+  66.66%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes anim3 {
+  0%, 66.66% {
+    /* left: -100%; */
+    opacity: 0;
+  }
+  74.96%, 91.62% {
+    left: 50%;
+    opacity: 1;
+  }
+  94% {
+    left: 48%;
+  }
+  100% {
+    opacity: 0;
+    left: 110%;
+  }
+}
