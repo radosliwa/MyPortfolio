@@ -1,10 +1,39 @@
 .col {
+  &__2cols {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* align-items: center; */
+    /*with this picture wouldnt reach the bottom
+    of the section*/
+    @mixin atMedium {
+      justify-content: space-between;
+      flex-direction: row;
+    }
+    &--whiteFont {
+      color: #FFF;
+    }
+  }
+  &__col100 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: column;
+    @mixin atMedium {
+      flex-flow: row;
+    }
+  }
   &__col50 {
     height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column;
     @mixin atMedium {
       width: 50%;
     }
-    &--blueBackground {
+    &--blueBackgroundAfter {
       @mixin atMedium {
         position: relative;
         color: #FFF;
@@ -18,29 +47,45 @@
           color: #000;
           height: 1000px;
           width: 1000px;
-          top: 0%;
+          top: 6%;
           bottom: 0;
-          left: 62%;
-          transform: rotate(19deg);
+          left: 37%;
+          transform: rotate(23deg);
+          @mixin atMediumXL {
+            top: 10%;
+            bottom: 0;
+            left: 55%;
+            transform: rotate(23deg);
+          }
         }
       }
     }
-  }
-  &__2cols {
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    /* align-items: center; */
-    /*with this on picture wouldnt reach the bottom
-    of the section*/
-    @mixin atMedium {
-      justify-content: space-between;
-      flex-direction: row;
-    }
-    &--whiteFont {
-      color: #FFF;
+    &--blueBackgroundBefore {
+      @mixin atMedium {
+        position: relative;
+        color: #FFF;
+        background-color: #2d4f68;
+        z-index: -2;
+        &:before {
+          z-index: -1;
+          position: absolute;
+          content: "";
+          background-color: #FFF;
+          color: #000;
+          height: 1000px;
+          width: 1000px;
+          top: -94%;
+          bottom: 0;
+          right: 65%;
+          transform: rotate(23deg);
+          @mixin atMediumXL {
+            top: -94%;
+            bottom: 0;
+            right: 65%;
+            transform: rotate(23deg);
+          }
+        }
+      }
     }
   }
   &__skewed:first-child {

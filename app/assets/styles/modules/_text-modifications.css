@@ -17,26 +17,28 @@
   &__item3 {
     animation-name: anim3;
   }
-  /*--------------------------ABOUT ME SECTION*/
-  /*--------------------------PROJECTS SECTION*/
-  &__h3ForProjectSection {
-    text-shadow: 1px 1px 1px #2d4f68;
-  }
-  &__pForProjectSectionM {
-    display: none;
-    @mixin atMedium {
+  &__h3 {
+    &--ForProjectSection {
       text-shadow: 1px 1px 1px #2d4f68;
-      display: block;
     }
+    &--AboutSection {}
   }
-  &__pForProjectSectionS {
-    display: block;
-    @mixin atMedium {
-      text-shadow: 1px 1px 1px #2d4f68;
+  &__p {
+    &--ForProjectSectionM {
       display: none;
+      @mixin atMedium {
+        text-shadow: 1px 1px 1px #2d4f68;
+        display: block;
+      }
+    }
+    &--ForProjectSectionS {
+      display: block;
+      @mixin atMedium {
+        text-shadow: 1px 1px 1px #2d4f68;
+        display: none;
+      }
     }
   }
-  /*--------------------------CONTACT SECTION*/
   &__questionInContact {
     padding: 3% 2%;
     /* margin-top: 10%; */
