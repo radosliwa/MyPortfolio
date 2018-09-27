@@ -42,13 +42,19 @@
   }
   &__text {
     position: absolute;
-    top: -130%;
+    top: -45%;
     display: block;
     font-size: responsive;
     min-font-size: 22px;
     max-font-size: 30px;
     white-space: nowrap;
     animation: pulse 2s linear alternate infinite;
+    @mixin atSmall {
+      top: -59%;
+    }
+    @mixin atMedium {
+      top: -130%;
+    }
   }
 }
 

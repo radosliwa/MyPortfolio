@@ -33,6 +33,12 @@
     @mixin atMedium {
       width: 50%;
     }
+    &--justifyCenter {
+      justify-content: center;
+    }
+    &--justifyFlexEnd {
+      justify-content: flex-end;
+    }
     &--blueBackgroundAfter {
       @mixin atMedium {
         position: relative;
@@ -74,15 +80,20 @@
           color: #000;
           height: 1000px;
           width: 1000px;
-          top: -94%;
+          top: -76%;
           bottom: 0;
-          right: 65%;
+          right: 63%;
           transform: rotate(23deg);
           @mixin atMediumXL {
-            top: -94%;
+            top: -72%;
             bottom: 0;
             right: 65%;
             transform: rotate(23deg);
+          }
+          @mixin atLarge {
+            top: -94%;
+            bottom: 0;
+            right: 65%;
           }
         }
       }

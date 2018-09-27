@@ -10472,6 +10472,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 var $navLinks = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.main-nav__menu a');
+var $h3ForProjectSection = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".text-modifications__h3--ForProjectSection");
+var $pForProjectSection = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".text-modifications__p--ForProjectSectionM");
+var $textModifications__spanTechnology = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".text-modifications__span--technology");
 
 var RevealOnScroll =
 /*#__PURE__*/
@@ -10494,6 +10497,7 @@ function () {
   }, {
     key: "wayPoints",
     value: function wayPoints(offset) {
+      var that = this;
       this.itemsToReveal.each(function () {
         var current = this;
         var allSectionTitles = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.section__title');
@@ -10501,12 +10505,29 @@ function () {
         new Waypoint({
           element: current,
           handler: function handler() {
-            // $(allSectionTitles).removeClass('section__title--lineThrough');
-            __WEBPACK_IMPORTED_MODULE_0_jquery___default()(current).addClass('revealItem--is-visible'); // $(sectionTitle).addClass('section__title--lineThrough');
+            __WEBPACK_IMPORTED_MODULE_0_jquery___default()(current).addClass('revealItem--is-visible');
+            that.technologies();
+            $h3ForProjectSection.addClass('animated bounceInLeft');
+            $pForProjectSection.addClass('animated bounceInLeft');
           },
           offset: offset
         });
       });
+    }
+  }, {
+    key: "technologies",
+    value: function technologies() {
+      console.log($textModifications__spanTechnology);
+
+      var _loop = function _loop(i) {
+        setTimeout(function () {
+          $textModifications__spanTechnology.eq(i).css('animation-delay', '1s').addClass('animated bounceInLeft');
+        }, 1000);
+      };
+
+      for (var i = 0; i < $textModifications__spanTechnology.length; i++) {
+        _loop(i);
+      }
     }
   }, {
     key: "lineThrough",
@@ -10520,7 +10541,7 @@ function () {
           handler: function handler(direction) {
             if (direction === "down") {
               __WEBPACK_IMPORTED_MODULE_0_jquery___default()(allSectionTitles).removeClass('section__title--lineThrough');
-              __WEBPACK_IMPORTED_MODULE_0_jquery___default()(sectionTitle).addClass('section__title--lineThrough'); // alert('top');
+              __WEBPACK_IMPORTED_MODULE_0_jquery___default()($textModifications__spanTechnology).addClass('section__title--lineThrough'); // alert('top');
             }
           },
           offset: "45%"

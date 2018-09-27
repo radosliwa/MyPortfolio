@@ -7,6 +7,16 @@
     animation-timing-function: ease-out;
     animation-iteration-count: infinite;
     transform: translate(-50%, -10%);
+    font-size: responsive;
+    min-font-size: 35px;
+    max-font-size: 55px;
+    color: #FFF;
+    text-align: center;
+    @mixin atSmall {
+      font-size: responsive;
+      min-font-size: 45px;
+      max-font-size: 60px;
+    }
   }
   &__item1 {
     animation-name: anim1;
@@ -19,23 +29,43 @@
   }
   &__h3 {
     &--ForProjectSection {
-      text-shadow: 1px 1px 1px #2d4f68;
+      &.animated {
+        animation-delay: .7s;
+      }
+      @mixin atMedium {
+        text-shadow: 2px 2px 1px #2d4f68;
+      }
     }
     &--AboutSection {}
   }
   &__p {
+    &--AboutSection {
+      text-shadow: 2px 2px 1px #2d4f68;
+    }
     &--ForProjectSectionM {
       display: none;
+      &.animated {
+        animation-delay: 1s;
+      }
       @mixin atMedium {
-        text-shadow: 1px 1px 1px #2d4f68;
         display: block;
+        text-shadow: 2px 2px 1px #2d4f68;
       }
     }
     &--ForProjectSectionS {
       display: block;
       @mixin atMedium {
-        text-shadow: 1px 1px 1px #2d4f68;
+        text-shadow: 2px 2px 1px #2d4f68;
         display: none;
+      }
+    }
+  }
+  &__span {
+    &--technology {
+      animation-delay: 1.3s;
+      padding: 3% 2%;
+      @mixin atMedium {
+        padding: 13% 5%;
       }
     }
   }

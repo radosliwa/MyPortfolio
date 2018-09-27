@@ -3,6 +3,9 @@ import waypoints from "../../../../node_modules/waypoints/lib/noframework.waypoi
 import smoothScroll from 'jquery-smooth-scroll';
 
 const $navLinks = $('.main-nav__menu a');
+const $h3ForProjectSection = $(".text-modifications__h3--ForProjectSection");
+const $pForProjectSection = $(".text-modifications__p--ForProjectSectionM");
+const $textModifications__spanTechnology = $(".text-modifications__span--technology");
 
 export default class RevealOnScroll{
   constructor(el, offset){
@@ -18,6 +21,7 @@ export default class RevealOnScroll{
   }
 
   wayPoints(offset){
+    let that = this;
     this.itemsToReveal.each(function(){
       let current = this;
       let allSectionTitles = $('.section__title');
@@ -25,15 +29,24 @@ export default class RevealOnScroll{
       new Waypoint({
         element: current,
         handler: function() {
-          // $(allSectionTitles).removeClass('section__title--lineThrough');
-          $(current).addClass('revealItem--is-visible');
-          // $(sectionTitle).addClass('section__title--lineThrough');
-        },
+            $(current).addClass('revealItem--is-visible');
+            that.technologies();
+            $h3ForProjectSection.addClass('animated bounceInLeft');
+            $pForProjectSection.addClass('animated bounceInLeft');
+      },
         offset: offset
       });
     });
   }
+    technologies(){
+      console.log($textModifications__spanTechnology);
+      for (let i = 0; i < $textModifications__spanTechnology.length; i++) {
+        setTimeout(function(){
+          $textModifications__spanTechnology.eq(i).css('animation-delay','1s').addClass('animated bounceInLeft');
 
+        },1000)
+  }
+    }
     lineThrough(){
       this.itemsToReveal.each(function(){
         let current = this;
@@ -45,7 +58,7 @@ export default class RevealOnScroll{
             handler: function(direction) {
               if(direction === "down"){
               $(allSectionTitles).removeClass('section__title--lineThrough');
-              $(sectionTitle).addClass('section__title--lineThrough');
+              $($textModifications__spanTechnology).addClass('section__title--lineThrough');
               // alert('top');
             }
             },
