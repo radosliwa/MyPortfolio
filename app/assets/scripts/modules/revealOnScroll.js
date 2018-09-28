@@ -29,24 +29,30 @@ export default class RevealOnScroll{
       new Waypoint({
         element: current,
         handler: function() {
+          let p = $(current).find($pForProjectSection);
+          let h3 = $(current).find($h3ForProjectSection);
             $(current).addClass('revealItem--is-visible');
             that.technologies();
-            $h3ForProjectSection.addClass('animated bounceInLeft');
-            $pForProjectSection.addClass('animated bounceInLeft');
+            p.addClass('animated bounceInLeft');
+            h3.addClass('animated bounceInLeft');
+
+            // $h3ForProjectSection.addClass('animated bounceInLeft');
+            // $pForProjectSection.addClass('animated bounceInLeft');
       },
         offset: offset
       });
+
     });
   }
     technologies(){
-      console.log($textModifications__spanTechnology);
-      for (let i = 0; i < $textModifications__spanTechnology.length; i++) {
-        setTimeout(function(){
-          $textModifications__spanTechnology.eq(i).css('animation-delay','1s').addClass('animated bounceInLeft');
 
-        },1000)
+      for (let i = 0; i < $textModifications__spanTechnology.length; i++) {
+          let check = document.querySelectorAll(".text-modifications__span--technology");
+          $(check).eq(i).css('animation-delay', i/5 + 's').addClass('animated flipInX');
+          // console.log(i);
   }
     }
+
     lineThrough(){
       this.itemsToReveal.each(function(){
         let current = this;
@@ -58,7 +64,7 @@ export default class RevealOnScroll{
             handler: function(direction) {
               if(direction === "down"){
               $(allSectionTitles).removeClass('section__title--lineThrough');
-              $($textModifications__spanTechnology).addClass('section__title--lineThrough');
+              $(sectionTitle).addClass('section__title--lineThrough');
               // alert('top');
             }
             },

@@ -282,8 +282,8 @@ select { /* 1 */
     -webkit-animation-name: anim3;
             animation-name: anim3;
   }.text-modifications__h3--ForProjectSection.animated {
-        -webkit-animation-delay: .7s;
-                animation-delay: .7s;
+        -webkit-animation-delay: .4s;
+                animation-delay: .4s;
       }@media(min-width: 770px) {.text-modifications__h3--ForProjectSection {
         text-shadow: 2px 2px 1px #2d4f68
     }
@@ -292,8 +292,8 @@ select { /* 1 */
     }.text-modifications__p--ForProjectSectionM {
       display: none;
     }.text-modifications__p--ForProjectSectionM.animated {
-        -webkit-animation-delay: 1s;
-                animation-delay: 1s;
+        -webkit-animation-delay: .6s;
+                animation-delay: .6s;
       }@media(min-width: 770px) {.text-modifications__p--ForProjectSectionM {
         display: block;
         text-shadow: 2px 2px 1px #2d4f68
@@ -305,11 +305,9 @@ select { /* 1 */
         display: none
     }
   }.text-modifications__span--technology {
-      -webkit-animation-delay: 1.3s;
-              animation-delay: 1.3s;
       padding: 3% 2%;
     }@media(min-width: 770px) {.text-modifications__span--technology {
-        padding: 13% 5%
+        /* padding: 2% 0; */
     }
   }.text-modifications__questionInContact {
     padding: 3% 2%;

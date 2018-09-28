@@ -10447,7 +10447,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-new __WEBPACK_IMPORTED_MODULE_1__modules_revealOnScroll__["a" /* default */](__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.section'), "50%");
+new __WEBPACK_IMPORTED_MODULE_1__modules_revealOnScroll__["a" /* default */](__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.section'), "20%");
 new __WEBPACK_IMPORTED_MODULE_2__modules_stickyNav__["a" /* default */]();
 
 /***/ }),
@@ -10505,10 +10505,13 @@ function () {
         new Waypoint({
           element: current,
           handler: function handler() {
+            var p = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(current).find($pForProjectSection);
+            var h3 = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(current).find($h3ForProjectSection);
             __WEBPACK_IMPORTED_MODULE_0_jquery___default()(current).addClass('revealItem--is-visible');
             that.technologies();
-            $h3ForProjectSection.addClass('animated bounceInLeft');
-            $pForProjectSection.addClass('animated bounceInLeft');
+            p.addClass('animated bounceInLeft');
+            h3.addClass('animated bounceInLeft'); // $h3ForProjectSection.addClass('animated bounceInLeft');
+            // $pForProjectSection.addClass('animated bounceInLeft');
           },
           offset: offset
         });
@@ -10517,16 +10520,9 @@ function () {
   }, {
     key: "technologies",
     value: function technologies() {
-      console.log($textModifications__spanTechnology);
-
-      var _loop = function _loop(i) {
-        setTimeout(function () {
-          $textModifications__spanTechnology.eq(i).css('animation-delay', '1s').addClass('animated bounceInLeft');
-        }, 1000);
-      };
-
       for (var i = 0; i < $textModifications__spanTechnology.length; i++) {
-        _loop(i);
+        var check = document.querySelectorAll(".text-modifications__span--technology");
+        __WEBPACK_IMPORTED_MODULE_0_jquery___default()(check).eq(i).css('animation-delay', i / 5 + 's').addClass('animated flipInX'); // console.log(i);
       }
     }
   }, {
@@ -10541,7 +10537,7 @@ function () {
           handler: function handler(direction) {
             if (direction === "down") {
               __WEBPACK_IMPORTED_MODULE_0_jquery___default()(allSectionTitles).removeClass('section__title--lineThrough');
-              __WEBPACK_IMPORTED_MODULE_0_jquery___default()($textModifications__spanTechnology).addClass('section__title--lineThrough'); // alert('top');
+              __WEBPACK_IMPORTED_MODULE_0_jquery___default()(sectionTitle).addClass('section__title--lineThrough'); // alert('top');
             }
           },
           offset: "45%"

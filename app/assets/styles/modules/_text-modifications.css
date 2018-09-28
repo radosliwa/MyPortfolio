@@ -30,7 +30,7 @@
   &__h3 {
     &--ForProjectSection {
       &.animated {
-        animation-delay: .7s;
+        animation-delay: .4s;
       }
       @mixin atMedium {
         text-shadow: 2px 2px 1px #2d4f68;
@@ -45,7 +45,7 @@
     &--ForProjectSectionM {
       display: none;
       &.animated {
-        animation-delay: 1s;
+        animation-delay: .6s;
       }
       @mixin atMedium {
         display: block;
@@ -62,10 +62,9 @@
   }
   &__span {
     &--technology {
-      animation-delay: 1.3s;
       padding: 3% 2%;
       @mixin atMedium {
-        padding: 13% 5%;
+        /* padding: 2% 0; */
       }
     }
   }
