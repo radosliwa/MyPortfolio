@@ -40,7 +40,9 @@
   }
   &__p {
     &--AboutSection {
-      text-shadow: 2px 2px 1px #2d4f68;
+      @mixin atMedium {
+        text-shadow: 2px 2px 1px #2d4f68;
+      }
     }
     &--ForProjectSectionM {
       display: none;

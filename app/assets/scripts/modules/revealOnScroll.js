@@ -48,7 +48,7 @@ export default class RevealOnScroll{
 
       for (let i = 0; i < $textModifications__spanTechnology.length; i++) {
           let check = document.querySelectorAll(".text-modifications__span--technology");
-          $(check).eq(i).css('animation-delay', i/5 + 's').addClass('animated flipInX');
+          $(check).eq(i).css('animation-delay', i/6 + 's').addClass('animated flipInX');
           // console.log(i);
   }
     }

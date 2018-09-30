@@ -10522,7 +10522,7 @@ function () {
     value: function technologies() {
       for (var i = 0; i < $textModifications__spanTechnology.length; i++) {
         var check = document.querySelectorAll(".text-modifications__span--technology");
-        __WEBPACK_IMPORTED_MODULE_0_jquery___default()(check).eq(i).css('animation-delay', i / 5 + 's').addClass('animated flipInX'); // console.log(i);
+        __WEBPACK_IMPORTED_MODULE_0_jquery___default()(check).eq(i).css('animation-delay', i / 6 + 's').addClass('animated flipInX'); // console.log(i);
       }
     }
   }, {

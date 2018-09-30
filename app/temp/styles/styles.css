@@ -287,9 +287,10 @@ select { /* 1 */
       }@media(min-width: 770px) {.text-modifications__h3--ForProjectSection {
         text-shadow: 2px 2px 1px #2d4f68
     }
-  }.text-modifications__h3--AboutSection {}.text-modifications__p--AboutSection {
-      text-shadow: 2px 2px 1px #2d4f68;
-    }.text-modifications__p--ForProjectSectionM {
+  }.text-modifications__h3--AboutSection {}@media(min-width: 770px) {.text-modifications__p--AboutSection {
+        text-shadow: 2px 2px 1px #2d4f68
+    }
+  }.text-modifications__p--ForProjectSectionM {
       display: none;
     }.text-modifications__p--ForProjectSectionM.animated {
         -webkit-animation-delay: .6s;
