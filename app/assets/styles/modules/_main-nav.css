@@ -7,14 +7,23 @@
   background-image: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
   transition: all .4s;
   &__menu {
-    display: flex;
+    opacity: 0;
+    /* display: flex;
     max-width: 100%;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    text-align: center;
+    text-align: center; */
+    pointer-events: none;
+    display: flex;
+    max-width: 100%;
+    @mixin atSmallXL {}
     @mixin atMedium {
-      flex-direction: row;
+      opacity: 1;
+      pointer-events: all;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
     }
     &>li {
       font-size: 2.1rem;
@@ -30,12 +39,79 @@
         color: $mainAquamarine;
       }
     }
+    &--is-visible {
+      pointer-events: all;
+      opacity: 1;
+      flex-direction: column;
+      z-index: 1;
+      transition: all .4s ease-out;
+      @mixin atMedium {}
+    }
   }
   &--is-fixed {
     @mixin atMedium {
       position: fixed;
       top: 0;
       transform: scale(1.1);
+    }
+  }
+  &--is-expanded {}
+  /*---------------------------MOBILE ICON*/
+  &__menuMobileIcon {
+    position: absolute;
+    bottom: -58px;
+    opacity: 1;
+    width: 45px;
+    height: 45px;
+    right: 1vw;
+    /* position: absolute;
+    bottom: 0;
+    top: 0; */
+    @mixin atMedium {
+      display: none;
+    }
+    &__middle {
+      position: absolute;
+      width: inherit;
+      height: 4px;
+      top: 15px;
+      background-color: #FFF;
+      transition: all .5s ease-out;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      left: 0;
+      height: 4px;
+      background-color: #FFF;
+      transform-origin: 0 0;
+      /*top left corner*/
+      transition: transform .3s ease-out;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      width: 100%;
+      left: 0;
+      height: 4px;
+      background-color: #FFF;
+      transform-origin: 0 100%;
+      /*top left corner*/
+      transition: transform .3s ease-out;
+    }
+    &--close-x {
+      &::before {
+        transform: rotate(45deg) scaleX(1);
+      }
+      .main-nav__menuMobileIcon__middle {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      &::after {
+        transform: rotate(-45deg) scaleX(1) translateY(1px);
+      }
     }
   }
 }

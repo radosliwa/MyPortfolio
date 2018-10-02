@@ -1,12 +1,19 @@
 .site-header {
-  background: url('../../assets/img/background-large.jpg') no-repeat center bottom fixed;
+  background: url('../../assets/img/background-small.jpg') no-repeat center bottom fixed;
   background-size: cover;
   height: 100vh;
   width: 100vw;
   /* display: flex;
   justify-content: center;
   align-items: center; */
+  @mixin atMedium {
+    background: url('../../assets/img/background-medium.jpg') no-repeat center bottom fixed;
+  }
+  @mixin atLarge {
+    background: url('../../assets/img/background-large.jpg') no-repeat center bottom fixed;
+  }
   &__myPicture {
+    opacity: 0;
     position: relative;
     border: 2px solid $mainAquamarine;
     border-radius: 50%;
@@ -22,7 +29,7 @@
     img {
       max-width: 305px;
       /*to adjust the size of the img itself and preserving ratio, has to go
-      hand in hand with myPicture max-width above*/
+        hand in hand with myPicture max-width above*/
     }
   }
   &__text {

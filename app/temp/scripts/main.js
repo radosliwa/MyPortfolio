@@ -10443,12 +10443,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_revealOnScroll__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_stickyNav__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_mobileMenu_js__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_stickyNav__ = __webpack_require__(6);
 
 
+
+
+new __WEBPACK_IMPORTED_MODULE_2__modules_mobileMenu_js__["a" /* default */](); //
 
 new __WEBPACK_IMPORTED_MODULE_1__modules_revealOnScroll__["a" /* default */](__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.section'), "20%");
-new __WEBPACK_IMPORTED_MODULE_2__modules_stickyNav__["a" /* default */]();
+new __WEBPACK_IMPORTED_MODULE_3__modules_stickyNav__["a" /* default */]();
 
 /***/ }),
 /* 2 */
@@ -11700,6 +11704,53 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 /* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MobileMenu; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var MobileMenu =
+/*#__PURE__*/
+function () {
+  function MobileMenu() {
+    _classCallCheck(this, MobileMenu);
+
+    this.mainNav = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.main-nav');
+    this.menuMobileIcon = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.main-nav__menuMobileIcon');
+    this.navMenu = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.main-nav__menu');
+    this.events();
+  }
+
+  _createClass(MobileMenu, [{
+    key: "events",
+    value: function events() {
+      this.menuMobileIcon.click(this.toggleTheMenu.bind(this));
+    }
+  }, {
+    key: "toggleTheMenu",
+    value: function toggleTheMenu() {
+      this.navMenu.toggleClass('main-nav__menu--is-visible');
+      this.mainNav.toggleClass('main-nav--is-expanded');
+      this.menuMobileIcon.toggleClass('main-nav__menuMobileIcon--close-x');
+    }
+  }]);
+
+  return MobileMenu;
+}();
+
+
+
+/***/ }),
+/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
