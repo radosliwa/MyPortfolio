@@ -14,6 +14,7 @@ export default class RevealOnScroll{
     this.wayPoints(offset);
     this.smoothScroll();
     this.lineThrough();
+
   }
 
   hide(){
@@ -79,13 +80,18 @@ export default class RevealOnScroll{
                 $(sectionTitle).addClass('section__title--lineThrough');
               }
             },
-            offset: "5%"
+            offset: "-25%"
           });
       });
     }
 
     smoothScroll(){
-      $navLinks.smoothScroll({offset:-50});
+      $navLinks.smoothScroll({offset:-100});
+      $navLinks.click(function(){
+        $('.main-nav__menu').removeClass('main-nav__menu--is-visible');
+        $('.main-nav__menuMobileIcon').removeClass('main-nav__menuMobileIcon--close-x');
+      })
+      /*expanded mobilemenu doesnt cover section title */
     }
 
 }

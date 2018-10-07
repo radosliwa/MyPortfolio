@@ -10,10 +10,10 @@ export default class MobileMenu{
   }
   events(){
     this.menuMobileIcon.click(this.toggleTheMenu.bind(this));
+
   }
   toggleTheMenu(){
     this.navMenu.toggleClass('main-nav__menu--is-visible');
-    this.mainNav.toggleClass('main-nav--is-expanded');
     this.menuMobileIcon.toggleClass('main-nav__menuMobileIcon--close-x');
   }
 }

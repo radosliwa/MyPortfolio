@@ -46,14 +46,17 @@
     display: block;
     font-size: responsive;
     min-font-size: 22px;
-    max-font-size: 30px;
+    max-font-size: 27px;
     white-space: nowrap;
     animation: pulse 2s linear alternate infinite;
     @mixin atSmall {
       top: -59%;
     }
     @mixin atMedium {
-      top: -130%;
+      top: -70%;
+    }
+    @mixin atLarge {
+      top: -100%;
     }
   }
 }

@@ -1,10 +1,10 @@
 .main-nav {
   width: 100vw;
-  z-index: 100;
   margin: 0 auto;
   border-bottom: 3px solid $mainAquamarine;
   color: #FFF;
   background-image: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
+  z-index: 100;
   transition: all .4s;
   &__menu {
     opacity: 0;
@@ -30,10 +30,10 @@
     }
     li a {
       display: block;
-      padding: 6% 4%;
+      padding: 3% 2%;
       transition: all .2s;
       @mixin atMedium {
-        padding: 6% 4%;
+        padding: 6% 6%;
       }
       &:hover {
         color: $mainAquamarine;
@@ -43,56 +43,62 @@
       pointer-events: all;
       opacity: 1;
       flex-direction: column;
-      z-index: 1;
+      z-index: 150;
       transition: all .4s ease-out;
-      @mixin atMedium {}
+      @mixin atMedium {
+        flex-direction: row;
+      }
     }
   }
   &--is-fixed {
-    @mixin atMedium {
-      position: fixed;
-      top: 0;
-      transform: scale(1.1);
+    position: fixed;
+    top: 0;
+    transform: scale(1.1);
+    z-index: 150;
+    .main-nav__menuMobileIcon {
+      right: 6vw;
+      @mixin atSmallXL {
+        right: 6vw;
+      }
     }
   }
-  &--is-expanded {}
   /*---------------------------MOBILE ICON*/
   &__menuMobileIcon {
     position: absolute;
-    bottom: -58px;
     opacity: 1;
     width: 45px;
     height: 45px;
     right: 1vw;
     /* position: absolute;
-    bottom: 0;
-    top: 0; */
+      bottom: 0;
+      top: 0; */
     @mixin atMedium {
       display: none;
-    }
-    &__middle {
-      position: absolute;
-      width: inherit;
-      height: 4px;
-      top: 15px;
-      background-color: #FFF;
-      transition: all .5s ease-out;
     }
     &:before {
       content: "";
       position: absolute;
       width: 100%;
       left: 0;
+      top: 4px;
       height: 4px;
       background-color: #FFF;
       transform-origin: 0 0;
       /*top left corner*/
       transition: transform .3s ease-out;
     }
+    &__middle {
+      position: absolute;
+      width: inherit;
+      height: 4px;
+      top: 19px;
+      background-color: #FFF;
+      transition: all .5s ease-out;
+    }
     &:after {
       content: "";
       position: absolute;
-      top: 30px;
+      top: 34px;
       width: 100%;
       left: 0;
       height: 4px;

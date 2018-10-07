@@ -1,6 +1,6 @@
 .section {
   height: auto;
-  transition: all .7s;
+  transition: all .5s;
   /*for Reveal on scroll */
   padding-top: 2%;
   overflow: hidden;

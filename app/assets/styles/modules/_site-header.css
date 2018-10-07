@@ -1,5 +1,5 @@
 .site-header {
-  background: url('../../assets/img/background-small.jpg') no-repeat center bottom fixed;
+  background: url('../../assets/img/background-small.jpg') no-repeat center center;
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -7,17 +7,18 @@
   justify-content: center;
   align-items: center; */
   @mixin atMedium {
-    background: url('../../assets/img/background-medium.jpg') no-repeat center bottom fixed;
+    background: url('../../assets/img/background-medium.jpg') no-repeat center center fixed;
+    background-size: cover;
   }
   @mixin atLarge {
     background: url('../../assets/img/background-large.jpg') no-repeat center bottom fixed;
+    background-size: cover;
   }
   &__myPicture {
-    opacity: 0;
     position: relative;
     border: 2px solid $mainAquamarine;
     border-radius: 50%;
-    max-width: 305px;
+    max-width: 220px;
     overflow: hidden;
     left: 50%;
     transform: translateX(-50%);
@@ -26,10 +27,14 @@
     align-items: center;
     /*to center picture in the circle and avoid stretching*/
     top: -5%;
-    img {
+    @mixin atMedium {
       max-width: 305px;
-      /*to adjust the size of the img itself and preserving ratio, has to go
-        hand in hand with myPicture max-width above*/
+    }
+    img {
+      min-width: 220px;
+      @mixin atMedium {
+        max-width: 305px;
+      }
     }
   }
   &__text {

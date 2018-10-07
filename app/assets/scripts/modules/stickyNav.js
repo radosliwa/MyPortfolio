@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 const $mainNav = $('.main-nav');
-
+const v = $('.scrollDown');
 export default class StickyNav{
   constructor(){
     this.fixedNav();
