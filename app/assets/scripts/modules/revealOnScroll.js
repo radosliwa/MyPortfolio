@@ -12,8 +12,8 @@ export default class RevealOnScroll{
     this.itemsToReveal = el;
     this.hide();
     this.wayPoints(offset);
-    this.smoothScroll();
     this.lineThrough();
+    this.smoothScroll();
 
   }
 

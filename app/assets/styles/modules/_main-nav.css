@@ -1,11 +1,17 @@
 .main-nav {
+  position: fixed;
+  top: 0;
   width: 100vw;
+  min-height: 60px;
   margin: 0 auto;
   border-bottom: 3px solid $mainAquamarine;
   color: #FFF;
   background-image: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
   z-index: 100;
   transition: all .4s;
+  @mixin atMedium {
+    position: static;
+  }
   &__menu {
     opacity: 0;
     /* display: flex;
@@ -51,16 +57,13 @@
     }
   }
   &--is-fixed {
-    position: fixed;
-    top: 0;
-    transform: scale(1.1);
-    z-index: 150;
-    .main-nav__menuMobileIcon {
-      right: 6vw;
-      @mixin atSmallXL {
-        right: 6vw;
-      }
+    @mixin atMedium {
+      position: fixed;
+      top: 0;
+      transform: scale(1.1);
+      z-index: 150;
     }
+    .main-nav__menuMobileIcon {}
   }
   /*---------------------------MOBILE ICON*/
   &__menuMobileIcon {
@@ -68,7 +71,8 @@
     opacity: 1;
     width: 45px;
     height: 45px;
-    right: 1vw;
+    right: 4vw;
+    top: 1vh;
     /* position: absolute;
       bottom: 0;
       top: 0; */

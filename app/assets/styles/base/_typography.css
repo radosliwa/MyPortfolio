@@ -19,7 +19,6 @@ a {
   min-font-size: 26px;
   max-font-size: 34px;
   @mixin atMedium {
-    font-size: responsive;
     min-font-size: 22px;
     max-font-size: 34px;
   }
