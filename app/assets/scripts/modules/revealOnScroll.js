@@ -32,13 +32,13 @@ export default class RevealOnScroll{
         handler: function() {
           let p = $(current).find($pForProjectSection);
           let h3 = $(current).find($h3ForProjectSection);
+          
             $(current).addClass('revealItem--is-visible');
             that.technologies();
             p.addClass('animated bounceInLeft');
             h3.addClass('animated bounceInLeft');
 
-            // $h3ForProjectSection.addClass('animated bounceInLeft');
-            // $pForProjectSection.addClass('animated bounceInLeft');
+
       },
         offset: offset
       });
@@ -49,7 +49,9 @@ export default class RevealOnScroll{
 
       for (let i = 0; i < $textModifications__spanTechnology.length; i++) {
           let check = document.querySelectorAll(".text-modifications__span--technology");
+
           $(check).eq(i).css('animation-delay', i/6 + 's').addClass('animated flipInX');
+
           // console.log(i);
   }
     }

@@ -58,7 +58,7 @@
           left: 37%;
           transform: rotate(23deg);
           @mixin atMediumXL {
-            top: 10%;
+            top: 0;
             bottom: 0;
             left: 55%;
             transform: rotate(23deg);
@@ -91,7 +91,7 @@
             transform: rotate(23deg);
           }
           @mixin atLarge {
-            top: -94%;
+            top: -113%;
             bottom: 0;
             right: 65%;
           }

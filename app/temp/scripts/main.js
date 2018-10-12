@@ -10514,8 +10514,7 @@ function () {
             __WEBPACK_IMPORTED_MODULE_0_jquery___default()(current).addClass('revealItem--is-visible');
             that.technologies();
             p.addClass('animated bounceInLeft');
-            h3.addClass('animated bounceInLeft'); // $h3ForProjectSection.addClass('animated bounceInLeft');
-            // $pForProjectSection.addClass('animated bounceInLeft');
+            h3.addClass('animated bounceInLeft');
           },
           offset: offset
         });

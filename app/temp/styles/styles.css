@@ -825,6 +825,9 @@ select { /* 1 */
   align-items: center;
   flex-flow: row wrap;
 }.projects__item {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     min-height: 240px;
     min-width: 240px;
     background-color: grey;
@@ -832,6 +835,59 @@ select { /* 1 */
   }@media(min-width: 768px) {.projects__item {
       margin: 2% 3%
   }
+      .projects__item:hover {
+        overflow: hidden;
+        box-shadow: 4px 6px 12px #000;
+        -webkit-transform: scale(1.07);
+                transform: scale(1.07);
+        transition: scale .2s ease-out;
+      }
+        .projects__item:hover .projects__link {
+          opacity: 1;
+          display: inline-block;
+          text-align: center;
+          transition: all .4s ease-out;
+        }
+          .projects__item:hover .projects__link:before {
+            -webkit-transform: scaleX(1);
+                    transform: scaleX(1);
+            -webkit-transform-origin: left;
+                    transform-origin: left;
+            padding: 0 2% 0 2%;
+          }
+  }.projects__item:active {
+      box-shadow: 3px 3px 2px #000;
+    }.projects__link {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    min-height: 80px;
+    padding: 6% 3% 1% 3%;
+    color: #FFF;
+    background-image: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
+    transition: opacity .6s ease-out;
+  }@media(min-width: 768px) {.projects__link {
+      opacity: 0
+  }
+  }.projects__link:before {
+      content: "";
+      background: #3a91cffa;
+      width: 100%;
+      height: 4px;
+      bottom: 10%;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      top: -3%;
+      transition: -webkit-transform .3s ease-in;
+      transition: transform .3s ease-in;
+      transition: transform .3s ease-in, -webkit-transform .3s ease-in;
+    }@media(min-width: 768px) {.projects__link:before {
+        -webkit-transform: scaleX(0);
+                transform: scaleX(0)
+    }
   }.chevron {
   position: relative;
   background-color: #2d4f68;
@@ -946,7 +1002,7 @@ select { /* 1 */
         }
           @media(min-width: 875px) {
         .col__col50--blueBackgroundAfter:after {
-            top: 10%;
+            top: 0;
             bottom: 0;
             left: 55%;
             -webkit-transform: rotate(23deg);
@@ -984,7 +1040,7 @@ select { /* 1 */
   }
           @media(min-width: 1080px) {
         .col__col50--blueBackgroundBefore:before {
-            top: -94%;
+            top: -113%;
             bottom: 0;
             right: 65%
         }
