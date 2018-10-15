@@ -27,12 +27,13 @@ export default class RevealOnScroll{
       let current = this;
       let allSectionTitles = $('.section__title');
       let sectionTitle = $(current).find('.section__title');
+
       new Waypoint({
         element: current,
         handler: function() {
           let p = $(current).find($pForProjectSection);
           let h3 = $(current).find($h3ForProjectSection);
-          
+
             $(current).addClass('revealItem--is-visible');
             that.technologies();
             p.addClass('animated bounceInLeft');
@@ -61,28 +62,33 @@ export default class RevealOnScroll{
         let current = this;
         let allSectionTitles = $('.section__title');
         let sectionTitle = $(current).find('.section__title');
-
+        let linkHighlight = current.getAttribute('data-match');
+            $navLinks.removeClass('is--current-link');
           new Waypoint({
             element: current,
             handler: function(direction) {
               if(direction === "down"){
+                $navLinks.removeClass('is--current-link');
+                $(linkHighlight).addClass('is--current-link');
               $(allSectionTitles).removeClass('section__title--lineThrough');
               $(sectionTitle).addClass('section__title--lineThrough');
               // alert('top');
             }
             },
-            offset: "45%"
+            offset: "55%"
           });
 
           new Waypoint({
             element: current,
             handler: function(direction) {
               if(direction === "up"){
+                $navLinks.removeClass('is--current-link');
+                $(linkHighlight).addClass('is--current-link');
                 $(allSectionTitles).removeClass('section__title--lineThrough');
                 $(sectionTitle).addClass('section__title--lineThrough');
               }
             },
-            offset: "-25%"
+            offset: 0
           });
       });
     }

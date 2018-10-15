@@ -4,7 +4,10 @@
   /*for Reveal on scroll */
   padding-top: 2%;
   overflow: hidden;
-  @mixin atMedium {}
+  margin-top: 10%;
+  @mixin atMedium {
+    margin-top: 6%;
+  }
   &--no100vh {
     height: auto;
   }
@@ -45,7 +48,9 @@
       }
     }
   }
-  &__myPicture2 {}
+  &--no-top-margin {
+    margin-top: 0;
+  }
 }
 
 @keyframes line-through {

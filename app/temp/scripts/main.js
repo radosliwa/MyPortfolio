@@ -10535,25 +10535,31 @@ function () {
         var current = this;
         var allSectionTitles = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.section__title');
         var sectionTitle = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(current).find('.section__title');
+        var linkHighlight = current.getAttribute('data-match');
+        $navLinks.removeClass('is--current-link');
         new Waypoint({
           element: current,
           handler: function handler(direction) {
             if (direction === "down") {
+              $navLinks.removeClass('is--current-link');
+              __WEBPACK_IMPORTED_MODULE_0_jquery___default()(linkHighlight).addClass('is--current-link');
               __WEBPACK_IMPORTED_MODULE_0_jquery___default()(allSectionTitles).removeClass('section__title--lineThrough');
               __WEBPACK_IMPORTED_MODULE_0_jquery___default()(sectionTitle).addClass('section__title--lineThrough'); // alert('top');
             }
           },
-          offset: "45%"
+          offset: "55%"
         });
         new Waypoint({
           element: current,
           handler: function handler(direction) {
             if (direction === "up") {
+              $navLinks.removeClass('is--current-link');
+              __WEBPACK_IMPORTED_MODULE_0_jquery___default()(linkHighlight).addClass('is--current-link');
               __WEBPACK_IMPORTED_MODULE_0_jquery___default()(allSectionTitles).removeClass('section__title--lineThrough');
               __WEBPACK_IMPORTED_MODULE_0_jquery___default()(sectionTitle).addClass('section__title--lineThrough');
             }
           },
-          offset: "-25%"
+          offset: 0
         });
       });
     }

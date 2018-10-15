@@ -16,8 +16,8 @@ p {
 
 a {
   font-size: responsive;
-  min-font-size: 26px;
-  max-font-size: 34px;
+  min-font-size: 22px;
+  max-font-size: 32px;
   @mixin atMedium {
     min-font-size: 22px;
     max-font-size: 34px;
