@@ -801,24 +801,23 @@ select { /* 1 */
     /* display: inline-block;
     margin: 0 auto;*/
     padding: 1% 0;
-  }.icons {
-  padding: 5%;
-}.icons__contact {
+  }.icons__contact {
     display: flex;
     justify-content: center;
     flex-flow: row;
+    z-index: 100;
   }@media(min-width: 768px) {.icons__contact {
-      position: relative;
+      /* position: relative;
       padding: 0;
-      top: -10%
+      top: -10%; */
   }
   }.icons__contact a:nth-child(2) {
-      margin: 0 3%;
+      margin: 0 10%;
     }@media(min-width: 768px) {.icons__contact a:nth-child(2) {
-        margin: 0 8%
+        margin: 0 15%
     }
   }.icons__item {
-    padding: 0 10%;
+    padding: 10%;
     font-size: calc(50px + 13 * ((100vw - 420px) / 860));
   }@media screen and (min-width: 1280px){.icons__item{
     font-size: 63px;
@@ -827,7 +826,7 @@ select { /* 1 */
     font-size: 50px;
   }
 }@media(min-width: 530px) {.icons__item--biggerPadding {
-        padding: 0 15%
+        padding: 20% 15%
     }
   }.projects {
   height: auto;
@@ -849,16 +848,19 @@ select { /* 1 */
       .projects__item:hover {
         overflow: hidden;
         box-shadow: 4px 6px 12px #000;
-        -webkit-transform: scale(1.07);
-                transform: scale(1.07);
-        transition: scale .2s ease-out;
+        -webkit-transform: scale(1.05);
+                transform: scale(1.05);
+        transition: all .5s ease-out;
       }
         .projects__item:hover .projects__link {
           opacity: 1;
           display: inline-block;
           text-align: center;
-          transition: all .4s ease-out;
+          transition: all .8s ease-out;
         }
+          .projects__item:hover .projects__link:hover {
+            color: #3a91cffa;
+          }
           .projects__item:hover .projects__link:before {
             -webkit-transform: scaleX(1);
                     transform: scaleX(1);
@@ -867,7 +869,8 @@ select { /* 1 */
             padding: 0 2% 0 2%;
           }
   }.projects__item:active {
-      box-shadow: 3px 3px 2px #000;
+      transition: all .3s ease-out;
+      box-shadow: 3px 2px 1px #000;
     }.projects__link {
     position: relative;
     display: inline-block;
@@ -902,7 +905,6 @@ select { /* 1 */
   }.chevron {
   position: relative;
   background-color: #2d4f68;
-  z-index: -3;
   /* &--TurnAround {
     height: 100vh;
     &:after, &:before {

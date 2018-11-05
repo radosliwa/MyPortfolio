@@ -17,13 +17,16 @@
       &:hover {
         overflow: hidden;
         box-shadow: 4px 6px 12px #000;
-        transform: scale(1.07);
-        transition: scale .2s ease-out;
+        transform: scale(1.05);
+        transition: all .5s ease-out;
         .projects__link {
           opacity: 1;
           display: inline-block;
           text-align: center;
-          transition: all .4s ease-out;
+          transition: all .8s ease-out;
+          &:hover {
+            color: $mainAquamarine;
+          }
           &:before {
             transform: scaleX(1);
             transform-origin: left;
@@ -33,7 +36,8 @@
       }
     }
     &:active {
-      box-shadow: 3px 3px 2px #000;
+      transition: all .3s ease-out;
+      box-shadow: 3px 2px 1px #000;
     }
   }
   &__link {

@@ -1,7 +1,6 @@
 .chevron {
   position: relative;
   background-color: #2d4f68;
-  z-index: -3;
   &:after, &:before {
     position: absolute;
     content: "";
