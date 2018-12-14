@@ -2,28 +2,25 @@
   position: fixed;
   top: 0;
   width: 100vw;
-  min-height: 60px;
   margin: 0 auto;
   border-bottom: 3px solid $mainAquamarine;
   color: #FFF;
   background-image: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
   z-index: 100;
   transition: all .4s;
+
   @mixin atMedium {
     position: static;
   }
+
   &__menu {
     opacity: 0;
-    /* display: flex;
-    max-width: 100%;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center; */
     pointer-events: none;
     display: flex;
     max-width: 100%;
+
     @mixin atSmallXL {}
+
     @mixin atMedium {
       opacity: 1;
       pointer-events: all;
@@ -31,34 +28,42 @@
       align-items: center;
       text-align: center;
     }
+
     &>li {
       font-size: 2.1rem;
     }
+
     li a {
       display: block;
       padding: 9% 2%;
       transition: all .2s;
+
       @mixin atMedium {
         padding: 6% 6%;
+
         &.is--current-link {
           color: $mainAquamarine;
         }
       }
+
       &:hover {
         color: $mainAquamarine;
       }
     }
+
     &--is-visible {
       pointer-events: all;
       opacity: 1;
       flex-direction: column;
       z-index: 150;
-      transition: all .4s ease-out;
+      transition: all 1s ease-out;
+
       @mixin atMedium {
         flex-direction: row;
       }
     }
   }
+
   &--is-fixed {
     @mixin atMedium {
       position: fixed;
@@ -66,62 +71,68 @@
       transform: scale(1.05);
       z-index: 150;
     }
+
     .main-nav__menuMobileIcon {}
   }
+
   /*---------------------------MOBILE ICON*/
   &__menuMobileIcon {
     position: absolute;
     opacity: 1;
     width: 45px;
-    height: 45px;
     right: 4vw;
-    top: 1vh;
-    /* position: absolute;
-      bottom: 0;
-      top: 0; */
+    top: 50%;
+    transform: translateY(-50%);
+
     @mixin atMedium {
       display: none;
     }
+
     &:before {
       content: "";
       position: absolute;
       width: 100%;
       left: 0;
-      top: 4px;
+      top: -14px;
       height: 4px;
       background-color: #FFF;
       transform-origin: 0 0;
       /*top left corner*/
-      transition: transform .3s ease-out;
+      transition: transform .5s ease-out;
     }
+
     &__middle {
       position: absolute;
       width: inherit;
       height: 4px;
-      top: 19px;
+      /* top: 19px; */
       background-color: #FFF;
-      transition: all .5s ease-out;
+      transition: all .7s ease-out;
     }
+
     &:after {
       content: "";
       position: absolute;
-      top: 34px;
+      top: 14px;
       width: 100%;
       left: 0;
       height: 4px;
       background-color: #FFF;
       transform-origin: 0 100%;
       /*top left corner*/
-      transition: transform .3s ease-out;
+      transition: transform .5s ease-out;
     }
+
     &--close-x {
       &::before {
         transform: rotate(45deg) scaleX(1);
       }
+
       .main-nav__menuMobileIcon__middle {
         opacity: 0;
         transform: scaleX(0);
       }
+
       &::after {
         transform: rotate(-45deg) scaleX(1) translateY(1px);
       }

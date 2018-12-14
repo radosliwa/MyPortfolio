@@ -6,16 +6,18 @@
   color: #FFF;
   max-width: 5%;
   height: 5%;
-  margin: 2% auto 0 auto;
+  margin: 0 auto 0 auto;
   z-index: 100;
+
   &__item {
     position: absolute;
-    top: 2%;
+    top: -70%;
     width: 28px;
-    height: 8px;
+    height: 4px;
     opacity: 0;
     transform: scale3d(0.5, 0.5, 0.5);
     animation: move 3s ease-out infinite;
+
     &:before, &:after {
       content: ' ';
       position: absolute;
@@ -24,38 +26,53 @@
       width: 51%;
       background: #fff;
     }
+
     &:before {
       left: 0;
       transform: skew(0deg, 30deg);
     }
+
     &:after {
       right: 0;
       width: 50%;
       transform: skew(0deg, -30deg);
       background: $mainAquamarine;
     }
+
     &:first-child {
       animation: move 3s ease-out 1s infinite;
     }
+
     &:nth-child(2) {
       animation: move 3s ease-out 2s infinite;
     }
   }
+
   &__text {
     position: absolute;
-    top: -45%;
+    top: -135%;
     display: block;
     font-size: responsive;
-    min-font-size: 22px;
-    max-font-size: 27px;
+    min-font-size: 20px;
+    max-font-size: 25px;
     white-space: nowrap;
     animation: pulse 2s linear alternate infinite;
+
     @mixin atSmall {
       top: -59%;
     }
+
+    @mixin atSmallHorizontal {
+      top: -185%;
+      font-size: responsive;
+      min-font-size: 18px;
+      max-font-size: 22px;
+    }
+
     @mixin atMedium {
       top: -70%;
     }
+
     @mixin atLarge {
       top: -100%;
     }
@@ -66,14 +83,17 @@
   25% {
     opacity: 1;
   }
+
   33% {
     opacity: 1;
     transform: translateY(30px);
   }
+
   67% {
     opacity: 1;
     transform: translateY(40px);
   }
+
   100% {
     opacity: 0;
     transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
@@ -84,6 +104,7 @@
   0% {
     opacity: .25;
   }
+
   100% {
     opacity: 1;
   }

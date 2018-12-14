@@ -1,85 +1,113 @@
 .text-modifications {
+
   /*--------------------------SITE-HEADER SECTION*/
   &__item1, &__item2, &__item3 {
     position: absolute;
-    width: 60%;
+    width: 65%;
     animation-duration: 9s;
     animation-timing-function: ease-out;
     animation-iteration-count: infinite;
     transform: translate(-50%, -10%);
     font-size: responsive;
-    min-font-size: 35px;
-    max-font-size: 55px;
+    min-font-size: 28px;
+    max-font-size: 30px;
     color: #FFF;
     text-align: center;
+
     @mixin atSmall {
       font-size: responsive;
-      min-font-size: 45px;
-      max-font-size: 60px;
+      min-font-size: 30px;
+      max-font-size: 45px;
+    }
+
+    @mixin atSmallHorizontal {
+      padding-top: 5%;
+      font-size: responsive;
+      min-font-size: 30px;
+      max-font-size: 40px;
+      width: 100%;
     }
   }
+
   &__item1 {
     animation-name: anim1;
   }
+
   &__item2 {
     animation-name: anim2;
   }
+
   &__item3 {
     animation-name: anim3;
   }
+
   &__h3 {
     &--ForProjectSection {
       &.animated {
         animation-delay: .4s;
       }
+
       @mixin atMedium {
         text-shadow: 2px 2px 1px #2d4f68;
       }
     }
+
     &--AboutSection {}
   }
+
   &__p {
     &--AboutSection {
       @mixin atMedium {
         text-shadow: 2px 2px 1px #2d4f68;
       }
     }
+
     &--ForProjectSectionM {
       display: none;
+
       &.animated {
         animation-delay: .6s;
       }
+
       @mixin atMedium {
         display: block;
         text-shadow: 2px 2px 1px #2d4f68;
       }
     }
+
     &--ForProjectSectionS {
       display: block;
+
       @mixin atMedium {
         text-shadow: 2px 2px 1px #2d4f68;
         display: none;
       }
     }
   }
+
   &__span {
     &--technology {
       padding: 3% 2%;
+
       @mixin atMedium {
         /* padding: 2% 0; */
       }
     }
   }
+
   &__questionInContact {
     padding: 3% 2%;
     /* margin-top: 10%; */
     font-weight: 600;
+
     @mixin atSmall {}
+
     @mixin atMedium {
       padding: 0;
       /* margin-top: -23%; */
     }
   }
+
   &__contactMeForm {
     padding: 3vh 0 2vh 0;
   }
@@ -90,10 +118,12 @@
     left: -100%;
     opacity: 0;
   }
+
   8.3%, 25% {
     left: 50%;
     opacity: 1;
   }
+
   33.33%, 100% {
     opacity: 0;
   }
@@ -104,10 +134,12 @@
     /* left: -100%; */
     opacity: 0;
   }
+
   41.63%, 58.29% {
     left: 50%;
     opacity: 1;
   }
+
   66.66%, 100% {
     opacity: 0;
   }
@@ -118,13 +150,16 @@
     /* left: -100%; */
     opacity: 0;
   }
+
   74.96%, 91.62% {
     left: 50%;
     opacity: 1;
   }
+
   94% {
     left: 48%;
   }
+
   100% {
     opacity: 0;
     left: 110%;
