@@ -10475,6 +10475,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
+var $mainNavMenu = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.main-nav__menu');
+var $hamburger = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.main-nav__menuMobileIcon');
 var $navLinks = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.main-nav__menu a');
 var $h3ForProjectSection = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".text-modifications__h3--ForProjectSection");
 var $pForProjectSection = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".text-modifications__p--ForProjectSectionM");
@@ -10570,8 +10572,8 @@ function () {
         offset: -100
       });
       $navLinks.click(function () {
-        __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.main-nav__menu').removeClass('main-nav__menu--is-visible');
-        __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.main-nav__menuMobileIcon').removeClass('main-nav__menuMobileIcon--close-x');
+        $mainNavMenu.removeClass('main-nav__menu--is-visible');
+        $hamburger.removeClass('main-nav__menuMobileIcon--close-x');
       });
       /*expanded mobilemenu doesnt cover section title */
     }

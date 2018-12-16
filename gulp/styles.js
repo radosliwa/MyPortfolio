@@ -10,12 +10,11 @@ var rucksack = require('rucksack-css');
 
 gulp.task('styles', function(){
     return gulp.src('./app/assets/styles/styles.css')
-    .pipe(postcss([cssImport,mixins,cssvar, nested, hexrgba, autoprefixer]))
+    .pipe(postcss([cssImport,mixins,cssvar, nested, hexrgba, autoprefixer,rucksack]))
     .on('error', function(errorInfo){
       console.log(errorInfo.toString());
       this.emit('end');
     })
-    .pipe(postcss([ rucksack() ]))
-      .pipe(gulp.dest('./app/temp/styles'));
+    .pipe(gulp.dest('./app/temp/styles'));
 
 });

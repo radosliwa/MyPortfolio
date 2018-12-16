@@ -1,5 +1,5 @@
 @define-mixin atSmallHorizontal {
-  @media(max-height: 500px) and (min-width: 300px) {
+  @media(max-height: 629px) and (min-width: 300px) {
     @mixin-content;
   }
 }

@@ -19,29 +19,28 @@
 
   &__myPicture {
     position: relative;
-    /* border: 2px solid $mainAquamarine;
-    border-radius: 50%; */
+    border: 2px solid $mainAquamarine;
+    border-radius: 50%;
     overflow: hidden;
-    /* max-width: 200px;
-    height: auto; */
-    left: 50%;
-    transform: translateX(-50%);
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     /*to center picture in the circle and avoid stretching*/
     top: -10%;
+    /* @mixin atSmall {
+      max-width: 210px;
+    }
 
-    /*
-    @media only screen and (max-height: 730px) and (min-width: 300px) {
+    @mixin atSmallHorizontal {
       max-width: 150px;
       height: auto;
-    } */
-    @mixin atSmall {}
-
-    @mixin atMedium {
-      /* max-width: 320px; */
     }
+
+    @mixin atLarge {
+      max-width: 325pxq;
+    } */
   }
 
   &__text {

@@ -6,7 +6,7 @@
   color: #FFF;
   max-width: 5%;
   height: 5%;
-  margin: 0 auto 0 auto;
+  margin: 0 auto;
   z-index: 100;
 
   &__item {
@@ -15,15 +15,26 @@
     width: 28px;
     height: 4px;
     opacity: 0;
+    /*  */
     transform: scale3d(0.5, 0.5, 0.5);
     animation: move 3s ease-out infinite;
+
+    /*  */
+    @supports (-ms-high-contrast: none) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @mixin atSmallHorizontal {
+      top: -222%;
+    }
 
     &:before, &:after {
       content: ' ';
       position: absolute;
       top: 0;
       height: 100%;
-      width: 51%;
+      width: 50%;
       background: #fff;
     }
 
@@ -49,24 +60,31 @@
   }
 
   &__text {
-    position: absolute;
-    top: -135%;
     display: block;
+    margin-top: -80%;
     font-size: responsive;
-    min-font-size: 20px;
-    max-font-size: 25px;
+    min-font-size: 17px;
+    max-font-size: 23px;
     white-space: nowrap;
     animation: pulse 2s linear alternate infinite;
 
+    @supports not (-ms-high-contrast: none) {
+      margin-top: 0;
+      position: absolute;
+      top: -135%;
+    }
+
     @mixin atSmall {
       top: -59%;
+      opacity: 1;
     }
 
     @mixin atSmallHorizontal {
       top: -185%;
       font-size: responsive;
-      min-font-size: 18px;
+      min-font-size: 10px;
       max-font-size: 22px;
+      opacity: 0;
     }
 
     @mixin atMedium {

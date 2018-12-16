@@ -2,6 +2,8 @@ import $ from 'jquery';
 import waypoints from "../../../../node_modules/waypoints/lib/noframework.waypoints.js";
 import smoothScroll from 'jquery-smooth-scroll';
 
+const $mainNavMenu = $('.main-nav__menu');
+const $hamburger = $('.main-nav__menuMobileIcon');
 const $navLinks = $('.main-nav__menu a');
 const $h3ForProjectSection = $(".text-modifications__h3--ForProjectSection");
 const $pForProjectSection = $(".text-modifications__p--ForProjectSectionM");
@@ -50,7 +52,6 @@ export default class RevealOnScroll{
 
       for (let i = 0; i < $textModifications__spanTechnology.length; i++) {
           let check = document.querySelectorAll(".text-modifications__span--technology");
-
           $(check).eq(i).css('animation-delay', i/6 + 's').addClass('animated flipInX');
 
           // console.log(i);
@@ -96,8 +97,8 @@ export default class RevealOnScroll{
     smoothScroll(){
       $navLinks.smoothScroll({offset:-100});
       $navLinks.click(function(){
-        $('.main-nav__menu').removeClass('main-nav__menu--is-visible');
-        $('.main-nav__menuMobileIcon').removeClass('main-nav__menuMobileIcon--close-x');
+        $mainNavMenu.removeClass('main-nav__menu--is-visible');
+        $hamburger.removeClass('main-nav__menuMobileIcon--close-x');
       })
       /*expanded mobilemenu doesnt cover section title */
     }

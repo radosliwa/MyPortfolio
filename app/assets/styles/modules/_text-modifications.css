@@ -4,19 +4,18 @@
   &__item1, &__item2, &__item3 {
     position: absolute;
     width: 65%;
-    animation-duration: 9s;
-    animation-timing-function: ease-out;
-    animation-iteration-count: infinite;
     transform: translate(-50%, -10%);
+    left: 50%;
     font-size: responsive;
     min-font-size: 28px;
     max-font-size: 30px;
     color: #FFF;
     text-align: center;
+    animation: 9s ease-out infinite;
 
-    @mixin atSmall {
+    @mixin atUltraSmall {
       font-size: responsive;
-      min-font-size: 30px;
+      min-font-size: 32px;
       max-font-size: 45px;
     }
 
@@ -26,6 +25,12 @@
       min-font-size: 30px;
       max-font-size: 40px;
       width: 100%;
+    }
+
+    @mixin atMediumXL {
+      font-size: responsive;
+      min-font-size: 35px;
+      max-font-size: 55px;
     }
   }
 
