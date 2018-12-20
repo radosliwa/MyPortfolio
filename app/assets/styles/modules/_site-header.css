@@ -4,9 +4,6 @@
   height: 100vh;
   width: 100vw;
 
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   @mixin atMedium {
     background: url('../../assets/img/background-medium.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -18,6 +15,7 @@
   }
 
   &__myPicture {
+    max-width: 350px;
     position: relative;
     border: 2px solid $mainAquamarine;
     border-radius: 50%;
@@ -29,18 +27,6 @@
     align-items: center;
     /*to center picture in the circle and avoid stretching*/
     top: -10%;
-    /* @mixin atSmall {
-      max-width: 210px;
-    }
-
-    @mixin atSmallHorizontal {
-      max-width: 150px;
-      height: auto;
-    }
-
-    @mixin atLarge {
-      max-width: 325pxq;
-    } */
   }
 
   &__text {

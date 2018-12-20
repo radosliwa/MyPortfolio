@@ -1,16 +1,19 @@
 .section {
-  height: auto;
-  transition: all .5s;
+  /* height: auto; */
+  transition: all .9s;
   /*for Reveal on scroll */
   padding-top: 2%;
   overflow: hidden;
   margin-top: 10%;
+
   @mixin atMedium {
     margin-top: 6%;
   }
+
   &--no100vh {
-    height: auto;
+    /* height: auto; */
   }
+
   &__title {
     position: relative;
     z-index: 2;
@@ -19,7 +22,9 @@
     justify-content: center;
     align-items: center;
     vertical-align: middle;
+
     &--lineThrough {
+
       /*another class was necessary, cause I couldn't modify __title's pseudo-elements
       with js/jQ ): */
       &:before {
@@ -33,6 +38,7 @@
         margin-right: 3%;
         animation: line-through .3s ease-out 1;
       }
+
       &:after {
         /* display: inline-block;
         vertical-align: middle; */
@@ -48,6 +54,7 @@
       }
     }
   }
+
   &--no-top-margin {
     margin-top: 0;
   }
@@ -58,6 +65,7 @@
     opacity: 0;
     transform: scaleX(0);
   }
+
   100% {
     opacity: 1;
     transform: scaleX(1);

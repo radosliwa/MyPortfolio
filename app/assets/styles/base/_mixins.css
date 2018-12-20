@@ -40,6 +40,12 @@
   }
 }
 
+@define-mixin supportsNot {
+  @supports not (-ms-high-contrast: none) {
+    @mixin-content;
+  }
+}
+
 @define-mixin clearfix {
   &::after {
     content: "";

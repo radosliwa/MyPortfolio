@@ -29,7 +29,7 @@
     <img class="site-header__myPicture animated zoomIn" srcset="assets/img/myPicture_small.jpg 500w,
       assets/img/myPicture_medium.jpg 600w,
       assets/img/myPicture_large.jpg 700w" sizes="(max-height: 630px) and (min-width: 300px) 150px,(max-width:529px) 180px,
-      (max-width:875px) 210px,(min-width:1080px) 325px,
+      (max-width:1079px) 280px,(min-width:1080px) 350px,
       250px"
       src="assets/img/myPicture_small.jpg" alt="me">
     <!-- -->
@@ -65,7 +65,7 @@
             <img src="" alt="">
           </div>
         </div>
-        <div class="col__col50 col__col50--blueBackgroundBefore">
+        <div class="col__col50 col__col50--blueBackgroundAfter">
           <p class="text-modifications__p text-modifications__p--AboutSection">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia maiores, quos modi est quod sapiente illo ratione, assumenda minus nostrum, blanditiis enim beatae,
             accusamus harum ipsa ipsum perspiciatis consequatur autem.</p>
         </div>
@@ -87,16 +87,23 @@
     <h2 class="section__title">Projects</h2>
     <div class="wrapper wrapper--forSection">
       <div class="col__2cols">
-        <div class="col__col50 col__col50--justifyCenter col__col50--blueBackgroundAfter">
+        <div class="col__col50 col__col50--justifyCenter col__col50--blueBackgroundBefore">
           <h3 class="text-modifications__h3 text-modifications__h3--ForProjectSection">Projects I did by myself</h3>
           <p class="text-modifications__p text-modifications__p--ForProjectSectionM">Hover over the pictures to learn more</p>
           <p class="text-modifications__p text-modifications__p--ForProjectSectionS">Click on the pictures to learn more</p>
         </div>
         <div class="col__col50">
           <div class="projects">
-            <div class="projects__item"><a class="projects__link" href="">LEARN MORE</a></div>
-            <div class="projects__item"><a class="projects__link" href="">LEARN MORE</a></div>
-            <div class="projects__item"><a class="projects__link" href="">LEARN MORE</a></div>
+            <div class="projects__item"><a class="projects__link" data-match=".projects__popUp--travel" href="">LEARN MORE</a></div>
+            <div class="projects__item"><a class="projects__link" data-match=".projects__popUp--gym" href="">LEARN MORE</a></div>
+            <div class="projects__item"><a class="projects__link" data-match=".projects__popUp--animalia" href="">LEARN MORE</a></div>
+
+            <div class="projects__popUp">
+              <span class="projects__popUp__X">X</span>
+              <span class="projects__popUp--travel">About travel</span>
+              <span class="projects__popUp--gym">About gym</span>
+              <span class="projects__popUp--animalia">About animalia</span>
+            </div>
           </div>
         </div>
       </div>

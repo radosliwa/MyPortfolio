@@ -20,7 +20,7 @@
     animation: move 3s ease-out infinite;
 
     /*  */
-    @supports (-ms-high-contrast: none) {
+    @mixin supportsNot {
       left: 50%;
       transform: translateX(-50%);
     }
@@ -68,7 +68,7 @@
     white-space: nowrap;
     animation: pulse 2s linear alternate infinite;
 
-    @supports not (-ms-high-contrast: none) {
+    @mixin supportsNot {
       margin-top: 0;
       position: absolute;
       top: -135%;

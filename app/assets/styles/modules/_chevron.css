@@ -1,60 +1,35 @@
 .chevron {
   position: relative;
   background-color: #2d4f68;
+
   &:after, &:before {
     position: absolute;
     content: "";
     background-color: rgba(0, 0, 0, 0);
     height: 70px;
     width: 120px;
+
     @mixin atSmall {
       background-color: #FFF;
       top: -15.5%;
     }
+
     @mixin atMedium {
       top: -13%;
     }
+
     @mixin atLarge {
       top: -9%;
     }
   }
+
   &:after {
     left: 50%;
     transform: skew(0, -22deg);
   }
+
   &:before {
     right: 50%;
     transform: skew(0, 22deg);
   }
-  /* &--TurnAround {
-    height: 100vh;
-    &:after, &:before {
-      position: absolute;
-      content: "";
-      background-color: rgba(0, 0, 0, 0);
-      height: 70px;
-      width: 120px;
-      @mixin atSmall {
-        background-color: #FFF;
-        top: 78vh;
-      }
-      @mixin atMedium {
-        top: 75vh;
-      }
-      @mixin atMediumXL {
-        top: 73%;
-      }
-      @mixin atLarge {
-        top: 71%;
-      }
-    }
-    &:after {
-      left: 50%;
-      transform: skew(0, 22deg);
-    }
-    &:before {
-      right: 50%;
-      transform: skew(0, -22deg);
-    }
-  } */
 }

@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+
     /* align-items: center; */
     /*with this picture wouldnt reach the bottom
     of the section*/
@@ -12,66 +13,79 @@
       justify-content: space-between;
       flex-direction: row;
     }
+
     &--whiteFont {
       color: #FFF;
     }
   }
+
   &__col100 {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-flow: column;
+
     @mixin atMedium {
       flex-flow: row;
     }
   }
+
   &__col50 {
     height: auto;
     display: flex;
     justify-content: space-around;
     flex-flow: column;
+
     @mixin atMedium {
       width: 50%;
     }
+
     &--justifyCenter {
       justify-content: center;
     }
+
     &--justifyFlexEnd {
       justify-content: flex-end;
     }
-    &--blueBackgroundAfter {
-      @mixin atMedium {
-        position: relative;
-        color: #FFF;
-        background-color: #2d4f68;
-        z-index: -2;
-        &:after {
-          z-index: -1;
-          position: absolute;
-          content: "";
-          background-color: #FFF;
-          color: #000;
-          height: 1000px;
-          width: 1000px;
-          top: 6%;
-          bottom: 0;
-          left: 37%;
-          transform: rotate(23deg);
-          @mixin atMediumXL {
-            top: 0;
-            bottom: 0;
-            left: 55%;
-            transform: rotate(23deg);
-          }
-        }
-      }
-    }
+
     &--blueBackgroundBefore {
       @mixin atMedium {
         position: relative;
         color: #FFF;
         background-color: #2d4f68;
         z-index: -2;
+
+        &:before {
+          z-index: -1;
+          position: absolute;
+          content: "";
+          background-color: #FFF;
+          color: #000;
+          height: 1000px;
+          width: 1500px;
+          /*works better in IE*/
+          top: 23%;
+          bottom: 0;
+          left: 40%;
+          transform: rotate(23deg);
+
+          @mixin atLarge {
+            top: 22%;
+            bottom: 10%;
+            left: 47%;
+            transform: rotate(23deg);
+          }
+        }
+      }
+    }
+
+    &--blueBackgroundAfter {
+      @mixin atMedium {
+        position: relative;
+        color: #FFF;
+        background-color: #2d4f68;
+        z-index: -2;
+
         &:before {
           z-index: -1;
           position: absolute;
@@ -80,44 +94,51 @@
           color: #000;
           height: 1000px;
           width: 1000px;
-          top: -76%;
+          top: -176%;
           bottom: 0;
           right: 63%;
           transform: rotate(23deg);
+
           @mixin atMediumXL {
-            top: -72%;
-            bottom: 0;
+            /* top: -72%;
+            bottom: 0; */
             right: 65%;
             transform: rotate(23deg);
           }
+
           @mixin atLarge {
-            top: -113%;
+            top: -162%;
             bottom: 0;
-            right: 65%;
+            right: 60%;
           }
         }
       }
     }
   }
+
   &__skewed:first-child {
     color: inherit;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+
     @mixin atSmall {
       background: url('../../assets/img/background-contact.jpg') no-repeat bottom center;
       background-size: cover;
     }
+
     @mixin atMedium {
       border-top-right-radius: 70%;
       border-bottom-right-radius: 0%;
       width: 50%;
     }
+
     h3, p {
       max-width: 75%;
     }
   }
+
   &__skewed:last-child {
     @mixin atMedium {
       width: 50%;
