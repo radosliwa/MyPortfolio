@@ -3,7 +3,7 @@
   transition: all .9s;
   /*for Reveal on scroll */
   padding-top: 2%;
-  overflow: hidden;
+  overflow: visible;
   margin-top: 10%;
 
   @mixin atMedium {

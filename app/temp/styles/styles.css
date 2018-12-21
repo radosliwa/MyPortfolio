@@ -482,7 +482,7 @@ select { /* 1 */
   transition: all .9s;
   /*for Reveal on scroll */
   padding-top: 2%;
-  overflow: hidden;
+  overflow: visible;
   margin-top: 10%;
 }@media(min-width: 768px) {.section {
     margin-top: 6%
@@ -1082,12 +1082,24 @@ select { /* 1 */
   }.projects__popUp {
     position: absolute;
     z-index: 99;
-    max-width: 50%;
+    left: 35%;
+    /* max-width: 40vw; */
+    height: 100vh;
     color: #FFF;
     background: -o-radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
     background: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
     display: none;
-  }.projects .visible {
+  }.projects__description {
+    display: none;
+    font-size: calc(16px + 4 * ((100vw - 420px) / 860));
+    line-height: 50px;
+  }@media screen and (min-width: 1280px){.projects__description{
+    font-size: 20px;
+  }
+}@media screen and (max-width: 420px){.projects__description{
+    font-size: 16px;
+  }
+}.projects .visible {
     display: block;
   }.projects .visible.animated {
       -webkit-animation-duration: .7s;
@@ -1096,7 +1108,6 @@ select { /* 1 */
               animation-timing-function: ease-out;
     }.projects__X {
     display: block;
-    width: 100%;
   }.projects__X:hover {
       color: rgba(40, 128, 160, 0.99);
     }.chevron {

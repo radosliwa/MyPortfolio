@@ -89,10 +89,20 @@
   &__popUp {
     position: absolute;
     z-index: 99;
-    max-width: 50%;
+    left: 35%;
+    /* max-width: 40vw; */
+    height: 100vh;
     color: #FFF;
     background: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
     display: none;
+  }
+
+  &__description {
+    display: none;
+    font-size: responsive;
+    min-font-size: 16px;
+    max-font-size: 20px;
+    line-height: 50px;
   }
 
   .visible {
@@ -106,7 +116,6 @@
 
   &__X {
     display: block;
-    width: 100%;
 
     &:hover {
       color: $mainAquamarine;

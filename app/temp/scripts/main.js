@@ -10455,15 +10455,21 @@ new __WEBPACK_IMPORTED_MODULE_1__modules_revealOnScroll__["a" /* default */](__W
 new __WEBPACK_IMPORTED_MODULE_3__modules_stickyNav__["a" /* default */]();
 __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".projects__link").on('click', function (e) {
   e.preventDefault();
-  var dataMatch = this.getAttribute('data-match');
-  var descr = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".projects__popUp").find(dataMatch).get(0);
-  __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".projects__popUp").addClass('visible animated bounceInLeft'); // console.log(e);
-  // console.log(e.target);
-  // console.log(this);
-  // console.log(e.childNodes);
+  var dataMatch = e.target.getAttribute('data-match');
+  var descr = document.getElementById(dataMatch).id; // console.log(descr);
 
-  console.log(dataMatch);
-  console.log(descr);
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".projects__popUp").addClass('visible animated bounceInLeft');
+
+  if (dataMatch === descr) {
+    descr = "#" + descr;
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default()(descr).addClass('visible');
+  } // console.log(dataMatch);
+  // console.log(e);
+
+
+  console.log(e.target); // console.log(e.target.classList.value);
+  // console.log(this);
+  // console.log(descr);
 });
 __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.projects__popUp__X').on('click', function () {
   __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".projects__popUp").removeClass('visible animated bounceInLeft');
