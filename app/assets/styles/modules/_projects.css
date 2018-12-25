@@ -1,5 +1,4 @@
 .projects {
-  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,10 +87,13 @@
 
   &__popUp {
     position: absolute;
-    z-index: 99;
-    left: 35%;
+    z-index: 100;
     /* max-width: 40vw; */
-    height: 100vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70vh;
     color: #FFF;
     background: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
     display: none;

@@ -2,35 +2,42 @@
 
   /*--------------------------SITE-HEADER SECTION*/
   &__item1, &__item2, &__item3 {
+    font-size: responsive;
+    min-font-size: 33px;
+    max-font-size: 36px;
     position: absolute;
     width: 65%;
     transform: translate(-50%, -10%);
     left: 50%;
-    font-size: responsive;
-    min-font-size: 28px;
-    max-font-size: 30px;
     color: #FFF;
-    text-align: center;
+    /* text-align: center; */
     animation: 9s ease-out infinite;
 
-    @mixin atUltraSmall {
+    @mixin notIEetCons {
+      animation: 9s ease-out infinite;
       font-size: responsive;
-      min-font-size: 32px;
-      max-font-size: 45px;
-    }
+      min-font-size: 28px;
+      max-font-size: 30px;
 
-    @mixin atSmallHorizontal {
-      padding-top: 5%;
-      font-size: responsive;
-      min-font-size: 30px;
-      max-font-size: 40px;
-      width: 100%;
-    }
+      @mixin atUltraSmall {
+        font-size: responsive;
+        min-font-size: 32px;
+        max-font-size: 45px;
+      }
 
-    @mixin atMediumXL {
-      font-size: responsive;
-      min-font-size: 35px;
-      max-font-size: 55px;
+      @mixin atSmallHorizontal {
+        padding-top: 5%;
+        font-size: responsive;
+        min-font-size: 30px;
+        max-font-size: 40px;
+        width: 100%;
+      }
+
+      @mixin atMediumXL {
+        font-size: responsive;
+        min-font-size: 35px;
+        max-font-size: 55px;
+      }
     }
   }
 
@@ -44,6 +51,7 @@
 
   &__item3 {
     animation-name: anim3;
+    display: block;
   }
 
   &__h3 {
@@ -162,11 +170,11 @@
   }
 
   94% {
-    left: 48%;
+    left: 46%;
   }
 
-  100% {
-    opacity: 0;
+  98%, 100% {
     left: 110%;
+    opacity: 0;
   }
 }

@@ -15,7 +15,8 @@
   }
 
   &__myPicture {
-    max-width: 350px;
+    display: block;
+    max-width: 250px;
     position: relative;
     border: 2px solid $mainAquamarine;
     border-radius: 50%;
@@ -27,6 +28,10 @@
     align-items: center;
     /*to center picture in the circle and avoid stretching*/
     top: -10%;
+
+    @mixin notIEetCons {
+      max-width: 350px;
+    }
   }
 
   &__text {

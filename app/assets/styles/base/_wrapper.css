@@ -1,11 +1,13 @@
 .wrapper {
   /* overflow: hidden; */
   text-align: center;
+
   &--forNav {
     max-width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+
     /* flex is for keeping hamburger menu on ther right while
     links are hidden with opacity:0 without using absolute*/
     @mixin atMedium {
@@ -14,5 +16,8 @@
       margin-right: 10%;
     }
   }
-  &--forSection {}
+
+  &--forSection {
+    position: relative;
+  }
 }

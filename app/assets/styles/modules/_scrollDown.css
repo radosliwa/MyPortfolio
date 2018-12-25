@@ -1,32 +1,38 @@
 .scrollDown {
   position: relative;
+  width: 15%;
+  height: 15%;
+  top: -5%;
   /*in order for the absolute below to work*/
-  display: flex;
-  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
   color: #FFF;
-  max-width: 5%;
-  height: 5%;
-  margin: 0 auto;
   z-index: 100;
+
+  @mixin notIEetCons {
+    display: flex;
+    justify-content: center;
+    width: 5%;
+    height: auto;
+  }
 
   &__item {
     position: absolute;
-    top: -70%;
     width: 28px;
     height: 4px;
     opacity: 0;
-    /*  */
     transform: scale3d(0.5, 0.5, 0.5);
     animation: move 3s ease-out infinite;
-
-    /*  */
-    @mixin supportsNot {
-      left: 50%;
-      transform: translateX(-50%);
-    }
+    top: 1.5vh;
 
     @mixin atSmallHorizontal {
-      top: -222%;
+      top: -8vh;
+    }
+
+    @mixin forIEetCons {
+      top: 22%;
+      left: 45%;
+      transform: translate(-45%, -50%);
     }
 
     &:before, &:after {
@@ -60,39 +66,43 @@
   }
 
   &__text {
-    display: block;
-    margin-top: -80%;
     font-size: responsive;
-    min-font-size: 17px;
-    max-font-size: 23px;
+    min-font-size: 15px;
+    max-font-size: 20px;
+    display: block;
     white-space: nowrap;
+    text-align: center;
+    /* margin-left: auto;
+    margin-right: auto; */
     animation: pulse 2s linear alternate infinite;
 
-    @mixin supportsNot {
-      margin-top: 0;
-      position: absolute;
-      top: -135%;
-    }
-
-    @mixin atSmall {
-      top: -59%;
-      opacity: 1;
-    }
-
-    @mixin atSmallHorizontal {
-      top: -185%;
+    @mixin notIEetCons {
       font-size: responsive;
-      min-font-size: 10px;
-      max-font-size: 22px;
-      opacity: 0;
-    }
+      min-font-size: 17px;
+      max-font-size: 23px;
 
-    @mixin atMedium {
-      top: -70%;
-    }
+      @mixin atSmall {
+        /* top: -59%; */
+        opacity: 1;
+      }
 
-    @mixin atLarge {
-      top: -100%;
+      @mixin atSmallHorizontal {
+        /* top: -185%; */
+        font-size: responsive;
+        min-font-size: 10px;
+        max-font-size: 22px;
+        opacity: 0;
+        display: none;
+      }
+
+      @mixin atMedium {
+        display: block;
+        /* top: -70%; */
+      }
+
+      @mixin atLarge {
+        /* top: -100%; */
+      }
     }
   }
 }

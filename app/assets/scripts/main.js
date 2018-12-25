@@ -7,12 +7,15 @@ new MobileMenu();//
 new RevealOnScroll($('.section'), "50%");
 new StickyNav();
 
-$(".projects__link").on('click', function(e){
+const $projectsLink = $('.projects__link');
+const $projectsPopUp = $('.projects__popUp');
+
+$projectsLink.on('click', function(e){
   e.preventDefault();
   let dataMatch = e.target.getAttribute('data-match');
   let descr = document.getElementById(dataMatch).id;
   // console.log(descr);
-  $(".projects__popUp").addClass('visible animated bounceInLeft');
+  $projectsPopUp.addClass('visible animated bounceInLeft');
   if(dataMatch===descr){
     descr = "#" + descr;
     $(descr).addClass('visible');
@@ -24,7 +27,7 @@ $(".projects__link").on('click', function(e){
 
 
 // console.log(e);
-console.log(e.target);
+console.log(e.target.getAttribute('class'));
 // console.log(e.target.classList.value);
 // console.log(this);
 
