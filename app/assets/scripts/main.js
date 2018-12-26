@@ -8,33 +8,28 @@ new RevealOnScroll($('.section'), "50%");
 new StickyNav();
 
 const $projectsLink = $('.projects__link');
-const $projectsPopUp = $('.projects__popUp');
+const $PopUp = $('.popUp');
+const $PopUpX = document.querySelector('.popUp__X').classList.value;
+const $ProjectDescription = $('.popUp__projectDescription');
 
 $projectsLink.on('click', function(e){
+  $ProjectDescription.removeClass('popUp__projectDescription--visible');
   e.preventDefault();
   let dataMatch = e.target.getAttribute('data-match');
-  let descr = document.getElementById(dataMatch).id;
-  // console.log(descr);
-  $projectsPopUp.addClass('visible animated bounceInLeft');
-  if(dataMatch===descr){
-    descr = "#" + descr;
-    $(descr).addClass('visible');
+  // console.log(dataMatch);
+  let descrId = document.getElementById(dataMatch).id;
 
+  $PopUp.addClass('popUp--visible');
+  if(dataMatch===descrId){
+    descrId = "#" + descrId;
+    $(descrId).addClass('popUp__projectDescription--visible');
+  }
+})
+
+$PopUp.on('click', function(e){
+  // console.log(e.target.getAttribute('class'));
+  if(e.target.getAttribute('class')===$PopUpX){
+    $PopUp.removeClass('popUp--visible');
 
   }
-  // console.log(dataMatch);
-
-
-
-// console.log(e);
-console.log(e.target.getAttribute('class'));
-// console.log(e.target.classList.value);
-// console.log(this);
-
-// console.log(descr);
-
-})
-  $('.projects__popUp__X').on('click', function(){
-    $(".projects__popUp").removeClass('visible animated bounceInLeft');
-
   })

@@ -1,4 +1,5 @@
 .section {
+  position: relative;
   /* height: auto; */
   transition: all .9s;
   /*for Reveal on scroll */
@@ -16,7 +17,7 @@
 
   &__title {
     position: relative;
-    z-index: 2;
+    z-index: 99;
     /*chevron was overlapping*/
     display: flex;
     justify-content: center;

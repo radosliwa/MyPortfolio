@@ -3,8 +3,8 @@
   /*--------------------------SITE-HEADER SECTION*/
   &__item1, &__item2, &__item3 {
     font-size: responsive;
-    min-font-size: 33px;
-    max-font-size: 36px;
+    min-font-size: 48px;
+    max-font-size: 50px;
     position: absolute;
     width: 65%;
     transform: translate(-50%, -10%);
@@ -95,6 +95,10 @@
         text-shadow: 2px 2px 1px #2d4f68;
         display: none;
       }
+    }
+
+    &--forPopUpProjectDescription {
+      font-size: 17px;
     }
   }
 

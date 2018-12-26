@@ -60,18 +60,18 @@
           content: "";
           background-color: #FFF;
           color: #000;
-          height: 1000px;
-          width: 1500px;
+          height: 2000px;
+          width: 2500px;
           /*works better in IE*/
           top: 23%;
           bottom: 0;
-          left: 40%;
+          left: -3%;
           transform: rotate(23deg);
 
           @mixin atLarge {
             top: 22%;
             bottom: 10%;
-            left: 47%;
+            left: 13%;
             transform: rotate(23deg);
           }
         }
@@ -91,11 +91,11 @@
           content: "";
           background-color: #FFF;
           color: #000;
-          height: 1000px;
+          height: 2000px;
           width: 1000px;
           top: -176%;
           bottom: 0;
-          right: 63%;
+          right: 93%;
           transform: rotate(23deg);
 
           @mixin atMediumXL {
@@ -108,7 +108,7 @@
           @mixin atLarge {
             top: -162%;
             bottom: 0;
-            right: 60%;
+            right: 90%;
           }
         }
       }

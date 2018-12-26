@@ -10454,27 +10454,27 @@ new __WEBPACK_IMPORTED_MODULE_2__modules_mobileMenu_js__["a" /* default */](); /
 new __WEBPACK_IMPORTED_MODULE_1__modules_revealOnScroll__["a" /* default */](__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.section'), "50%");
 new __WEBPACK_IMPORTED_MODULE_3__modules_stickyNav__["a" /* default */]();
 var $projectsLink = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.projects__link');
-var $projectsPopUp = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.projects__popUp');
+var $PopUp = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.popUp');
+var $PopUpX = document.querySelector('.popUp__X').classList.value;
+var $ProjectDescription = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.popUp__projectDescription');
 $projectsLink.on('click', function (e) {
+  $ProjectDescription.removeClass('popUp__projectDescription--visible');
   e.preventDefault();
-  var dataMatch = e.target.getAttribute('data-match');
-  var descr = document.getElementById(dataMatch).id; // console.log(descr);
+  var dataMatch = e.target.getAttribute('data-match'); // console.log(dataMatch);
 
-  $projectsPopUp.addClass('visible animated bounceInLeft');
+  var descrId = document.getElementById(dataMatch).id;
+  $PopUp.addClass('popUp--visible');
 
-  if (dataMatch === descr) {
-    descr = "#" + descr;
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default()(descr).addClass('visible');
-  } // console.log(dataMatch);
-  // console.log(e);
-
-
-  console.log(e.target.getAttribute('class')); // console.log(e.target.classList.value);
-  // console.log(this);
-  // console.log(descr);
+  if (dataMatch === descrId) {
+    descrId = "#" + descrId;
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default()(descrId).addClass('popUp__projectDescription--visible');
+  }
 });
-__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.projects__popUp__X').on('click', function () {
-  __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".projects__popUp").removeClass('visible animated bounceInLeft');
+$PopUp.on('click', function (e) {
+  // console.log(e.target.getAttribute('class'));
+  if (e.target.getAttribute('class') === $PopUpX) {
+    $PopUp.removeClass('popUp--visible');
+  }
 });
 
 /***/ }),
