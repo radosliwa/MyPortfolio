@@ -4,17 +4,26 @@
   align-items: center;
   flex-flow: row wrap;
 
+  @mixin atMedium {
+    flex-direction: row;
+  }
+
   &__item {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    min-height: 240px;
-    min-width: 240px;
     background-color: grey;
     margin: 3% 1%;
+    /* max-width: 25%;
+    max-height: 25%; */
+    min-height: 200px;
+    min-width: 200px;
+
+    @supports not (-ms-high-contrast: none) {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
 
     @mixin atMedium {
-      margin: 2% 3%;
+      margin: 2%;
 
       &:hover {
         overflow: hidden;
@@ -50,16 +59,23 @@
   &__link {
     position: relative;
     display: inline-block;
-    padding: 6% 4% 1% 4%;
+    padding: 8px;
     color: #FFF;
     background-image: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
     transition: opacity .6s ease-out;
     width: 100%;
-    min-height: 60px;
+    /* min-height: 60px; */
     margin-top: 79%;
+    font-size: responsive;
+    min-font-size: 16px;
+    max-font-size: 18px;
 
     @mixin atMedium {
       opacity: 0;
+      padding: 12px;
+      font-size: responsive;
+      min-font-size: 20px;
+      max-font-size: 22px;
     }
 
     &:before {
@@ -73,7 +89,7 @@
       top: 50%;
       transform: translateY(-50%);
       top: -3%;
-      transition: transform .3s ease-in;
+      transition: transform .5s ease-in;
 
       @mixin atMedium {
         transform: scaleX(0);
