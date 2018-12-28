@@ -98,7 +98,19 @@
     }
 
     &--forPopUpProjectDescription {
-      font-size: 17px;
+      font-size: responsive;
+      min-font-size: 16px;
+      max-font-size: 22px;
+
+      @mixin notIEetCons {
+        font-size: 17px;
+      }
+
+      @mixin atMedium {
+        font-size: responsive;
+        min-font-size: 22px;
+        max-font-size: 27px;
+      }
     }
   }
 

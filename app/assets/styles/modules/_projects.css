@@ -1,16 +1,16 @@
 .projects {
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-flow: row wrap;
+  flex-flow: column;
 
-  @mixin atMedium {
-    flex-direction: row;
+  @mixin atSmallXL {
+    flex-flow: row wrap;
+    justify-content: center;
   }
 
   &__item {
     background-color: grey;
-    margin: 3% 1%;
+    margin: 1.5% 1%;
     /* max-width: 25%;
     max-height: 25%; */
     min-height: 200px;
@@ -22,8 +22,14 @@
       align-items: flex-end;
     }
 
+    @mixin atSmallXL {
+      margin: 1%;
+    }
+
     @mixin atMedium {
       margin: 2%;
+      min-height: 250px;
+      min-width: 250px;
 
       &:hover {
         overflow: hidden;
@@ -59,7 +65,7 @@
   &__link {
     position: relative;
     display: inline-block;
-    padding: 8px;
+    padding: 15px;
     color: #FFF;
     background-image: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
     transition: opacity .6s ease-out;
@@ -74,8 +80,8 @@
       opacity: 0;
       padding: 12px;
       font-size: responsive;
-      min-font-size: 20px;
-      max-font-size: 22px;
+      min-font-size: 24px;
+      max-font-size: 27px;
     }
 
     &:before {

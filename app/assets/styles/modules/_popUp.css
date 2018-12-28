@@ -6,7 +6,7 @@
   bottom: 2%;
   left: 2%;
   right: 2%;
-  max-height: calc(100vh - 210px);
+  max-height: calc(100vh - 110px);
   overflow-y: auto;
   /*to make popUp scrollable*/
   color: #FFF;
@@ -15,20 +15,44 @@
   transform: scale(1.3);
   transition: all .5s ease-out;
 
-  @mixin atMedium {}
+  @mixin atSmallHorizontal {
+    max-height: 100vh;
+  }
 
   &__projectDescription {
     display: none;
-    font-size: responsive;
-    min-font-size: 16px;
-    max-font-size: 20px;
+    text-align: center;
     line-height: 50px;
 
     &--visible {
       display: flex;
       justify-content: center;
-      flex-direction: column;
       align-items: center;
+      flex-flow: column;
+
+      @mixin atMedium {
+        padding: 2%;
+        /*adds bottom space when "visit" turns
+        into a button*/
+      }
+
+      @mixin atMediumXL {
+        display: block;
+
+        &>* {
+          float: left;
+        }
+
+        h3 {
+          margin-left: 65%;
+          margin-top: -572px;
+        }
+
+        p {
+          margin-top: -472px;
+          margin-left: 52%;
+        }
+      }
     }
   }
 
@@ -40,7 +64,10 @@
 
   &__X {
     display: block;
+    width: 100%;
     padding: 1% 0 1% 0;
+    margin-bottom: 4%;
+    cursor: pointer;
     transition: transform .3s linear;
 
     &:hover {
@@ -50,9 +77,40 @@
   }
 
   &__projectPicture {
-    display: block;
-    width: 200px;
+    width: 250px;
     height: 200px;
+
+    @mixin atMediumXL {
+      width: 50%;
+      height: 580px;
+    }
+
+    img {
+      width: 500px;
+      height: 580px;
+      border: 3px solid #000;
+    }
+  }
+
+  &__projectLink {
+    transition: all .8s ease-out;
     background-color: #000;
+    width: 100%;
+
+    &:hover {
+      color: $mainAquamarine;
+      border: 2px solid #000;
+    }
+
+    @mixin atMediumXL {
+      width: 15%;
+      border: 2px solid $mainAquamarine;
+      border-radius: 40%;
+      padding: .3% 1%;
+      position: absolute;
+      bottom: 2%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }

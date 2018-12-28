@@ -10455,7 +10455,7 @@ new __WEBPACK_IMPORTED_MODULE_1__modules_revealOnScroll__["a" /* default */](__W
 new __WEBPACK_IMPORTED_MODULE_3__modules_stickyNav__["a" /* default */]();
 var $projectsLink = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.projects__link');
 var $PopUp = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.popUp');
-var $PopUpX = document.querySelector('.popUp__X').classList.value;
+var $PopUpX = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.popUp__X');
 var $ProjectDescription = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.popUp__projectDescription');
 $projectsLink.on('click', function (e) {
   $ProjectDescription.removeClass('popUp__projectDescription--visible');
@@ -10470,11 +10470,9 @@ $projectsLink.on('click', function (e) {
     __WEBPACK_IMPORTED_MODULE_0_jquery___default()(descrId).addClass('popUp__projectDescription--visible');
   }
 });
-$PopUp.on('click', function (e) {
-  // console.log(e.target.getAttribute('class'));
-  if (e.target.getAttribute('class') === $PopUpX) {
-    $PopUp.removeClass('popUp--visible');
-  }
+$PopUp.on('click', ".popUp__X", function () {
+  console.log(this);
+  $PopUp.removeClass('popUp--visible');
 });
 
 /***/ }),
