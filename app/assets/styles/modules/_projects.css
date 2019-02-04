@@ -9,17 +9,36 @@
   }
 
   &__item {
+    position: relative;
     background-color: grey;
     margin: 1.5% 1%;
-    /* max-width: 25%;
-    max-height: 25%; */
-    min-height: 200px;
-    min-width: 200px;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid rgba(40, 128, 160, 0.99);
 
     @supports not (-ms-high-contrast: none) {
       display: flex;
       justify-content: center;
       align-items: flex-end;
+    }
+
+    &:nth-child(1) {
+      background: url('../../assets/img/travel-agency.jpg') center no-repeat;
+      background-size: cover;
+      background-color: grey;
+    }
+
+    &:nth-child(2) {
+      background: url('../../assets/img/animalia-app.jpg') center no-repeat;
+      background-size: cover;
+      background-color: grey;
+    }
+
+    &:nth-child(3) {
+      background: url('../../assets/img/gym-page.jpg') center no-repeat;
+      background-size: cover;
+      background-color: grey;
     }
 
     @mixin atSmallXL {
@@ -28,8 +47,8 @@
 
     @mixin atMedium {
       margin: 2%;
-      min-height: 250px;
-      min-width: 250px;
+      width: 250px;
+      height: 250px;
 
       &:hover {
         overflow: hidden;
@@ -62,6 +81,10 @@
     }
   }
 
+  &__projectPicture {
+    display: none;
+  }
+
   &__link {
     position: relative;
     display: inline-block;
@@ -70,7 +93,6 @@
     background-image: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
     transition: opacity .6s ease-out;
     width: 100%;
-    /* min-height: 60px; */
     margin-top: 79%;
     font-size: responsive;
     min-font-size: 16px;

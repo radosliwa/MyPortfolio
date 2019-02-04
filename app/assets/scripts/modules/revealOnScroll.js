@@ -4,13 +4,13 @@ import smoothScroll from 'jquery-smooth-scroll';
 
 const $mainNavMenu = $('.main-nav__menu');
 const $hamburger = $('.main-nav__menuMobileIcon');
-const $navLinks = $('.main-nav__menu a');
+const $navLinks = $mainNavMenu.find('a');
 const $h3ForProjectSection = $(".text-modifications__h3--ForProjectSection");
 const $pForProjectSection = $(".text-modifications__p--ForProjectSectionM");
 const $textModifications__spanTechnology = $(".text-modifications__span--technology");
 
-export default class RevealOnScroll{
-  constructor(el, offset){
+export default class RevealOnScroll {
+  constructor(el, offset) {
     this.itemsToReveal = el;
     this.hide();
     this.wayPoints(offset);
@@ -19,13 +19,13 @@ export default class RevealOnScroll{
 
   }
 
-  hide(){
-  this.itemsToReveal.addClass('revealItem');
+  hide() {
+    this.itemsToReveal.addClass('revealItem');
   }
 
-  wayPoints(offset){
+  wayPoints(offset) {
     let that = this;
-    this.itemsToReveal.each(function(){
+    this.itemsToReveal.each(function() {
       let current = this;
       let allSectionTitles = $('.section__title');
       let sectionTitle = $(current).find('.section__title');
@@ -36,69 +36,75 @@ export default class RevealOnScroll{
           let p = $(current).find($pForProjectSection);
           let h3 = $(current).find($h3ForProjectSection);
 
-            $(current).addClass('revealItem--is-visible');
+          $(current).addClass('revealItem--is-visible');
+          p.addClass('animated bounceInLeft');
+          h3.addClass('animated bounceInLeft');
+          if ($('#about').hasClass('revealItem--is-visible')) {
+            console.log('working');
             that.technologies();
-            p.addClass('animated bounceInLeft');
-            h3.addClass('animated bounceInLeft');
 
+          }
 
-      },
+        },
         offset: offset
       });
 
     });
   }
-    technologies(){
-      for (let i = 0; i < $textModifications__spanTechnology.length; i++) {
-          let check = document.querySelectorAll(".text-modifications__span--technology");
-          $(check).eq(i).css('animation-delay', i/6 + 's').addClass('animated flipInX');
+  technologies() {
 
+    for (let i = 0; i < $textModifications__spanTechnology.length; i++) {
+      let check = document.querySelectorAll(".text-modifications__span--technology");
+      $(check).eq(i).css('animation-delay', (i + 1) / 3 + 's').addClass('animated flipInX');
+
+    }
   }
-    }
 
-    lineThrough(){
-      this.itemsToReveal.each(function(){
-        let current = this;
-        let allSectionTitles = $('.section__title');
-        let sectionTitle = $(current).find('.section__title');
-        let linkHighlight = current.getAttribute('data-match');
+  lineThrough() {
+    this.itemsToReveal.each(function() {
+      let current = this;
+      let allSectionTitles = $('.section__title');
+      let sectionTitle = $(current).find('.section__title');
+      let linkHighlight = current.getAttribute('data-match');
+      $navLinks.removeClass('is--current-link');
+      new Waypoint({
+        element: current,
+        handler: function(direction) {
+          if (direction === "down") {
             $navLinks.removeClass('is--current-link');
-          new Waypoint({
-            element: current,
-            handler: function(direction) {
-              if(direction === "down"){
-                $navLinks.removeClass('is--current-link');
-                $(linkHighlight).addClass('is--current-link');
-              $(allSectionTitles).removeClass('section__title--lineThrough');
-              $(sectionTitle).addClass('section__title--lineThrough');
-              // alert('top');
-            }
-            },
-            offset: "55%"
-          });
-
-          new Waypoint({
-            element: current,
-            handler: function(direction) {
-              if(direction === "up"){
-                $navLinks.removeClass('is--current-link');
-                $(linkHighlight).addClass('is--current-link');
-                $(allSectionTitles).removeClass('section__title--lineThrough');
-                $(sectionTitle).addClass('section__title--lineThrough');
-              }
-            },
-            offset: 0
-          });
+            $(linkHighlight).addClass('is--current-link');
+            $(allSectionTitles).removeClass('section__title--lineThrough');
+            $(sectionTitle).addClass('section__title--lineThrough');
+            // alert('top');
+          }
+        },
+        offset: "55%"
       });
-    }
 
-    smoothScroll(){
-      $navLinks.smoothScroll({offset:-100});
-      $navLinks.click(function(){
-        $mainNavMenu.removeClass('main-nav__menu--is-visible');
-        $hamburger.removeClass('main-nav__menuMobileIcon--close-x');
-      })
-      /*expanded mobilemenu doesnt cover section title */
-    }
+      new Waypoint({
+        element: current,
+        handler: function(direction) {
+          if (direction === "up") {
+            $navLinks.removeClass('is--current-link');
+            $(linkHighlight).addClass('is--current-link');
+            $(allSectionTitles).removeClass('section__title--lineThrough');
+            $(sectionTitle).addClass('section__title--lineThrough');
+          }
+        },
+        offset: "-15%"
+      });
+    });
+  }
+
+  smoothScroll() {
+    $navLinks.smoothScroll({
+      offset: -100
+    });
+    $navLinks.click(function() {
+      $mainNavMenu.removeClass('main-nav__menu--is-visible');
+      $hamburger.removeClass('main-nav__menuMobileIcon--close-x');
+    })
+    /*expanded mobilemenu doesnt cover section title */
+  }
 
 }

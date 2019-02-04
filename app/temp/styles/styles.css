@@ -361,21 +361,24 @@ select { /* 1 */
     }
   }.text-modifications__p--ForProjectSectionM {
       display: none;
+      text-shadow: 2px 2px 1px #2d4f68;
     }.text-modifications__p--ForProjectSectionM.animated {
         -webkit-animation-delay: .6s;
                 animation-delay: .6s;
-      }@media(min-width: 768px) {.text-modifications__p--ForProjectSectionM {
-        display: block;
-        text-shadow: 2px 2px 1px #2d4f68
+      }@media(min-width: 875px) {.text-modifications__p--ForProjectSectionM {
+        display: block
     }
   }.text-modifications__p--ForProjectSectionS {
       display: block;
     }@media(min-width: 768px) {.text-modifications__p--ForProjectSectionS {
-        text-shadow: 2px 2px 1px #2d4f68;
+        text-shadow: 2px 2px 1px #2d4f68
+    }
+  }@media(min-width: 875px) {.text-modifications__p--ForProjectSectionS {
         display: none
     }
   }.text-modifications__p--forPopUpProjectDescription {
       font-size: calc(16px + 6 * ((100vw - 420px) / 860));
+      padding: 0 2%;
     }@media screen and (min-width: 1280px){.text-modifications__p--forPopUpProjectDescription{
     font-size: 22px;
   }
@@ -386,7 +389,8 @@ select { /* 1 */
         font-size: 17px
     }
   }@media(min-width: 768px) {.text-modifications__p--forPopUpProjectDescription {
-        font-size: calc(22px + 5 * ((100vw - 420px) / 860))
+        font-size: calc(22px + 5 * ((100vw - 420px) / 860));
+        padding: 0 1%
     }@media screen and (min-width: 1280px){.text-modifications__p--forPopUpProjectDescription{
       font-size: 27px;
     }
@@ -1054,12 +1058,13 @@ select { /* 1 */
             justify-content: center
 }
   }.projects__item {
+    position: relative;
     background-color: grey;
     margin: 1.5% 1%;
-    /* max-width: 25%;
-    max-height: 25%; */
-    min-height: 200px;
-    min-width: 200px;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid rgba(40, 128, 160, 0.99);
   }@supports not (-ms-high-contrast: none) {.projects__item {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1071,13 +1076,25 @@ select { /* 1 */
           -ms-flex-align: end;
               align-items: flex-end
   }
+    }.projects__item:nth-child(1) {
+      background: url('../../assets/img/travel-agency.jpg') center no-repeat;
+      background-size: cover;
+      background-color: grey;
+    }.projects__item:nth-child(2) {
+      background: url('../../assets/img/animalia-app.jpg') center no-repeat;
+      background-size: cover;
+      background-color: grey;
+    }.projects__item:nth-child(3) {
+      background: url('../../assets/img/gym-page.jpg') center no-repeat;
+      background-size: cover;
+      background-color: grey;
     }@media(min-width: 600px) {.projects__item {
       margin: 1%
   }
   }@media(min-width: 768px) {.projects__item {
       margin: 2%;
-      min-height: 250px;
-      min-width: 250px
+      width: 250px;
+      height: 250px
   }
 
       .projects__item:hover {
@@ -1120,7 +1137,9 @@ select { /* 1 */
       transition: all .3s ease-out;
       -webkit-box-shadow: 3px 2px 1px #000;
               box-shadow: 3px 2px 1px #000;
-    }.projects__link {
+    }.projects__projectPicture {
+    display: none;
+  }.projects__link {
     position: relative;
     display: inline-block;
     padding: 15px;
@@ -1131,7 +1150,6 @@ select { /* 1 */
     -o-transition: opacity .6s ease-out;
     transition: opacity .6s ease-out;
     width: 100%;
-    /* min-height: 60px; */
     margin-top: 79%;
     font-size: calc(16px + 2 * ((100vw - 420px) / 860));
   }@media screen and (min-width: 1280px){.projects__link{
@@ -1435,7 +1453,7 @@ select { /* 1 */
         }
 
         .popUp__projectDescription--visible p {
-          margin-top: -472px;
+          margin-top: -510px;
           margin-left: 52%;
         }
   }.popUp--visible {
@@ -1447,8 +1465,7 @@ select { /* 1 */
   }.popUp__X {
     display: block;
     width: 100%;
-    padding: 1% 0 1% 0;
-    margin-bottom: 4%;
+    padding: 1.5% 0;
     cursor: pointer;
     -webkit-transition: -webkit-transform .3s linear;
     transition: -webkit-transform .3s linear;
@@ -1460,18 +1477,18 @@ select { /* 1 */
           -ms-transform: scale(1.3);
               transform: scale(1.3);
       color: rgba(40, 128, 160, 0.99);
-    }.popUp__projectPicture {
-    width: 250px;
-    height: 200px;
-  }@media(min-width: 875px) {.popUp__projectPicture {
-      width: 50%;
-      height: 580px
+    }@media(min-width: 875px) {.popUp__projectPicture {
+      width: 50%
   }
   }.popUp__projectPicture img {
-      width: 500px;
-      height: 580px;
+      display: inline-block;
+      max-width: 65%;
+      height: auto;
       border: 3px solid #000;
-    }.popUp__projectLink {
+    }@media(min-width: 875px) {.popUp__projectPicture img {
+        width: 100%
+    }
+  }.popUp__projectLink {
     -webkit-transition: all .8s ease-out;
     -o-transition: all .8s ease-out;
     transition: all .8s ease-out;

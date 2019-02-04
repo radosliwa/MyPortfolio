@@ -10460,8 +10460,7 @@ var $ProjectDescription = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.popUp
 $projectsLink.on('click', function (e) {
   $ProjectDescription.removeClass('popUp__projectDescription--visible');
   e.preventDefault();
-  var dataMatch = e.target.getAttribute('data-match'); // console.log(dataMatch);
-
+  var dataMatch = e.target.getAttribute('data-match');
   var descrId = document.getElementById(dataMatch).id;
   $PopUp.addClass('popUp--visible');
 
@@ -10498,7 +10497,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var $mainNavMenu = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.main-nav__menu');
 var $hamburger = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.main-nav__menuMobileIcon');
-var $navLinks = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.main-nav__menu a');
+var $navLinks = $mainNavMenu.find('a');
 var $h3ForProjectSection = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".text-modifications__h3--ForProjectSection");
 var $pForProjectSection = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".text-modifications__p--ForProjectSectionM");
 var $textModifications__spanTechnology = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".text-modifications__span--technology");
@@ -10535,9 +10534,13 @@ function () {
             var p = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(current).find($pForProjectSection);
             var h3 = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(current).find($h3ForProjectSection);
             __WEBPACK_IMPORTED_MODULE_0_jquery___default()(current).addClass('revealItem--is-visible');
-            that.technologies();
             p.addClass('animated bounceInLeft');
             h3.addClass('animated bounceInLeft');
+
+            if (__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#about').hasClass('revealItem--is-visible')) {
+              console.log('working');
+              that.technologies();
+            }
           },
           offset: offset
         });
@@ -10548,7 +10551,7 @@ function () {
     value: function technologies() {
       for (var i = 0; i < $textModifications__spanTechnology.length; i++) {
         var check = document.querySelectorAll(".text-modifications__span--technology");
-        __WEBPACK_IMPORTED_MODULE_0_jquery___default()(check).eq(i).css('animation-delay', i / 6 + 's').addClass('animated flipInX');
+        __WEBPACK_IMPORTED_MODULE_0_jquery___default()(check).eq(i).css('animation-delay', (i + 1) / 3 + 's').addClass('animated flipInX');
       }
     }
   }, {
@@ -10582,7 +10585,7 @@ function () {
               __WEBPACK_IMPORTED_MODULE_0_jquery___default()(sectionTitle).addClass('section__title--lineThrough');
             }
           },
-          offset: 0
+          offset: "-15%"
         });
       });
     }

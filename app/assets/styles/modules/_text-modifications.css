@@ -77,14 +77,14 @@
 
     &--ForProjectSectionM {
       display: none;
+      text-shadow: 2px 2px 1px #2d4f68;
 
       &.animated {
         animation-delay: .6s;
       }
 
-      @mixin atMedium {
+      @mixin atMediumXL {
         display: block;
-        text-shadow: 2px 2px 1px #2d4f68;
       }
     }
 
@@ -93,6 +93,9 @@
 
       @mixin atMedium {
         text-shadow: 2px 2px 1px #2d4f68;
+      }
+
+      @mixin atMediumXL {
         display: none;
       }
     }
@@ -101,6 +104,7 @@
       font-size: responsive;
       min-font-size: 16px;
       max-font-size: 22px;
+      padding: 0 2%;
 
       @mixin notIEetCons {
         font-size: 17px;
@@ -110,6 +114,7 @@
         font-size: responsive;
         min-font-size: 22px;
         max-font-size: 27px;
+        padding: 0 1%;
       }
     }
   }
