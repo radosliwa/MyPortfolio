@@ -122,10 +122,6 @@
   &__span {
     &--technology {
       padding: 3% 2%;
-
-      @mixin atMedium {
-        /* padding: 2% 0; */
-      }
     }
   }
 

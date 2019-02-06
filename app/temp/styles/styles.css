@@ -400,10 +400,7 @@ select { /* 1 */
   }
   }.text-modifications__span--technology {
       padding: 3% 2%;
-    }@media(min-width: 768px) {.text-modifications__span--technology {
-        /* padding: 2% 0; */
-    }
-  }.text-modifications__questionInContact {
+    }.text-modifications__questionInContact {
     padding: 3% 2%;
     /* margin-top: 10%; */
     font-weight: 600;
