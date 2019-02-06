@@ -67,6 +67,7 @@ export default class RevealOnScroll {
       let sectionTitle = $(current).find('.section__title');
       let linkHighlight = current.getAttribute('data-match');
       $navLinks.removeClass('is--current-link');
+
       new Waypoint({
         element: current,
         handler: function(direction) {

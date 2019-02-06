@@ -30,27 +30,19 @@
       align-items: center;
       flex-flow: column;
 
-      @mixin atMedium {
-        padding: 2%;
-        /*adds bottom space when "visit" turns
-        into a button*/
-      }
-
       @mixin atMediumXL {
+        padding: 2%;
         display: block;
 
+        /*adds bottom space when "visit" turns
+        into a button*/
         &>* {
           float: left;
+          width: 50%;
         }
 
         h3 {
-          margin-left: 65%;
-          margin-top: -572px;
-        }
-
-        p {
-          margin-top: -510px;
-          margin-left: 52%;
+          margin-top: 0;
         }
       }
     }
@@ -76,19 +68,15 @@
   }
 
   &__projectPicture {
-    @mixin atMediumXL {
-      width: 50%;
-    }
-
     img {
       display: inline-block;
-      max-width: 65%;
+      max-width: 50%;
       height: auto;
       border: 3px solid #000;
+    }
 
-      @mixin atMediumXL {
-        width: 100%;
-      }
+    @mixin atMediumXL {
+      max-width: 80%;
     }
   }
 
@@ -102,14 +90,22 @@
       border: 2px solid #000;
     }
 
+    @mixin atMedium {
+      a {
+        font-size: 22px;
+        vertical-align: middle;
+        padding: inherit;
+      }
+    }
+
     @mixin atMediumXL {
-      width: 15%;
+      width: 17%;
       border: 2px solid $mainAquamarine;
       border-radius: 40%;
-      padding: .3% 1%;
-      position: absolute;
-      bottom: 2%;
+      padding: .3% 1.5%;
+      position: relative;
       left: 50%;
+      /* top: 85%; */
       transform: translateX(-50%);
     }
   }

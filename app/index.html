@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="temp\styles\styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
+  <script src="/temp/scripts/vendor.js"></script>
 
 </head>
 
@@ -26,13 +26,13 @@
       </div>
     </div>
 
-    <img class="site-header__myPicture animated zoomIn" srcset="assets/img/myPicture_small.jpg 500w,
+    <img class="site-header__myPicture animated zoomIn lazyload" data-srcset="assets/img/myPicture_small.jpg 500w,
       assets/img/myPicture_medium.jpg 600w,
       assets/img/myPicture_large.jpg 700w" sizes="(max-height: 630px) and (min-width: 300px) 150px,(max-width:529px) 180px,
-      (max-width:1079px) 280px,(min-width:1080px) 330px,
+      (max-width:1079px) 280px,(min-width:1080px) 320px,
       250px"
-      src="assets/img/myPicture_large.jpg" alt="me">
-    <!-- -->
+      data-src="assets/img/myPicture_large.jpg" alt="me">
+
     <div class="scrollDown">
 
       <span class="scrollDown__text">Scroll down</span>
@@ -117,7 +117,7 @@
               <div class="icons icons__contact">
                 <a href="#"><i class="icons__item icons__item--biggerPadding fab fa-facebook"></i></a>
                 <a href="#"><i class="icons__item icons__item--biggerPadding far fa-envelope"></i></a>
-                <a href="#"><i class="icons__item icons__item--biggerPadding fab fa-github"></i></a>
+                <a href="https://github.com/radosliwa"><i class="icons__item icons__item--biggerPadding fab fa-github"></i></a>
               </div>
           </div>
 
@@ -160,8 +160,10 @@
 
     <span class="popUp__X">X</span>
     <div class="popUp__projectDescription" id="popUp__description--travel">
-      <div class="popUp__projectPicture"><img src="assets/img/travel-agency.jpg" alt=""></div>
-      <div class="popUp__projectLink"><a href="">VISIT</a></div>
+      <div class="popUp__projectPicture">
+        <img data-src="assets/img/travel-agency.jpg" class="popUp__projectPicture lazyload" alt="">
+        <div class="popUp__projectLink"><a href="https://radosliwa.github.io/myFirstPage/">VISIT</a></div>
+      </div>
       <h3>About travel</h3>
       <p class='text-modifications__p text-modifications__p--forPopUpProjectDescription'>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eveniet illo optio, nisi, autem voluptas maiores eos placeat, facere rerum officia
@@ -169,23 +171,23 @@
       </p>
     </div>
     <div class="popUp__projectDescription" id="popUp__description--gym">
-      <div class="popUp__projectPicture"> <img src="assets/img/gym-page.jpg" alt="" class="popUp__projectPicture">
+      <div class="popUp__projectPicture">
+        <img data-src="assets/img/gym-page.jpg" alt="https://radosliwa.github.io/GymPage/" class="popUp__projectPicture lazyload">
+        <div class="popUp__projectLink"><a href="">VISIT</a></div>
       </div>
-
       <h3>About gym</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eveniet illo optio, nisi, autem voluptas maiores eos placeat, facere rerum officia
         atque aut tempora quae veniam quasi. Ratione, veritatis, consequatur?
       </p>
-      <div class="popUp__projectLink"><a href="">VISIT</a></div>
     </div>
     <div class="popUp__projectDescription" id="popUp__description--animalia">
-      <div class="popUp__projectPicture"><img src="assets/img/animalia-app.jpg" alt="" class="popUp__projectPicture">
+      <div class="popUp__projectPicture"><img data-src="assets/img/animalia-app.jpg" alt="" class="popUp__projectPicture lazyload">
+        <div class="popUp__projectLink"><a href="https://radosliwa.github.io/Animalia/">VISIT</a></div>
       </div>
       <h3>About animalia</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eveniet illo optio, nisi, autem voluptas maiores eos placeat, facere rerum officia
         atque aut tempora quae veniam quasi. Ratione, veritatis, consequatur?
       </p>
-      <div class="popUp__projectLink"><a href="">VISIT</a></div>
 
     </div>
 

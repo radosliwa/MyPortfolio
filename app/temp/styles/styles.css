@@ -650,7 +650,7 @@ select { /* 1 */
   position: relative;
   width: 15%;
   height: 15%;
-  top: -5%;
+  top: -3%;
   /*in order for the absolute below to work*/
   margin-left: auto;
   margin-right: auto;
@@ -1028,6 +1028,9 @@ select { /* 1 */
   }.icons__item {
     padding: 10%;
     font-size: calc(50px + 13 * ((100vw - 420px) / 860));
+    -webkit-transition: color 1s;
+    -o-transition: color 1s;
+    transition: color 1s;
   }@media screen and (min-width: 1280px){.icons__item{
     font-size: 63px;
   }
@@ -1037,7 +1040,9 @@ select { /* 1 */
 }@media(min-width: 530px) {.icons__item--biggerPadding {
         padding: 20% 15%
     }
-  }.projects {
+  }.icons__item:hover {
+      color: #2D4F68;
+    }.projects {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1064,7 +1069,7 @@ select { /* 1 */
     width: 200px;
     height: 200px;
     overflow: hidden;
-    border: 1px solid rgba(40, 128, 160, 0.99);
+    border: 2px solid rgba(40, 128, 160, 0.99);
   }@supports not (-ms-high-contrast: none) {.projects__item {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1081,11 +1086,11 @@ select { /* 1 */
       background-size: cover;
       background-color: grey;
     }.projects__item:nth-child(2) {
-      background: url('../../assets/img/animalia-app.jpg') center no-repeat;
+      background: url('../../assets/img/gym-page.jpg') center no-repeat;
       background-size: cover;
       background-color: grey;
     }.projects__item:nth-child(3) {
-      background: url('../../assets/img/gym-page.jpg') center no-repeat;
+      background: url('../../assets/img/animalia-app.jpg') center no-repeat;
       background-size: cover;
       background-color: grey;
     }@media(min-width: 600px) {.projects__item {
@@ -1150,7 +1155,6 @@ select { /* 1 */
     -o-transition: opacity .6s ease-out;
     transition: opacity .6s ease-out;
     width: 100%;
-    margin-top: 79%;
     font-size: calc(16px + 2 * ((100vw - 420px) / 860));
   }@media screen and (min-width: 1280px){.projects__link{
     font-size: 18px;
@@ -1434,27 +1438,20 @@ select { /* 1 */
       -webkit-box-direction: normal;
           -ms-flex-flow: column;
               flex-flow: column;
-    }@media(min-width: 768px) {.popUp__projectDescription--visible {
-        padding: 2%
+    }@media(min-width: 875px) {.popUp__projectDescription--visible {
+        padding: 2%;
+        display: block
+
         /*adds bottom space when "visit" turns
         into a button*/
     }
-  }@media(min-width: 875px) {.popUp__projectDescription--visible {
-        display: block
-    }
-
         .popUp__projectDescription--visible>* {
           float: left;
+          width: 50%;
         }
 
         .popUp__projectDescription--visible h3 {
-          margin-left: 65%;
-          margin-top: -572px;
-        }
-
-        .popUp__projectDescription--visible p {
-          margin-top: -510px;
-          margin-left: 52%;
+          margin-top: 0;
         }
   }.popUp--visible {
     z-index: 999;
@@ -1477,17 +1474,14 @@ select { /* 1 */
           -ms-transform: scale(1.3);
               transform: scale(1.3);
       color: rgba(40, 128, 160, 0.99);
-    }@media(min-width: 875px) {.popUp__projectPicture {
-      width: 50%
-  }
-  }.popUp__projectPicture img {
+    }.popUp__projectPicture img {
       display: inline-block;
-      max-width: 65%;
+      max-width: 50%;
       height: auto;
       border: 3px solid #000;
-    }@media(min-width: 875px) {.popUp__projectPicture img {
-        width: 100%
-    }
+    }@media(min-width: 875px) {.popUp__projectPicture {
+      max-width: 80%
+  }
   }.popUp__projectLink {
     -webkit-transition: all .8s ease-out;
     -o-transition: all .8s ease-out;
@@ -1497,14 +1491,20 @@ select { /* 1 */
   }.popUp__projectLink:hover {
       color: rgba(40, 128, 160, 0.99);
       border: 2px solid #000;
-    }@media(min-width: 875px) {.popUp__projectLink {
-      width: 15%;
+    }@media(min-width: 768px) {
+      .popUp__projectLink a {
+        font-size: 22px;
+        vertical-align: middle;
+        padding: inherit;
+      }
+  }@media(min-width: 875px) {.popUp__projectLink {
+      width: 17%;
       border: 2px solid rgba(40, 128, 160, 0.99);
       border-radius: 40%;
-      padding: .3% 1%;
-      position: absolute;
-      bottom: 2%;
+      padding: .3% 1.5%;
+      position: relative;
       left: 50%;
+      /* top: 85%; */
       -webkit-transform: translateX(-50%);
           -ms-transform: translateX(-50%);
               transform: translateX(-50%)

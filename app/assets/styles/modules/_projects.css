@@ -15,7 +15,7 @@
     width: 200px;
     height: 200px;
     overflow: hidden;
-    border: 1px solid rgba(40, 128, 160, 0.99);
+    border: 2px solid rgba(40, 128, 160, 0.99);
 
     @supports not (-ms-high-contrast: none) {
       display: flex;
@@ -30,13 +30,13 @@
     }
 
     &:nth-child(2) {
-      background: url('../../assets/img/animalia-app.jpg') center no-repeat;
+      background: url('../../assets/img/gym-page.jpg') center no-repeat;
       background-size: cover;
       background-color: grey;
     }
 
     &:nth-child(3) {
-      background: url('../../assets/img/gym-page.jpg') center no-repeat;
+      background: url('../../assets/img/animalia-app.jpg') center no-repeat;
       background-size: cover;
       background-color: grey;
     }
@@ -93,7 +93,6 @@
     background-image: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
     transition: opacity .6s ease-out;
     width: 100%;
-    margin-top: 79%;
     font-size: responsive;
     min-font-size: 16px;
     max-font-size: 18px;
