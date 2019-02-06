@@ -5,18 +5,22 @@
   justify-content: center;
   flex-flow: column;
   text-align: center;
+
   @mixin atSmall {
     top: 2%;
   }
+
   @mixin atMedium {
     margin-top: 4%;
   }
-  input, textarea {
-    padding: 2%;
-  }
+
   &>div {
     /* display: inline-block;
     margin: 0 auto;*/
-    padding: 1% 0;
+    padding: 1.5% 0;
+  }
+
+  &__submit {
+    margin-bottom: 1.5%;
   }
 }

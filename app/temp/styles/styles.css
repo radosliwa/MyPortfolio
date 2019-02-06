@@ -994,12 +994,12 @@ select { /* 1 */
   }@media(min-width: 768px) {.form {
     margin-top: 4%
 }
-  }.form input, .form textarea {
-    padding: 2%;
   }.form>div {
     /* display: inline-block;
     margin: 0 auto;*/
-    padding: 1% 0;
+    padding: 1.5% 0;
+  }.form__submit {
+    margin-bottom: 1.5%;
   }.icons__contact {
     display: -webkit-box;
     display: -ms-flexbox;
