@@ -52,5 +52,6 @@ gulp.task('usemin', ['styles', 'scripts'], function() {
     }))
     .pipe(gulp.dest('./docs'));
 });
+/* ^ "retrun" to make sure rev finishes before next function begins*/
 
 gulp.task('build', ['delDocs', 'optimizePics', 'useminStart']);

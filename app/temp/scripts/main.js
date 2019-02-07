@@ -10470,7 +10470,6 @@ $projectsLink.on('click', function (e) {
   }
 });
 $PopUp.on('click', ".popUp__X", function () {
-  console.log(this);
   $PopUp.removeClass('popUp--visible');
 });
 
