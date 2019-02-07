@@ -87,7 +87,8 @@
 
   &__link {
     position: relative;
-    display: inline-block;
+    display: block;
+    top: 77%;
     padding: 15px;
     color: #FFF;
     background-image: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
@@ -96,6 +97,12 @@
     font-size: responsive;
     min-font-size: 16px;
     max-font-size: 18px;
+
+    @supports not (-ms-high-contrast: none) {
+      top: 0;
+      /*in IE without top:77% link appeared
+      on top of the project item*/
+    }
 
     @mixin atMedium {
       opacity: 0;

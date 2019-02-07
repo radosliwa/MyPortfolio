@@ -1143,7 +1143,8 @@ select { /* 1 */
     display: none;
   }.projects__link {
     position: relative;
-    display: inline-block;
+    display: block;
+    top: 77%;
     padding: 15px;
     color: #FFF;
     background-image: -o-radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
@@ -1159,7 +1160,12 @@ select { /* 1 */
 }@media screen and (max-width: 420px){.projects__link{
     font-size: 16px;
   }
-}@media(min-width: 768px) {.projects__link {
+}@supports not (-ms-high-contrast: none) {.projects__link {
+      top: 0
+      /*in IE without top:77% link appeared
+      on top of the project item*/
+  }
+    }@media(min-width: 768px) {.projects__link {
       opacity: 0;
       padding: 12px;
       font-size: calc(24px + 3 * ((100vw - 420px) / 860))
