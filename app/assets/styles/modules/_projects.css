@@ -16,6 +16,7 @@
     height: 200px;
     overflow: hidden;
     border: 2px solid rgba(40, 128, 160, 0.99);
+    transition: all .4s ease-out;
 
     @supports not (-ms-high-contrast: none) {
       display: flex;
@@ -51,10 +52,9 @@
       height: 250px;
 
       &:hover {
-        overflow: hidden;
-        box-shadow: 4px 6px 12px #000;
-        transform: scale(1.05);
-        transition: all .5s ease-out;
+        box-shadow: 7px 10px 20px #000;
+        transform: skewX(-5deg) skewY(3deg) translateY(1%);
+        transform-origin: top center;
 
         .projects__link {
           opacity: 1;
