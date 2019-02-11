@@ -10457,6 +10457,7 @@ var $projectsLink = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.projects__l
 var $PopUp = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.popUp');
 var $PopUpX = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.popUp__X');
 var $ProjectDescription = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.popUp__projectDescription');
+var $MailEnvelope = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.icons__contact a:nth-child(2)');
 $projectsLink.on('click', function (e) {
   $ProjectDescription.removeClass('popUp__projectDescription--visible');
   e.preventDefault();
@@ -10471,6 +10472,10 @@ $projectsLink.on('click', function (e) {
 });
 $PopUp.on('click', ".popUp__X", function () {
   $PopUp.removeClass('popUp--visible');
+});
+$MailEnvelope.click(function (e) {
+  e.preventDefault();
+  alert('Not yet active, please use contact form for now');
 });
 
 /***/ }),
