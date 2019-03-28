@@ -1,3 +1,7 @@
+h1, #about h4 {
+  @mixin hideTag;
+}
+
 .text-modifications {
 
   /*--------------------------SITE-HEADER SECTION*/
@@ -56,6 +60,14 @@
 
   &__h3 {
     &--ForProjectSection {
+      @mixin hideTag;
+    }
+  }
+
+  &__span {
+    &--ForProjectSection {
+      font-weight: bold;
+
       &.animated {
         animation-delay: .4s;
       }

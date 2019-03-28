@@ -26,6 +26,10 @@ a {
   }
 }
 
+h1, #about h4 {
+  @mixin hideTag;
+}
+
 h2, h3 {}
 
 span {

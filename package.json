@@ -17,6 +17,7 @@
     "jquery": "latest",
     "jquery-smooth-scroll": "^2.2.0",
     "lazysizes": "^4.1.5",
+    "natives": "^1.1.6",
     "normalize.css": "latest",
     "waypoints": "^4.0.1",
     "webpack": "^3.11.0"

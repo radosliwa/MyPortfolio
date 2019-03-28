@@ -248,7 +248,18 @@ select { /* 1 */
     min-font-size: 22px;
     max-font-size: 34px
 }
-  }h2, h3 {}span {
+  }h1, #about h4 {
+  font-size: 0;
+  width: 1px;
+  height: 1px;
+  display: inline-block;
+  overflow: hidden;
+  position: absolute !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px);
+}h2, h3 {}span {
   /* text-shadow: 0px 2px 2px #000; */
   font-weight: 500;
 }strong {
@@ -276,7 +287,18 @@ select { /* 1 */
   }
   }.wrapper--forPopUp {
     padding: 5px 12px 5px 12px;
-  }/*--------------------------SITE-HEADER SECTION*/.text-modifications__item1, .text-modifications__item2, .text-modifications__item3 {
+  }h1, #about h4 {
+  font-size: 0;
+  width: 1px;
+  height: 1px;
+  display: inline-block;
+  overflow: hidden;
+  position: absolute !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px);
+}/*--------------------------SITE-HEADER SECTION*/.text-modifications__item1, .text-modifications__item2, .text-modifications__item3 {
     font-size: calc(48px + 2 * ((100vw - 420px) / 860));
     position: absolute;
     width: 65%;
@@ -350,13 +372,26 @@ select { /* 1 */
     -webkit-animation-name: anim3;
             animation-name: anim3;
     display: block;
-  }.text-modifications__h3--ForProjectSection.animated {
+  }.text-modifications__h3--ForProjectSection {
+      font-size: 0;
+      width: 1px;
+      height: 1px;
+      display: inline-block;
+      overflow: hidden;
+      position: absolute !important;
+      border: 0 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      clip: rect(1px, 1px, 1px, 1px);
+    }.text-modifications__span--ForProjectSection {
+      font-weight: bold;
+    }.text-modifications__span--ForProjectSection.animated {
         -webkit-animation-delay: .4s;
                 animation-delay: .4s;
-      }@media(min-width: 768px) {.text-modifications__h3--ForProjectSection {
+      }@media(min-width: 768px) {.text-modifications__span--ForProjectSection {
         text-shadow: 2px 2px 1px #2d4f68
     }
-  }.text-modifications__h3--AboutSection {}@media(min-width: 768px) {.text-modifications__p--AboutSection {
+  }.text-modifications__span--AboutSection {}@media(min-width: 768px) {.text-modifications__p--AboutSection {
         text-shadow: 2px 2px 1px #2d4f68
     }
   }.text-modifications__p--ForProjectSectionM {
