@@ -19,6 +19,6 @@ ul, li, a {
   color: inherit;
 }
 
-a {
+a, button {
   cursor: pointer;
 }

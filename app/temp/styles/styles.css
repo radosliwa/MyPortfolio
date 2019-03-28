@@ -212,7 +212,7 @@ select { /* 1 */
   padding: 0;
   margin: 0;
   color: inherit;
-}a {
+}a, button {
   cursor: pointer;
 }/*for fine-tuning animate.css*/.animated.zoomIn {
   -webkit-animation-duration: 2s;
@@ -1137,7 +1137,7 @@ select { /* 1 */
       height: 250px
   }
 
-      .projects__item:hover {
+      .projects__item:hover, .projects__item:focus {
         -webkit-box-shadow: 7px 10px 20px #000;
                 box-shadow: 7px 10px 20px #000;
         -webkit-transform: skewX(-5deg) skewY(3deg) translateY(1%);
@@ -1148,7 +1148,7 @@ select { /* 1 */
                 transform-origin: top center;
       }
 
-        .projects__item:hover .projects__link {
+        .projects__item:hover .projects__link, .projects__item:focus .projects__link {
           opacity: 1;
           display: inline-block;
           text-align: center;
@@ -1157,11 +1157,11 @@ select { /* 1 */
           transition: all .8s ease-out;
         }
 
-          .projects__item:hover .projects__link:hover {
+          .projects__item:hover .projects__link:hover, .projects__item:hover .projects__link:focus, .projects__item:focus .projects__link:hover, .projects__item:focus .projects__link:focus {
             color: rgba(40, 128, 160, 0.99);
           }
 
-          .projects__item:hover .projects__link:before {
+          .projects__item:hover .projects__link:before, .projects__item:focus .projects__link:before {
             -webkit-transform: scaleX(1);
                 -ms-transform: scaleX(1);
                     transform: scaleX(1);
@@ -1179,6 +1179,11 @@ select { /* 1 */
     }.projects__projectPicture {
     display: none;
   }.projects__link {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    border-style: none;
+    /*to reset button*/
     position: relative;
     display: block;
     top: 77%;
@@ -1236,7 +1241,28 @@ select { /* 1 */
             -ms-transform: scaleX(0);
                 transform: scaleX(0)
     }
-  }.projects__visible {}.chevron {
+  }.projects__visible {}/* .projects__item:focus {
+  box-shadow: 7px 10px 20px #000;
+  transform: skewX(-5deg) skewY(3deg) translateY(1%);
+  transform-origin: top center;
+
+  .projects__link {
+    opacity: 1;
+    display: inline-block;
+    text-align: center;
+    transition: all .8s ease-out;
+
+    &:hover, &:focus {
+      color: $mainAquamarine;
+    }
+
+    &:before {
+      transform: scaleX(1);
+      transform-origin: left;
+      padding: 0 2% 0 2%;
+    }
+  }
+} */.chevron {
   position: relative;
   background-color: #2d4f68;
 }.chevron:after, .chevron:before {
@@ -1437,16 +1463,17 @@ select { /* 1 */
       width: 50%
   }
   }.popUp {
-  position: fixed;
+  position: absolute;
   z-index: -2;
   /* wont be clickable with opacity 0 */
   top: 0;
-  bottom: 2%;
-  left: 2%;
-  right: 2%;
-  max-height: calc(100vh - 110px);
+  bottom: 0;
+  left: 1%;
+  right: 1%;
+  height: 70vh;
   overflow-y: auto;
   /*to make popUp scrollable*/
+  border-radius: 10%;
   color: #FFF;
   background: -o-radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
   background: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);

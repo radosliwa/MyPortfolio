@@ -30,6 +30,15 @@ $projectsLink.on('click', function(e) {
 $PopUp.on('click', ".popUp__X", function() {
   $PopUp.removeClass('popUp--visible');
 })
+$(document).keydown(function(e) {
+  var keys = e.keyCode === 27 || e.which === 27;
+  var popUpVisibility = $PopUp.hasClass('popUp--visible');
+
+  if (popUpVisibility && keys) {
+    console.log(e.keyCode + " pressed");
+    $PopUp.removeClass('popUp--visible');
+  }
+})
 
 $MailEnvelope.click(function(e) {
   e.preventDefault();

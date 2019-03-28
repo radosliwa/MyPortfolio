@@ -1,14 +1,15 @@
 .popUp {
-  position: fixed;
+  position: absolute;
   z-index: -2;
   /* wont be clickable with opacity 0 */
   top: 0;
-  bottom: 2%;
-  left: 2%;
-  right: 2%;
-  max-height: calc(100vh - 110px);
+  bottom: 0;
+  left: 1%;
+  right: 1%;
+  height: 70vh;
   overflow-y: auto;
   /*to make popUp scrollable*/
+  border-radius: 10%;
   color: #FFF;
   background: radial-gradient(circle, #5d605a, #4e4e47, #403c36, #322b26, #241b18);
   opacity: 0;

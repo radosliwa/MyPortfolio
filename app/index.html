@@ -64,20 +64,20 @@
   <!---ABOUT---------------->
   <main id="main-content" role="main">
     <section id="about" class="section" data-match="#about-link">
-      <h2 class="section__title">About</h2>
+      <h2 class="section__title" tabindex="0">About</h2>
       <div class="wrapper wrapper--forSection">
         <div class="col__2cols">
           <div class="col__col50">
-            <h3 class="text-modifications__h3 text-modifications__h3--AboutSection">Who am I?</h3>
+            <h3 class="text-modifications__h3 text-modifications__h3--AboutSection" tabindex="0">Who am I?</h3>
 
           </div>
           <div class="col__col50 col__col50--blueBackgroundAfter">
-            <p class="text-modifications__p text-modifications__p--AboutSection">My name is Radek Śliwa. I am a rookie computer programmer. My journey started around early 2017, when I got fascinated by the web developement, specifically
+            <p class="text-modifications__p text-modifications__p--AboutSection" tabindex="0">My name is Radek Śliwa. I am a rookie computer programmer. My journey started around early 2017, when I got fascinated by the web developement, specifically
               frontend area. Each day I put a ton of effort and heart in the learning process. My dream and main goal now is to get my first job in the field and keep getting better at it. </p>
           </div>
         </div>
         <div class="col__col100">
-          <h4>Technologies I use</h4>
+          <h4 tabindex="0">Technologies I use</h4>
           <span class="text-modifications__span text-modifications__span--technology">HTML</span>
           <span class="text-modifications__span text-modifications__span--technology">CSS</span>
           <span class="text-modifications__span text-modifications__span--technology">ES6</span>
@@ -91,29 +91,67 @@
     </section>
     <!---PROJECTS---------------->
     <section id="projects" class="section" data-match="#projects-link">
-      <h2 class="section__title">Projects</h2>
+      <h2 class="section__title" tabindex="0">Projects</h2>
       <div class="wrapper wrapper--forSection">
         <div class="col__2cols">
           <div class="col__col50 col__col50--justifyCenter col__col50--blueBackgroundBefore">
-            <span class="text-modifications__span text-modifications__span--ForProjectSection">Projects I did by myself</span>
-            <p class="text-modifications__p text-modifications__p--ForProjectSectionM">Hover over the pictures to learn more</p>
-            <p class="text-modifications__p text-modifications__p--ForProjectSectionS">Click on the pictures to learn more</p>
+            <span tabindex="0" class="text-modifications__span text-modifications__span--ForProjectSection">Projects I did by myself</span>
+            <p tabindex="0" class="text-modifications__p text-modifications__p--ForProjectSectionM">Hover over the pictures to learn more</p>
+            <p tabindex="0" class="text-modifications__p text-modifications__p--ForProjectSectionS">Click on the pictures to learn more</p>
           </div>
           <div class="col__col50">
             <div class="projects">
 
-              <div class="projects__item"><a class="projects__link" data-match="popUp__description--travel" href="">
-                  <h3 class="text-modifications__h3--ForProjectSection">Travel agency's site</h3>LEARN MORE
-                </a></div>
-              <div class="projects__item"><a class="projects__link" data-match="popUp__description--gym" href="">
-                  <h3 class="text-modifications__h3--ForProjectSection">Gym's site</h3>LEARN MORE
-                </a></div>
-              <div class="projects__item"><a class="projects__link" data-match="popUp__description--animalia" href="">
-                  <h3 class="text-modifications__h3--ForProjectSection">Animalia game</h3>LEARN MORE
-                </a></div>
+              <div class="projects__item" tabindex="0">
+                <h3 class="text-modifications__h3--ForProjectSection">Travel agency's site</h3>
+                <button class="projects__link" data-match="popUp__description--travel" tabindex="-1" aria-hidden="true">LEARN MORE</button>
+              </div>
 
+              <div class="projects__item" tabindex="0">
+                <h3 class="text-modifications__h3--ForProjectSection">Gym's site</h3>
+                <button class="projects__link" data-match="popUp__description--gym" tabindex="-1" aria-hidden="true">LEARN MORE</button>
+              </div>
+
+              <div class="projects__item" tabindex="0">
+                <h3 class="text-modifications__h3--ForProjectSection">Animalia game</h3>
+                <button class="projects__link" data-match="popUp__description--animalia" aria-hidden="true">LEARN MORE</button>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="popUp">
+        <span class="popUp__X" tabindex="0">X</span>
+        <div class="popUp__projectDescription" id="popUp__description--travel">
+          <div class="popUp__projectPicture">
+            <img src="assets/img/travel-agency.jpg" class="popUp__projectPicture" alt="project picture">
+            <div class="popUp__projectLink" tabindex="0"><a href="https://radosliwa.github.io/myFirstPage/">VISIT</a></div>
+          </div>
+          <h3>About travel</h3>
+          <p class='text-modifications__p text-modifications__p--forPopUpProjectDescription'>
+            One of my oldest projects and the first one I was satisfied enough with to include it in my portfolio. Depending on the section I alternated between flexbox and float-based layout for the sake of experiment. Site is fully responsive and
+            JS
+            code is split
+            into ES6 modules which were compiled through Babel and its plugins. </p>
+        </div>
+        <div class="popUp__projectDescription" id="popUp__description--gym">
+          <div class="popUp__projectPicture">
+            <img src="assets/img/gym-page.jpg" alt="project picture" class="popUp__projectPicture">
+            <div class="popUp__projectLink"><a href="https://radosliwa.github.io/GymPage/">VISIT</a></div>
+          </div>
+          <h3>About gym</h3>
+          <p>A more recent imaginary website I created, mostly as a way of improving upon my understanding of RWD and such layout modules as Flexbox and floats to a lesser extent. Same as all my projects this one utilises Gulp for real-time
+            handling of HTML
+            and CSS, and Webpack for updating and compiling JS.</p>
+        </div>
+        <div class="popUp__projectDescription" id="popUp__description--animalia">
+          <div class="popUp__projectPicture"><img src="assets/img/animalia-app.jpg" alt="project picture" class="popUp__projectPicture">
+            <div class="popUp__projectLink"><a href="https://radosliwa.github.io/Animalia/">VISIT</a></div>
+          </div>
+          <h3>About animalia</h3>
+          <p>Basic as this game may appear, it took me the longest time to develop. Main reason is that I rewrote it many times to get the better grasp of jquery, events and splitting whatever JS logic there was into import-based ES6 modules while
+            keeping the code efficient.
+          </p>
         </div>
       </div>
     </section>
@@ -122,12 +160,12 @@
   <!-----------CONTACT-->
 
   <section id="contact" class="section section--no100vh" data-match="#contact-link">
-    <h2 class="section__title">Contact</h2>
+    <h2 class="section__title" tabindex="0">Contact</h2>
     <div class="wrapper wrapper--forSection">
       <div class="chevron">
         <div class="col__2cols col__2cols--whiteFont">
           <div class="col__skewed">
-            <span class="text-modifications__questionInContact">Interested in my services?</span>
+            <span class="text-modifications__questionInContact" tabindex="0">Interested in my services?</span>
             <p>Reach out to me through social media or using the contact form
               <div class="icons icons__contact">
                 <a href="#"><i class="icons__item icons__item--biggerPadding fab fa-facebook"></i></a>
@@ -137,8 +175,8 @@
           </div>
 
           <div class="col__skewed">
-            <form class="form" method="POST" action="https://formspree.io/sliwa.radoslaw2@gmail.com">
-              <span class="text-modifications__contactMeForm">Contact me</span>
+            <form aria-label="contact section" tabindex="0" class="form" method="POST" action="https://formspree.io/sliwa.radoslaw2@gmail.com">
+              <h3 class="text-modifications__contactMeForm" aria-hidden="true">Contact me</h3>
               <div class="form__input form__input--name">
 
                 <input id="name" name="name" type="text" placeholder="your name...">
@@ -171,43 +209,7 @@
       Radoslaw Sliwa 2018
     </div>
   </footer>
-  <div class="popUp">
 
-    <span class="popUp__X">X</span>
-    <div class="popUp__projectDescription" id="popUp__description--travel">
-      <div class="popUp__projectPicture">
-        <img src="assets/img/travel-agency.jpg" class="popUp__projectPicture" alt="project picture">
-        <div class="popUp__projectLink"><a href="https://radosliwa.github.io/myFirstPage/">VISIT</a></div>
-      </div>
-      <h3>About travel</h3>
-      <p class='text-modifications__p text-modifications__p--forPopUpProjectDescription'>
-        One of my oldest projects and the first one I was satisfied enough with to include it in my portfolio. Depending on the section I alternated between flexbox and float-based layout for the sake of experiment. Site is fully responsive and
-        JS
-        code is split
-        into ES6 modules which were compiled through Babel and its plugins. </p>
-    </div>
-    <div class="popUp__projectDescription" id="popUp__description--gym">
-      <div class="popUp__projectPicture">
-        <img src="assets/img/gym-page.jpg" alt="project picture" class="popUp__projectPicture">
-        <div class="popUp__projectLink"><a href="https://radosliwa.github.io/GymPage/">VISIT</a></div>
-      </div>
-      <h3>About gym</h3>
-      <p>A more recent imaginary website I created, mostly as a way of improving upon my understanding of RWD and such layout modules as Flexbox and floats to a lesser extent. Same as all my projects this one utilises Gulp for real-time
-        handling of HTML
-        and CSS, and Webpack for updating and compiling JS.</p>
-    </div>
-    <div class="popUp__projectDescription" id="popUp__description--animalia">
-      <div class="popUp__projectPicture"><img src="assets/img/animalia-app.jpg" alt="project picture" class="popUp__projectPicture">
-        <div class="popUp__projectLink"><a href="https://radosliwa.github.io/Animalia/">VISIT</a></div>
-      </div>
-      <h3>About animalia</h3>
-      <p>Basic as this game may appear, it took me the longest time to develop. Main reason is that I rewrote it many times to get the better grasp of jquery, events and splitting whatever JS logic there was into import-based ES6 modules while
-        keeping the code efficient.
-      </p>
-
-    </div>
-
-  </div>
   <!-- build:js assets/scripts/Main.js -->
   <script src="temp/scripts/Main.js"></script>
   <!-- endbuild -->
